@@ -1,0 +1,46 @@
+{
+ "what": "Real HTML fragments from six NBPE reports (the paragraphs and list items that carry realisation figures), keyed by report date. Captured 2026-10-07.",
+ "reports": {
+  "2022-06-30": {
+   "file": "1000685188-en.html",
+   "html": [
+    "<li>$11 million of proceeds received during June</li>",
+    "<p><sup>1 </sup><i>$67 million of cash from realisations received through 30 June 2022, of which $17 million was attributable to a sale announced in 2021, but received in 2022. Including the realisation signed in June 2022, NBPE expects total additional cash proceeds of $68 million, which would result in $119 million of total realisations in 2022.</i><br><i><sup>2</sup></i><i> Pending realisations are subject to customary closing conditions. No assurances can be given the transactions ultimately close.</i></p>"
+   ]
+  },
+  "2024-01-31": {
+   "file": "1000914991-en.html",
+   "html": [
+    "<li>$38 million of proceeds received during January, consisting primarily of previously announced realisations</li>",
+    "<li>$38 million<sup>1</sup> of realisations received during the month, consisting primarily of the previously announced sales of FV Hospital and Melissa &amp; Doug as well as realisations from legacy income investments, which now represent 7% of the overall portfolio</li>"
+   ]
+  },
+  "2024-03-31": {
+   "file": "1000946455-en.html",
+   "html": [
+    "<li>$171 million of proceeds from realisations received during 2023</li>"
+   ]
+  },
+  "2025-05-31": {
+   "file": "1001114995-en.html",
+   "html": [
+    "<p><strong>$66 million of realisations in 2025 year to date</strong></p>",
+    "<li style=\"margin-bottom:10pt;\">$8 million of proceeds received during the month of May<br><br></li>"
+   ]
+  },
+  "2025-08-31": {
+   "file": "1001127894-en.html",
+   "html": [
+    "<p><strong>$86 million of realisations year-to-date </strong></p>",
+    "<li style=\"margin-bottom:10pt;\">~$13 million received during the month from the partial realisation of Tendam; YTD realisations driven by partial sales / exits of private holdings. Remaining realisations consisted of proceeds from the sales of quoted holdings and other partial realisations</li>"
+   ]
+  },
+  "2026-07-31": {
+   "file": "2d0e199c-f3c1-4bbf-aa0a-374bbe7eaa47.html",
+   "html": [
+    "<p><b>$1 million of realisation proceeds received in July 2026; total announced realisations of $150 million</b></p>",
+    "<li style=\"margin-bottom:10pt;\">On a pro forma basis for 2026, including expected realisations from announced but not yet closed transactions, NBPE’s total realisations would be $150m\n    <br>\n    <br></li>"
+   ]
+  }
+ }
+}

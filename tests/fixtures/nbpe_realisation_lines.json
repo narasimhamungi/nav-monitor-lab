@@ -1,0 +1,692 @@
+{
+ "what": "Every line that mentions realisations, proceeds or exits (or a dollar amount received) in each NBPE monthly report, as rendered text. Captured in a browser from the FCA National Storage Mechanism on 2026-10-07 and written here by script, without retyping. Footnote marks appear glued to the preceding word, as a browser renders them.",
+ "base_url": "https://data.fca.org.uk/artefacts/NSM/GNW/",
+ "reports": [
+  {
+   "as_of": "2022-02-28",
+   "published": "2022-03-17",
+   "file": "1000611242-en.html",
+   "lines": [
+    "$54 million of realisations announced during 2022",
+    "Realisations from the portfolio continue in 2022",
+    "2022 year to date announced realisations to $54 milllion",
+    "1 Includes proceeds of $14m, from one previously announced transaction in 2021, which were received in the month. Original estimate fo the proceeds was $12m."
+   ]
+  },
+  {
+   "as_of": "2022-03-31",
+   "published": "2022-04-26",
+   "file": "1000628938-en.html",
+   "lines": [
+    "$401 million of announced realisations during 2021",
+    "“The portfolio benefitted from significant liquidity in 2021, with 31% of the opening portfolio realised during the year and $401 million of proceeds announced in the year. 14 companies announced full or partial realisations during the year, at an 83% uplift to prior year values and 3.3x multiple of cost, and NBPE has seen further realisation activity early in 2022.",
+    "Realisations from the portfolio continue in 2022",
+    "2022 year to date announced realisations of $77 milllion, of which $65 million is from four announced transactions including",
+    "$33 million and $2 million attributable to declines in quoted share prices and negative foreign exchange valuation adjustments, respectively, during 2022 year to date"
+   ]
+  },
+  {
+   "as_of": "2022-04-30",
+   "published": "2022-05-12",
+   "file": "1000632831-en.html",
+   "lines": [
+    "Total announced portfolio realisations year to date of $80 million",
+    "Realisations from the portfolio in 2022",
+    "2022 year to date announced realisations of $80 milllion",
+    "Four full or partial sales announced in 2022 include: the remaining assets of Telxius, and the announced full sales of Leaseplan and Omega Environmental Technologies, and the partial realisation of MHS Global1",
+    "Pending realisations are subject to customary closing conditions. No assurances can be given the transactions ultimately close."
+   ]
+  },
+  {
+   "as_of": "2022-05-31",
+   "published": "2022-06-15",
+   "file": "1000659116-en.html",
+   "lines": [
+    "Total announced portfolio realisations year to date of $120 million",
+    "$120 million of announced realisations in 2022",
+    "2022 year to date announced realisations of $120 milllion1",
+    "Five full or partial sales announced in 2022 include: the remaining assets of Telxius, the announced full sales of Leaseplan and Omega Environmental Technologies, the partial realisation of MHS Global and the sale of an additional unannounced transaction which was signed in June but has not yet closed2",
+    "1 $56 million of cash from realisations received through 31 May 2022, of which $17 million was attributable to a sale announced in 2021, but received in 2022. Including the realisation signed in June 2022, NBPE expects total additional cash proceeds of $81 million, which would result in $120 million of total realisations in 2022.",
+    "2 Pending realisations are subject to customary closing conditions. No assurances can be given the transactions ultimately close."
+   ]
+  },
+  {
+   "as_of": "2022-06-30",
+   "published": "2022-07-19",
+   "file": "1000685188-en.html",
+   "lines": [
+    "$11 million of proceeds received during the month and $371 million of cash and undrawn credit line available",
+    "$119 million of announced realisations in 2022",
+    "2022 year to date announced realisations of $119 milllion1",
+    "Five full or partial sales announced in 2022 include: the remaining assets of Telxius, the announced full sales of Leaseplan and Omega Environmental Technologies, the partial realisation of MHS Global and the sale of an additional unannounced transaction which was signed in June but has not yet closed2",
+    "$11 million of proceeds received during June",
+    "1 $67 million of cash from realisations received through 30 June 2022, of which $17 million was attributable to a sale announced in 2021, but received in 2022. Including the realisation signed in June 2022, NBPE expects total additional cash proceeds of $68 million, which would result in $119 million of total realisations in 2022.",
+    "2 Pending realisations are subject to customary closing conditions. No assurances can be given the transactions ultimately close."
+   ]
+  },
+  {
+   "as_of": "2022-07-31",
+   "published": "2022-08-24",
+   "file": "1000711368-en.html",
+   "lines": [
+    "$110 million of announced realisations in 2022",
+    "2022 year to date announced realisations of $110 milllion1",
+    "Five full or partial sales announced in 2022 include: the remaining assets of Telxius, the announced full sales of Leaseplan and Omega Environmental Technologies, the partial realisation of MHS Global and the partial sale of an additional transaction which was signed in June and closed in August 20222",
+    "1 $67 million of cash from realisations received through 31 July 2022, of which $17 million was attributable to a sale announced in 2021, but received in 2022. Including the partial realisation signed in June 2022, NBPE expects total additional net cash from these realisations of $38 million."
+   ]
+  },
+  {
+   "as_of": "2022-08-31",
+   "published": "2022-09-21",
+   "file": "1000736519-en.html",
+   "lines": [
+    "$110 million of announced realisations through 30 June 2022",
+    "Realisations from the portfolio continue in 2022",
+    "2022 year to date announced realisations of $114 milllion3",
+    "– Six full or partial sales announced in 2022 include: the remaining assets of Telxius, the announced full sales of Leaseplan and Omega Environmental Technologies, the partial realisation of MHS Global, the sale of Stratus Technologies and the partial sale of an additional transaction which was signed in June and closed in August 20224",
+    "In addition, $39 million of distributions expected over the coming months from announced realisations",
+    "3 $77 million of cash from realisations received through 31 August 2022, of which $17 million was attributable to a sale announced in 2021, but received in 2022. Including the partial realisation signed in June 2022, NBPE expects total additional net cash from these realisations of $39 million."
+   ]
+  },
+  {
+   "as_of": "2022-09-30",
+   "published": "2022-10-18",
+   "file": "1000751432-en.html",
+   "lines": [
+    "$119 million of announced realisations through 30 September 2022",
+    "Realisations from the portfolio continue in 2022",
+    "2022 year to date announced realisations of $119 milllion1",
+    "– Six full or partial sales announced in 2022 include: the remaining assets of Telxius, the announced full sales of Leaseplan and Omega Environmental Technologies, the partial realisation of MHS Global, the sale of Stratus Technologies and the partial sale of an additional transaction which was signed in June and closed in August 20222",
+    "In addition, $39 million of distributions expected over the coming months from announced realisations",
+    "1 $84 million of cash from realisations received through 30 September 2022, of which $17 million was attributable to a sale announced in 2021, but received in 2022. Including the partial realisation signed in June 2022, NBPE expects total additional net cash from these realisations of $39 million.",
+    "2 Additional transaction represents an aggregate gross value to NBPE of approximately $33 million, of which NBPE received approximately $12 million in cash and NBPE elected to roll a total of approximately $21 million in value. The transaction closed in August 2022 and NBPE received the cash in October 2022."
+   ]
+  },
+  {
+   "as_of": "2022-10-31",
+   "published": "2022-11-24",
+   "file": "1000768550-en.html",
+   "lines": [
+    "$130 million of announced realisations in 10 months to 31 October 2022",
+    "$130 million of announced realisations from the portfolio in 20221",
+    "Six full or partial sales announced in 2022 include: the remaining assets of Telxius, the announced full sales of Leaseplan and Omega Environmental Technologies, the partial realisation of MHS Global, the sale of Stratus Technologies and the partial sale of an additional transaction which was signed in June and closed in August 20222",
+    "A further $27 million of proceeds from announced realisations expected in coming months",
+    "1 $108 million of cash from realisations received through 31 October 2022, of which $17 million was attributable to a sale announced in 2021, but received in 2022. Including the partial realisation signed in June 2022, NBPE expects total additional net cash from these realisations of $26 million.",
+    "2 Additional transaction represents an aggregate gross value to NBPE of approximately $33 million, of which NBPE received approximately $12 million in cash and NBPE elected to roll a total of approximately $21 million in value. The transaction closed in August 2022 and NBPE received the cash in October 2022."
+   ]
+  },
+  {
+   "as_of": "2022-11-30",
+   "published": "2022-12-14",
+   "file": "1000772073-en.html",
+   "lines": [
+    "$135 million of announced realisations in 11 months to 30 November 2022",
+    "$135 million of announced realisations from the portfolio in 20221",
+    "Six full or partial sales announced in 2022 include: the remaining assets of Telxius, the announced full sales of Leaseplan and Omega Environmental Technologies, the partial realisation of MHS Global, the sale of Stratus Technologies and the partial sale of an additional transaction which was signed in June and closed in August 20222",
+    "A further $27 million of proceeds from previously announced realisations expected in coming months",
+    "1 $113 million of cash from realisations received through 30 November 2022, of which $17 million was attributable to a sale announced in 2021, but received in 2022. NBPE expects total additional net cash from these realisations of $27 million.",
+    "2 Additional transaction represents an aggregate gross value to NBPE of approximately $33 million, of which NBPE received approximately $12 million in cash and NBPE elected to roll a total of approximately $21 million in value. The transaction closed in August 2022 and NBPE received the cash in October 2022."
+   ]
+  },
+  {
+   "as_of": "2022-12-31",
+   "published": "2023-01-19",
+   "file": "1000777954-en.html",
+   "lines": [
+    "$143 million of announced realisations during 2022",
+    "$143 million of announced realisations from the portfolio in 20221",
+    "Seven full or partial sales announced in 2022 include: the remaining assets of Telxius, the announced full sales of Leaseplan and Omega Environmental Technologies, the final sale of public shares of Fiserv, the partial realisation of MHS Global, the sale of Stratus Technologies and the partial sale of an additional transaction which was signed in June and closed in August 20222",
+    "A further $27 million of proceeds from previously announced realisations expected in the coming months",
+    "1 $120 million of cash from realisations received through 31 December 2022, of which $17 million was attributable to a sale announced in 2021, but received in 2022. NBPE expects total additional net cash from these realisations of $27 million.",
+    "2 Additional transaction represents an aggregate gross value to NBPE of approximately $33 million, of which NBPE received approximately $12 million in cash and NBPE elected to roll a total of approximately $21 million in value. The transaction closed in August 2022 and NBPE received the cash in October 2022."
+   ]
+  },
+  {
+   "as_of": "2023-01-31",
+   "published": "2023-02-27",
+   "file": "1000794846-en.html",
+   "lines": [
+    "$300 million of available liquidity, and a further $27 million of proceeds expected in the coming months",
+    "A further $27 million of proceeds from previously announced realisations expected in the coming months"
+   ]
+  },
+  {
+   "as_of": "2023-02-28",
+   "published": "2023-03-21",
+   "file": "1000799208-en.html",
+   "lines": [
+    "$289 million of available liquidity, and a further $16 million of proceeds from previously announced realisations expected in the coming months",
+    "A further $16 million of proceeds from previously announced realisations expected in the coming months"
+   ]
+  },
+  {
+   "as_of": "2023-03-31",
+   "published": "2023-04-25",
+   "file": "1000805869-en.html",
+   "lines": [
+    "$143 million of announced realisations during 2022",
+    "Realisations from the portfolio in 2023",
+    "$27 million of announced realisations in the first three months of 20232",
+    "Realisation from the sale of one public stock position; partial sale of one portfolio company, and continued realisations from the Income portfolio",
+    "A further $16 million of proceeds from previously announced realisations expected in the coming months",
+    "Public investments up ~$19 million YTD 2023, or approximately 11%",
+    "2$37 million received during 2023, of which $11 million was attributable to an announced sale in 2022, but received in 2023."
+   ]
+  },
+  {
+   "as_of": "2023-04-30",
+   "published": "2023-05-26",
+   "file": "1000822095-en.html",
+   "lines": [
+    "Realisation activity - $40 million of proceeds received year to date",
+    "Includes $10 million from partial realisations of NBPE’s co-investment in Action at December 2022 holding value. Following the realisation, Action remains NBPE’s largest company, valued at $71 million at 30 April 2023"
+   ]
+  },
+  {
+   "as_of": "2023-05-31",
+   "published": "2023-06-13",
+   "file": "1000824917-en.html",
+   "lines": [
+    "Robust liquidity – $41 million of proceeds received year to date and well positioned to take advantage of opportunities",
+    "Pro forma for expected cash receipts from realisations in June 2023, NBPE expects total cash realisations to be $55 million",
+    "Excluding FX, 0.3% NAV decrease ($4 million) from the receipt of first quarter private company valuation information received during the month of May; including previous received Q1 valuations, private company valutions up by 0.6% in Q1 2023 from Q4 2022"
+   ]
+  },
+  {
+   "as_of": "2023-06-30",
+   "published": "2023-07-18",
+   "file": "1000830364-en.html",
+   "lines": [
+    "Two new pending portfolio company realisations with the recently announced sales of both Accedian and FV Hospital to strategic acquirers. These two exits are estimated to generate a total of approximately $40 million of proceeds and are expected to close in the coming months1",
+    "NBPE continues to be well positioned to take advantage of investment opportunities - $291 million of available liquidity (excluding the above pending realisations)",
+    "Robust liquidity – $45 million of proceeds received year to date and two additional announced pending realisations during June / early July",
+    "Two recently announced pending realisations of Accedian and FV Hospital are estimated to generate approximately $40 million of additional proceeds and are expected to close in the coming months1",
+    "$291 million of available liquidity ($1 million of cash, $290 million of undrawn credit facility), excluding the above pending realisations",
+    "[1] Pending realisations are subject to customary closing conditions. No assurances can be given that the referenced transactions will ultimately close."
+   ]
+  },
+  {
+   "as_of": "2023-07-31",
+   "published": "2023-08-23",
+   "file": "1000835819-en.html",
+   "lines": [
+    "Realisations of Accedian and FV Hospital announced, estimated to generate approximately $40 million of proceeds, taking total year to date realisations announced to $97 million",
+    "Robust liquidity – $57 million of proceeds received year-to-date and two additional announced pending realisations which are expected to close in the coming months1",
+    "The recently announced pending realisations of Accedian and FV Hospital are estimated to generate approximately $40 million of total proceeds and are expected to close in the coming months3",
+    "$297 million of available liquidity ($2 million of cash, $295 million of undrawn credit facility), excluding the above pending realisations",
+    "2 Not accounting for the above-mentioned pending realisations and any near-term drawn down under NBPE’s credit facility as set out below.",
+    "3 Pending realisations are subject to customary closing conditions. No assurances can be given that the referenced transactions will ultimately close.",
+    "NBPE’s new investment in Solenis takes total year-to-date investment to $19 million"
+   ]
+  },
+  {
+   "as_of": "2023-08-31",
+   "published": "2023-09-26",
+   "file": "1000841140-en.html",
+   "lines": [
+    "Realisations from the portfolio continue in 2023",
+    "2023 year to date announced realisations of $127 milllion3",
+    "In addition, $67 million of distributions expected to be received over the coming months from announced realisations",
+    "3 $60 million received during 2023, of which $11 million was attributable to an announced sale in 2022 but received in 2023. Pending realisations are subject to customary closing conditions. No assurances can be given the transactions ultimately close.",
+    "$20m of investment year to date through 31 August 2023"
+   ]
+  },
+  {
+   "as_of": "2023-09-30",
+   "published": "2023-10-19",
+   "file": "1000864817-en.html",
+   "lines": [
+    "Realisation activity continues with the announced full sale of Melissa & Doug (fka undisclosed branded toy company) bringing total year to date announced cash proceeds to $148 million1",
+    "Full or partial sales year to date have achieved a 2.0x gross multiple of capital and were at a 13% uplift to the value three quarters prior to the announced transaction2; $15 million realised from quoted holdings year to date, which are now 9% of the portfolio fair value",
+    "Realisations from the portfolio continue in 2023",
+    "2023 year to date announced cash proceeds of $148 milllion3",
+    "In addition, $78 million of distributions expected to be received over the coming months from announced realisations",
+    "1 $70 million received through 30 September 2023, with a further $78 million expected from announced but not yet received transactions. $20 million was attributable to announced sales in 2022 but received in 2023. Pending realisations are subject to customary closing conditions. No assurances can be given the transactions ultimately close.",
+    "2 For one investment with a partial sale, multiple and uplift reflect realised proceeds only.",
+    "3 $70 million received during 2023, of which $20 million was attributable to announced sales in 2022 but received in 2023. Pending realisations are subject to customary closing conditions. No assurances can be given the transactions ultimately close.",
+    "$20m of investment year to date through 30 September 2023"
+   ]
+  },
+  {
+   "as_of": "2023-10-31",
+   "published": "2023-11-23",
+   "file": "1000900705-en.html",
+   "lines": [
+    "Total realisations year to date of $110 million and a further $44 million expected from announced but not yet closed transactions1",
+    "Full or partial sales year to date have achieved a 2.0x gross multiple of capital and were at a 13% uplift2; $21 million realised from quoted holdings year to date, which are now 7% of the portfolio fair value",
+    "$317 million of available liquidity at 31 October 2023 (excluding cash expected to be received from exits that have been announced but not yet closed)",
+    "Realisations from the portfolio continue in 2023",
+    "2023 year to date cash proceeds of $110 milllion3",
+    "$44 million of realisations expected to be received over the coming months from announced but not yet closed transactions including FV Hospital, Melissa & Doug (fka undisclosed branded toy company) and Petsmart4",
+    "1 $110 million received through 31 October 2023, with a further $44 million expected from announced but not yet received transactions. $20 million was attributable to announced sales in 2022 but received in 2023. Pending realisations are subject to customary closing conditions. No assurances can be given the transactions ultimately close.",
+    "2 Uplift to value three quarters prior to the announced transaction. For one investment with a partial sale, multiple and uplift reflect realised proceeds only.",
+    "4 Pending realisations are subject to customary closing conditions. No assurances can be given the transactions ultimately close.",
+    "$20m of investment year to date through 31 October 2023",
+    "3 $110 million received during 2023, of which $20 million was attributable to announced sales in 2022 but received in 2023."
+   ]
+  },
+  {
+   "as_of": "2023-11-30",
+   "published": "2023-12-18",
+   "file": "1000904771-en.html",
+   "lines": [
+    "Realisation activity year to date of $118 million of proceeds received and a further $87 million expected from announced but not yet closed transactions1",
+    "Full or partial sales year to date have achieved a 2.3x gross multiple of capital and were at a 16% uplift2; $22 million realised from quoted holdings year to date",
+    "$324 million of available liquidity at 30 November 2023 (excluding cash expected to be received from exits that have been announced but not yet closed)",
+    "Realisations from the portfolio continue in 2023",
+    "2023 year to date cash proceeds of $118 milllion3",
+    "$87 million of realisations expected to be received over the coming months from announced but not yet closed transactions including FV Hospital, Melissa & Doug (fka undisclosed branded toy company), one undisclosed investment and Petsmart4",
+    "1 $118 million received through 30 November 2023, with a further $87 million expected from announced but not yet received transactions. $20 million was attributable to announced sales in 2022 but received in 2023. Pending realisations are subject to customary closing conditions. No assurances can be given the transactions ultimately close.",
+    "2 Uplift to value three quarters prior to the announced transaction. For two investments with a partial sale, multiple and uplift reflect realised proceeds only.",
+    "4 Pending realisations are subject to customary closing conditions. No assurances can be given the transactions ultimately close.",
+    "$22m of investment year to date through 30 November 2023",
+    "3 $118 million received during 2023, of which $20 million was attributable to announced sales in 2022 but received in 2023."
+   ]
+  },
+  {
+   "as_of": "2023-12-31",
+   "published": "2024-01-16",
+   "file": "1000908908-en.html",
+   "lines": [
+    "$171 million of proceeds received in 2023 with a further $39 million expected from announced but not yet closed transactions1",
+    "$376 million of available liquidity at 31 December 2023 (excluding cash expected to be received from exits that have been announced but not yet closed)",
+    "Realisations from the portfolio continue in 2023",
+    "2023 cash proceeds of $171 milllion3",
+    "- $24 million received from legacy income investment portfolio, which is in realisation mode",
+    "- $22 million of other realisations",
+    "$39 million of realisations expected to be received over the coming months from announced but not yet closed transactions including FV Hospital, Melissa & Doug (fka undisclosed branded toy company), and Petsmart4",
+    "1 $171 million received through 31 December 2023, with a further $39 million expected from announced but not yet received transactions. $20 million was attributable to announced sales in 2022 but received in 2023. Pending realisations are subject to customary closing conditions. No assurances can be given the transactions ultimately close.",
+    "2 Uplift to value three quarters prior to the announced transaction. For two investments with a partial sale, multiple and uplift reflect realised proceeds only.",
+    "4 Pending realisations are subject to customary closing conditions. No assurances can be given the transactions ultimately close.",
+    "– Full sales of Accedian and Boa Vista ($20 million)",
+    "– Partial sales of USI, Leaseplan, Action and Hub Insurance ($73 million)",
+    "– Full and partial sales of public stock in GFL, Uber, Vertiv, Concord, Holley, Solarwinds and N-able ($32 million)",
+    "3 $171 million received during 2023, of which $20 million was attributable to announced sales in 2022 but received in 2023."
+   ]
+  },
+  {
+   "as_of": "2024-01-31",
+   "published": "2024-02-22",
+   "file": "1000914991-en.html",
+   "lines": [
+    "$38 million of proceeds received during January, consisting primarily of previously announced realisations",
+    "Realisations from the portfolio continue in 2024",
+    "$38 million1 of realisations received during the month, consisting primarily of the previously announced sales of FV Hospital and Melissa & Doug as well as realisations from legacy income investments, which now represent 7% of the overall portfolio",
+    "Announced recapitalisation of Cotiviti in February 2024; NBPE expects to receive an estimated $41 million in total proceeds from this recapitalisation, which is expected to close in the second quarter of 20242",
+    "1 NBPE expects a further $5 million in 2024 from previously announced realisations.",
+    "2 Pending realisations are subject to customary closing conditions. No assurances can be given the transactions ultimately close."
+   ]
+  },
+  {
+   "as_of": "2024-02-29",
+   "published": "2024-03-20",
+   "file": "1000930117-en.html",
+   "lines": [
+    "Realisations from the portfolio continue in 2024",
+    "$38 million of realisations received year to date, consisting primarily of the previously announced sales of FV Hospital and Melissa & Doug as well as realisations from legacy income investments, which now represent 6% of the overall portfolio (3% pro forma for Cotiviti realisation)",
+    "$51 million of additional expected realisations1",
+    "1 Pending realisations are subject to customary closing conditions. No assurances can be given the transactions ultimately close.",
+    "$44m invested year to date and one new investment in February 2024",
+    "In total, $44 million of new and follow on investments year to date"
+   ]
+  },
+  {
+   "as_of": "2024-03-31",
+   "published": "2024-04-24",
+   "file": "1000946455-en.html",
+   "lines": [
+    "$171 million of proceeds from realisations received during 2023",
+    "Realisations from the portfolio in 2024",
+    "$64 million of proceeds received in the first three months of 20243",
+    "Receipts from the previously announced sales of Melissa and Doug and FV Hospital, full sale of Safefleet in 2024, sales of public stock (inclusive of the full exit of one public holding), and other partial realisations",
+    "A further $42 million of proceeds from previously announced realisations in process is expected in the coming months",
+    "3 $33 million attributable to sales which were announced in 2023, but proceeds were received in 2024."
+   ]
+  },
+  {
+   "as_of": "2024-04-30",
+   "published": "2024-05-29",
+   "file": "1000963331-en.html",
+   "lines": [
+    "Realisations from the portfolio continue in 2024",
+    "$70 million of realisations received year to date, consisting of the previously announced sales of FV Hospital and Melissa & Doug as well as realisations from legacy income investments, which now represent 6% of the overall portfolio (3% pro forma for Cotiviti realisation)",
+    "$41 million of additional realisations from the closing of Cotiviti was received in May 2024"
+   ]
+  },
+  {
+   "as_of": "2024-05-31",
+   "published": "2024-06-20",
+   "file": "1000967232-en.html",
+   "lines": [
+    "Realisations from the portfolio continue in 2024",
+    "$52 million of realisations during the month, driven by the previously announced exit of Cotiviti and realisations from legacy income investments (which now represent 3% of the portfolio)",
+    "Including proceeds received from announced sales in 2023, total 2024 realisations of $122 million to 31 May 2024, representing approximately 9% of opening portfolio value",
+    "$28 million invested in FDH Aero in May; total of $75 million invested year to date in new and follow-on investments",
+    "$28 million invested in FDH Aero, a leading parts distributor to the aerospace and defense industry"
+   ]
+  },
+  {
+   "as_of": "2024-06-30",
+   "published": "2024-07-17",
+   "file": "1000971851-en.html",
+   "lines": [
+    "Realisations from the portfolio continue in 2024",
+    "$126 million of realisations received year to date, driven by previously announced sales of Cotiviti, Melissa & Doug, FV Hospital and Safefleet as well as partial sales of public stock and continued realisations from the legacy income investment portfolio",
+    "$25 million invested in FDH Aero, a leading parts distributor to the aerospace and defense industry"
+   ]
+  },
+  {
+   "as_of": "2024-07-31",
+   "published": "2024-08-29",
+   "file": "1000988783-en.html",
+   "lines": [
+    "$27 million of proceeds received during the month, primarily driven by a partial realisation in Action, taking total proceeds received in 2024 year to date to $153 million",
+    "Realisations from the portfolio continue in 2024",
+    "$153 million of realisations received year to date, driven by Action and previously announced sales of Cotiviti, Melissa & Doug, FV Hospital and Safefleet as well as partial sales of public stock and continued realisations from the legacy income investment portfolio",
+    "$27 million received during the month, primarily driven by a partial liquidity event in Action where the Investment Manager elected for liquidity for portfolio construction reasons",
+    "$25 million invested in FDH Aero, a leading parts distributor to the aerospace and defense industry"
+   ]
+  },
+  {
+   "as_of": "2024-08-31",
+   "published": "2024-09-25",
+   "file": "1000993747-en.html",
+   "lines": [
+    "Realisations from the portfolio continue in 2024",
+    "$5 million received during the month and a further $6 million expected in the coming months from the announced realisation of Syniti",
+    "$158 million of realisations received year to date, driven by Action and previously announced sales of Cotiviti, Melissa & Doug, FV Hospital and Safefleet as well as partial sales of public stock and continued realisations from the legacy income investment portfolio",
+    "$73 million invested in new and follow on investments year to date",
+    "$25 million invested in FDH Aero, a leading parts distributor to the aerospace and defense industry"
+   ]
+  },
+  {
+   "as_of": "2024-09-30",
+   "published": "2024-10-11",
+   "file": "1000996862-en.html",
+   "lines": [
+    "Realisations from the portfolio continue in 2024",
+    "$160 million of realisations received year to date, driven by Action, Cotiviti and previously announced sales of Melissa & Doug, FV Hospital and Safefleet as well as sales of public stock and continued realisations from the legacy income investment portfolio",
+    "$73 million invested in new and follow on investments year to date",
+    "$25 million invested in FDH Aero, a leading parts distributor to the aerospace and defense industry"
+   ]
+  },
+  {
+   "as_of": "2024-10-31",
+   "published": "2024-11-26",
+   "file": "1001025141-en.html",
+   "lines": [
+    "Realisations from the portfolio continue in 2024",
+    "$161 million of realisations received year to date, driven by Action, Cotiviti and previously announced sales of Melissa & Doug, FV Hospital and Safefleet as well as sales of public stock and continued realisations from the legacy income investment portfolio",
+    "$103 million invested in new and follow on investments year to date, including $30 million investment in Mariner Wealth Advisors which funded in November",
+    "$25 million invested in FDH Aero, a leading parts distributor to the aerospace and defense industry"
+   ]
+  },
+  {
+   "as_of": "2024-11-30",
+   "published": "2024-12-18",
+   "file": "1001029331-en.html",
+   "lines": [
+    "Realisations from the portfolio",
+    "$168 million of realisations received year to date, driven by Action, Cotiviti and previously announced sales of Melissa & Doug, FV Hospital and Safefleet as well as sales of public stock and continued realisations from the legacy income investment portfolio",
+    "$25 million invested in FDH Aero, a leading parts distributor to the aerospace and defense industry"
+   ]
+  },
+  {
+   "as_of": "2024-12-31",
+   "published": "2025-01-28",
+   "file": "1001045219-en.html",
+   "lines": [
+    "Realisations from the portfolio",
+    "$179 million of realisations received in 2024. Driven by full exits of Cotiviti, Safefleet, Melissa & Doug, FV Hospital and Syniti, partial realisations of Action and Qpark as well as full and partial realisations of quoted holdings and income investments",
+    "$25 million invested in FDH Aero, a leading parts distributor to the aerospace and defense industry"
+   ]
+  },
+  {
+   "as_of": "2025-01-31",
+   "published": "2025-03-03",
+   "file": "1001051376-en.html",
+   "lines": [
+    "$3 million of realisations in 2025 to date",
+    "$3 million of realisations received during the month of January, consisting of partial realisation proceeds"
+   ]
+  },
+  {
+   "as_of": "2025-02-28",
+   "published": "2025-03-18",
+   "file": "1001054395-en.html",
+   "lines": [
+    "$29 million of realisations in 2025 year to date",
+    "$26 million of realisations received during the month of February, consisting primarily of exit proceeds from NBPE’s investment in USI and a partial realisation in Tendam"
+   ]
+  },
+  {
+   "as_of": "2025-03-31",
+   "published": "2025-04-28",
+   "file": "1001092638-en.html",
+   "lines": [
+    "$179 million of proceeds from realisations received during 2024",
+    "Realisations from the portfolio in 2025",
+    "$47 million of proceeds received in the first three months of 2025",
+    "Realisations to date driven by full exits of USI and Kyobo Life Insurance, partial realisations of Tendam, Qpark, Clearent, and Osaic, as well as full and partial realisations of certain quoted holdings and income investments",
+    "A further ~$20 million of proceeds is expected in the coming months from pending transactions"
+   ]
+  },
+  {
+   "as_of": "2025-04-30",
+   "published": "2025-05-28",
+   "file": "1001099301-en.html",
+   "lines": [
+    "$53 million of realisations in 2025 year to date",
+    "$6 million of proceeds received during the month of April, consisting primarily of full and partial realisations of GFL, Corona Industrials and Inflection Energy"
+   ]
+  },
+  {
+   "as_of": "2025-05-31",
+   "published": "2025-06-27",
+   "file": "1001114995-en.html",
+   "lines": [
+    "$66 million of realisations in 2025 year to date",
+    "$8 million of proceeds received during the month of May",
+    "~51k shares repurchased (~$1 million) during May 2025 at a weighted average discount of 30% which was accretive to NAV by ~$0.01 per share. Year-to-date, NBPE has repurchased ~738k shares (~$14 million) at a weighted average discount of 29% which was accretive to NAV by ~$0.11 per share"
+   ]
+  },
+  {
+   "as_of": "2025-06-30",
+   "published": "2025-07-22",
+   "file": "1001118995-en.html",
+   "lines": [
+    "Total realisations of $68 million and $8 million of follow-on investments in the first half of 2025",
+    "$68 million of realisations in the first half of 2025",
+    "Of the $68 million received during the first half, over three-quarters of the proceeds are from full and partial sales / exits of private holdings; remaining realisations consisted of proceeds from the sales of quoted holdings and other partial realisations",
+    "~51k shares repurchased (~$1 million) during June 2025 at a weighted average discount of 30% which was accretive to NAV by ~$0.01 per share. Year-to-date, NBPE has repurchased ~759k shares (~$15 million) at a weighted average discount of 29% which was accretive to NAV by ~$0.11 per share"
+   ]
+  },
+  {
+   "as_of": "2025-07-31",
+   "published": "2025-08-29",
+   "file": "1001125206-en.html",
+   "lines": [
+    "Total realisations of $71 million and $11 million of follow-on investments year-to-date",
+    "$71 million of realisations year-to-date",
+    "Driven by partial sales / exits of private holdings; remaining realisations consisted of proceeds from the sales of quoted holdings and other partial realisations",
+    "~35k shares repurchased (~$0.7 million) during July 2025 at a weighted average discount of 27% which was accretive to NAV by <$0.01 per share. Year-to-date, NBPE has repurchased ~824k shares (~$16 million) at a weighted average discount of 29% which was accretive to NAV by ~$0.11 per share",
+    "2.6% NAV increase ($32 million) from Q2 private valuation information received during the month"
+   ]
+  },
+  {
+   "as_of": "2025-08-31",
+   "published": "2025-09-15",
+   "file": "1001127894-en.html",
+   "lines": [
+    "Total realisations of $86 million and $12 million of follow-on investments year-to-date; $9 million of additional pending realisations awaited",
+    "$86 million of realisations year-to-date",
+    "~$13 million received during the month from the partial realisation of Tendam; YTD realisations driven by partial sales / exits of private holdings. Remaining realisations consisted of proceeds from the sales of quoted holdings and other partial realisations",
+    "$9 million of pending realisations awaited in the coming weeks",
+    "~52k shares repurchased (~$1.0 million) during August 2025 at a weighted average discount of 28% which was accretive to NAV by ~$0.01 per share. Year-to-date, NBPE has repurchased ~921k shares (~$18 million) at a weighted average discount of 29% which was accretive to NAV by ~$0.17 per share"
+   ]
+  },
+  {
+   "as_of": "2025-09-30",
+   "published": "2025-10-21",
+   "file": "1001134064-en.html",
+   "lines": [
+    "$15 million of proceeds received in September; total proceeds received of $101 million year to date with a further $64 million expected in the coming months",
+    "$15 million of proceeds received in September",
+    "~$15 million received from the full exit of Unity and partial realisations from By Light, Brightview and Holley Performance Products",
+    "$101 million of proceeds received year to date, with a further $64m of proceeds expected in coming months",
+    "$10 million deployed into a new investment in Infra Group, alongside PAI in September; $23 million deployed into new and follow on investments year to date",
+    "Year-to-date, NBPE has repurchased ~1.4m shares (~$28 million) at a weighted average discount of 28%, resulting in ~$0.25 NAV per share accretion",
+    "$23 million deployed into one new and three follow-on investments year to date"
+   ]
+  },
+  {
+   "as_of": "2025-10-31",
+   "published": "2025-11-24",
+   "file": "bc05e258-1c03-4dfc-8180-c8a0da6f8111.html",
+   "lines": [
+    "Improving exit environment with c. $165 million of realisations announced YTD, at an aggregate uplift of 17% to carrying value, and a 2.7x multiple of cost. Positive outlook for additional liquidity with a number of ‘exit ready’ companies and further realisations anticipated in the coming months",
+    "$64 million of realisations in October",
+    "~$29 million cash received from a partial realisation of Action and full sale of SICIT; additional $34 million of realisations closed from one unannounced transaction and the full exit of Saguaro",
+    "$23 million deployed year-to-date, with strong pipeline of new opportunities",
+    "$23 million deployed into one new and three follow-on investments year-to-date",
+    "Year-to-date, NBPE has repurchased ~2.3m shares ($45 million) at a weighted average discount of 27% which was accretive to NAV by ~$0.39 per share"
+   ]
+  },
+  {
+   "as_of": "2025-11-30",
+   "published": "2025-12-23",
+   "file": "b006292f-9759-431b-801f-ac8a1e942f6a.html",
+   "lines": [
+    "$157 million of realisations received year to date",
+    "Cash received from the previously announced closing of one undisclosed exit",
+    "Announced realisations from equity co-investments 50% higher than 2024",
+    "$23 million deployed year-to-date, with strong pipeline of new opportunities",
+    "$23 million deployed into one new and three follow-on investments year-to-date",
+    "Year-to-date, NBPE has repurchased ~2.9m shares ($57 million) at a weighted average discount of 26% which was accretive to NAV by ~$0.48 per share"
+   ]
+  },
+  {
+   "as_of": "2025-12-31",
+   "published": "2026-01-30",
+   "file": "f5c0af01-c413-451e-9033-cee161e49c6c.html",
+   "lines": [
+    "$180 million of realisations received in 2025",
+    "$22 million received during the month of December, consisting primarily of previously announced realisations and partial sales of quoted holdings",
+    "Realisations from equity co-investments 57% higher than 2024",
+    "2 Includes unrealised value of partial realisations."
+   ]
+  },
+  {
+   "as_of": "2026-01-31",
+   "published": "2026-03-02",
+   "file": "d11b532d-c344-4668-a1c7-0dac4010730c.html",
+   "lines": [
+    "$4 million of realisations received in 2026",
+    "$4 million received during the month of January, consisting of full and partial realisations of Hydro Holdings and Husky"
+   ]
+  },
+  {
+   "as_of": "2026-02-28",
+   "published": "2026-03-27",
+   "file": "12fd2dbb-50b4-49b9-ba20-3583adea8320.html",
+   "lines": [
+    "$6 million of realisations received in February 2026",
+    "$6 million received during the month of February, consisting of proceeds received from the debt refinancing of one company"
+   ]
+  },
+  {
+   "as_of": "2026-03-31",
+   "published": "2026-04-27",
+   "file": "4040f760-3913-4c7b-af06-598adc5156dd.html",
+   "lines": [
+    "$180 million of proceeds from realisations received during 2025; over 50% increase in distributions from co-investments",
+    "“NBPE delivered a NAV total return of 5.0% in the year, with growth predominantly driven by continued strong underlying operating performance and realisation activity. Despite a slow start to the year, realisations were particularly strong with $180 million of proceeds received at an aggregate 2.8x multiple of invested capital at a 17% uplift to carrying value three quarters prior."
+   ]
+  },
+  {
+   "as_of": "2026-04-30",
+   "published": "2026-05-27",
+   "file": "5d98500e-a2b1-4aff-9197-bc50d7bcbf01.html",
+   "lines": [
+    "$18 million of realisation proceeds received in April 2026",
+    "Consisting primarily of proceeds received from the full exit of Solace Systems, a 2016 vintage co-investment",
+    "Year-to-date realisations total $28 million as of the end of April 2026",
+    "Will continue to balance the pace of new investments with realisations and returns of capital to shareholders",
+    "$104 million committed to new investments year to date (including $25 million to one new investment which is expected to close in the coming weeks)",
+    "Year to date, NBPE has returned $46 million to shareholders through dividends and buybacks"
+   ]
+  },
+  {
+   "as_of": "2026-05-31",
+   "published": "2026-06-24",
+   "file": "75f14f6d-a026-4d8a-bc19-5d6aa6f6c702.html",
+   "lines": [
+    "Partial realisation of Osaic, an independent broker dealer, in May 2026 via a continuation vehicle. As part of the transaction, NBPE realised approximately 40% of its 30 April 2026 NAV; total exit proceeds from Osaic are $27 million",
+    "Announced realisation of FDH Aero, a global leader in aerospace and defence logistics and a 2024 vintage co-investment; the transaction is expected to close in the second half of 2026",
+    "Pro forma for other expected realisations and cash received to-date during the month of June, total realisations for the year would be $144 million",
+    "$25 million of realisation proceeds received in May 2026; total announced realisations of $144 million",
+    "Consisting primarily of proceeds received from the partial exit of Osaic, an independent broker dealer, through a continuation vehicle process; NBPE invested $15 million into Osaic in 2019",
+    "Following the partial realisation of approximately 40% of NBPE’s April net asset value, which generated $27 million of total sales proceeds, NBPE’s remaining net asset value in Osaic is approximately $42 million",
+    "Announced realisation of FDH Aero, a global leader in aerospace and defence logistics; NBPE invested in FDH in 2024 (~2 year holding period to-date). The transaction is expected to close in the second half of 2026",
+    "Together with other expected realisations and other cash received to-date in June, pro forma realisations in 2026 would be $144 million",
+    "Will continue to balance the pace of new investments with realisations and returns of capital to shareholders",
+    "At 31 May 2026, there was approximately $91 million of pending realisations, which provides a meaningful enhancement to the liquidity position as cash is received from the underlying transactions",
+    "$25 million invested in an undisclosed technology company; $104 million committed to new investments year-to-date",
+    "$104 million committed to new investments year-to-date",
+    "Year-to-date, NBPE has returned $57 million to shareholders through dividends and buybacks"
+   ]
+  },
+  {
+   "as_of": "2026-06-30",
+   "published": "2026-07-22",
+   "file": "ae20217e-b457-4bd5-92f7-d70788343055.html",
+   "lines": [
+    "On a pro forma basis for 2026, including expected realisations from announced but not yet closed transactions, NBPE’s total realisations would be $146m",
+    "$35 million of realisation proceeds received in June 2026; total announced realisations of $146 million",
+    "$35 million of realisation proceeds received during June 2026, consisting of cash received from the previously announced partial exit of Osaic, the partial exit of one undisclosed investment, the full exit of an undisclosed healthcare company (in-home devices), as well as other partial realisations from several quoted and private companies",
+    "On a pro forma basis for 2026, including expected realisations from announced but not yet closed transactions, NBPE’s total realisations would be $146m",
+    "Will continue to balance the pace of new investments with realisations and returns of capital to shareholders",
+    "At 30 June 2026, there was approximately $59 million of pending realisations, which provides a meaningful enhancement to the liquidity position as cash is received from the underlying transactions",
+    "$104 million committed to new investments year-to-date",
+    "$104 million committed to six new investments year-to-date",
+    "$104 million committed to six new investments year-to-date",
+    "Additional $10 million of follow-on investments to existing portfolio companies year-to-date",
+    "Year-to-date, NBPE has returned $74 million to shareholders through dividends and buybacks"
+   ]
+  },
+  {
+   "as_of": "2026-07-31",
+   "published": "2026-08-24",
+   "file": "2d0e199c-f3c1-4bbf-aa0a-374bbe7eaa47.html",
+   "lines": [
+    "On a pro forma basis for 2026, including expected realisations from announced but not yet closed transactions, NBPE’s total realisations would be $150m",
+    "$1 million of realisation proceeds received in July 2026; total announced realisations of $150 million",
+    "Additional $1 million of proceeds received from a previously announced 2026 exit",
+    "Year to date exits driven by the full sale of Solace and FDH Aero (announced), partial exit of Osaic, the partial exit of one undisclosed investment, the full exit of an undisclosed healthcare company (in-home devices), as well as other partial realisations from several quoted and private companies",
+    "On a pro forma basis for 2026, including expected realisations from announced but not yet closed transactions, NBPE’s total realisations would be $150m",
+    "Will continue to balance the pace of new investments with realisations and returns of capital to shareholders",
+    "At 31 July 2026, there was approximately $61 million of pending realisations, which provides a meaningful enhancement to the liquidity position as cash is received from the underlying transactions",
+    "$104 million committed to new investments year-to-date",
+    "$104 million committed to six new investments year-to-date",
+    "$104 million committed to six new investments year-to-date",
+    "Additional $10 million of follow-on investments to existing portfolio companies year-to-date",
+    "Year-to-date, NBPE has returned or declared $98 million (2025: $102 million) to shareholders through dividends and buybacks"
+   ]
+  },
+  {
+   "as_of": "2026-08-31",
+   "published": "2026-09-23",
+   "file": "25d07b8e-e71f-4c69-97ef-c772fdbc7eb1.html",
+   "lines": [
+    "Robust exit activity: $150 million of realisations announced with visibility of a further $68 million of proceeds from transactions yet to be announced",
+    "Year to date announced realisations of $150 million, with visibility of a further $68 million of proceeds from transactions yet to be announced",
+    "$3 million of proceeds received from Bending Spoons in connection with the company’s IPO received in August",
+    "Year to date exits driven by the full sale of Solace and FDH Aero (announced), partial exit of Osaic, the partial exit of one undisclosed investment, the full exit of an undisclosed healthcare company (in-home devices), as well as other partial realisations from several quoted and private companies",
+    "Visibility of a further $68 million of proceeds from transactions, yet to be announced, which we expect to close in the coming months",
+    "Will continue to balance the pace of new investments with realisations and returns of capital to shareholders",
+    "Year to date2, NBPE has repurchased 5.3m shares (cost of $105 million) at a weighted average discount of 29% resulting in $0.75 NAV per share accretion",
+    "$114 million committed to six new investments year-to-date to 31 August 2026, with a further $50 million committed in September 2026"
+   ]
+  }
+ ]
+}

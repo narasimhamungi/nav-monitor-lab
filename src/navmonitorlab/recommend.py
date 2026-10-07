@@ -57,7 +57,8 @@ def assess_candidates(candidates: list[dict], scenario_rows: dict[float, list[di
 
 
 def build_flags(*, pool: dict, overlay: dict, quality_counts: dict, stale: dict, snapshot_meta: dict, proposed: dict | None,
-                runoff_info: dict | None, policy: dict, cov: dict, limits_bite: float, market_ran: bool) -> list[Flag]:
+                runoff_info: dict | None, policy: dict, cov: dict, limits_bite: float, market_ran: bool,
+                calibration: dict | None = None) -> list[Flag]:
     f: list[Flag] = []
     if quality_counts.get("error", 0):
         f.append(Flag("P01", "blocker", "Data errors in the inputs", f"{quality_counts['error']} error-level findings", "0",
@@ -103,10 +104,26 @@ def build_flags(*, pool: dict, overlay: dict, quality_counts: dict, stale: dict,
         f.append(Flag("P17", "note", "Concentration limits reduce the borrowing base", f"{limits_bite:,.1f} excluded by the single-name cap and top-{cov.get('top_n')} limit",
                       "n/a", "Loan is sized on eligible NAV after these limits"))
     if runoff_info and runoff_info.get("breakeven_pace") is not None:
-        be, assumed = runoff_info["breakeven_pace"], runoff_info["assumed_pace"]
-        sev = "condition" if be > 0.8 * assumed else "note"
-        f.append(Flag("P18", sev, "Repayment depends on the pace of exits", f"needs {be:.1%} of the pool realised a year to repay by maturity; base case assumes {assumed:.0%}",
-                      "breakeven at most 80% of the assumed pace", "Add scheduled amortisation or a maturity extension test; do not rely on exits alone"))
+        be, base = runoff_info["breakeven_pace"], runoff_info["base_pace"]
+        share = float(policy.get("max_breakeven_share_of_base_pace", 0.8))
+        how = "calibrated from reported realisations" if calibration and calibration.get("source") == "calibrated" else "an assumption"
+        sev = "condition" if be > share * base else "note"
+        f.append(Flag("P18", sev, "Repayment depends on the pace of exits", f"needs {be:.1%} of the pool realised a year to repay by maturity; base case uses {base:.1%} ({how})",
+                      f"breakeven at most {share:.0%} of the base pace ({share * base:.1%})", "Add scheduled amortisation or a maturity extension test; do not rely on exits alone"))
+    if calibration is not None:
+        former = calibration.get("fallback_pace")
+        if calibration.get("source") == "calibrated":
+            wins = "; ".join(f"{w['window']} {w['pace']:.1%}" for w in calibration["windows"] if w["pace"] is not None)
+            f.append(Flag("P20", "note", "Exit pace calibrated from the vehicle's reported realisations",
+                          f"{calibration['base_pace']:.1%} a year, the {calibration['rule']} of the windows to {calibration['end']} ({wins}); the former assumption was {former:.0%}",
+                          "rule set in configs/facility.yaml", "The former assumption is shown beside the base case in section 5"))
+            lag, max_lag = calibration.get("lag_months"), policy.get("max_calibration_lag_months")
+            if lag is not None and max_lag is not None and lag > max_lag:
+                f.append(Flag("P21", "condition", "Realisation data is out of date", f"the last report that states cash received is {lag} months before the report date",
+                              f"at most {max_lag} months", "Obtain cash received to date from the manager before relying on the exit pace"))
+        else:
+            f.append(Flag("P20", "condition", "Exit pace could not be calibrated; the base case is an assumption", calibration.get("reason") or "no calibration",
+                          "calibrated from reported cash received", f"Base case uses the assumed {former:.0%} a year; obtain the realisation history"))
     if not market_ran:
         f.append(Flag("P19", "condition", "Market layer did not run", "no usable price history", "roll-forward available",
                       "Run `navmon refresh` to fetch prices; LTV shown is on reported values only"))

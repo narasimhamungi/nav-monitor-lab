@@ -15,7 +15,7 @@ from ..schema import FundRecord, Holding, Snapshot, TrackRecord
 HOLDING_COLS = ["vehicle", "as_of", "company", "vintage", "sponsor", "sector", "fair_value", "pct_of_fv"]
 SNAPSHOT_COLS = ["vehicle", "as_of", "published", "source_url", "headline", "currency", "unit", "stated_total_fv",
                  "stated_total_pct", "nav_per_share_usd", "nav_per_share_gbp", "valuation_mix", "investment_level_pct",
-                 "cash_m", "undrawn_credit_m"]
+                 "cash_m", "undrawn_credit_m", "realised_ytd_m", "realised_month_m", "realised_prior_year_m", "realised_text"]
 TRACK_COLS = ["lp", "program", "as_of", "fund", "vintage", "committed", "cash_in", "cash_out", "total_value",
               "net_irr", "multiple", "footnote"]
 PRICE_COLS = ["date", "symbol", "adj_close", "close", "currency"]
@@ -86,7 +86,9 @@ class FileHoldings:
                 stated_total_fv=_f(s.get("stated_total_fv")), stated_total_pct=_f(s.get("stated_total_pct")),
                 nav_per_share_usd=_f(s.get("nav_per_share_usd")), nav_per_share_gbp=_f(s.get("nav_per_share_gbp")),
                 valuation_mix=mix_from_text(s.get("valuation_mix", "")), investment_level_pct=_f(s.get("investment_level_pct")),
-                cash_m=_f(s.get("cash_m")), undrawn_credit_m=_f(s.get("undrawn_credit_m")), headline=s.get("headline", "")))
+                cash_m=_f(s.get("cash_m")), undrawn_credit_m=_f(s.get("undrawn_credit_m")), headline=s.get("headline", ""),
+                realised_ytd_m=_f(s.get("realised_ytd_m")), realised_month_m=_f(s.get("realised_month_m")),
+                realised_prior_year_m=_f(s.get("realised_prior_year_m")), realised_text=s.get("realised_text") or ""))
         return sorted(out, key=lambda x: x.as_of)
 
 
@@ -102,7 +104,11 @@ def save_snapshots(snaps: list[Snapshot], holdings_csv: Path, snapshots_csv: Pat
                       "valuation_mix": mix_to_text(s.valuation_mix),
                       "investment_level_pct": "" if s.investment_level_pct is None else f"{s.investment_level_pct:g}",
                       "cash_m": "" if s.cash_m is None else f"{s.cash_m:g}",
-                      "undrawn_credit_m": "" if s.undrawn_credit_m is None else f"{s.undrawn_credit_m:g}"})
+                      "undrawn_credit_m": "" if s.undrawn_credit_m is None else f"{s.undrawn_credit_m:g}",
+                      "realised_ytd_m": "" if s.realised_ytd_m is None else f"{s.realised_ytd_m:g}",
+                      "realised_month_m": "" if s.realised_month_m is None else f"{s.realised_month_m:g}",
+                      "realised_prior_year_m": "" if s.realised_prior_year_m is None else f"{s.realised_prior_year_m:g}",
+                      "realised_text": s.realised_text})
         for h in s.holdings:
             hrows.append({"vehicle": s.vehicle, "as_of": s.as_of.isoformat(), "company": h.company,
                           "vintage": "" if h.vintage is None else h.vintage, "sponsor": h.sponsor, "sector": h.sector,

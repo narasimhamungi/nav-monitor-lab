@@ -68,6 +68,7 @@ def refresh(cfg: dict, live_dir: Path, *, cache_dir: Path | None = None, sample_
             new = sorted(s.as_of.isoformat() for s in snaps if s.as_of not in before)
             report["steps"]["holdings"] = {"status": "OK", "snapshots": len(snaps), "latest": snaps[-1].as_of.isoformat(),
                                            "new_since_last_refresh": new if before else "first refresh",
+                                           "reports_stating_cash_received": sum(1 for s in snaps if s.realised_ytd_m is not None or s.realised_month_m is not None),
                                            "parser_findings": [x.row() for x in getattr(src, "findings", [])]}
         except (FetchError, ValueError, KeyError) as e:
             fail("holdings", e, [hfile, sfile])
@@ -140,6 +141,7 @@ def refresh(cfg: dict, live_dir: Path, *, cache_dir: Path | None = None, sample_
 def check_sources(cfg: dict, fetcher: Fetcher | None = None, today: date | None = None) -> list[dict]:
     """A small live call to each plug, checked for shape. Run this first on a new machine."""
     from .sources.calpers import CalpersTrackRecord
+    from .realisations import compile_patterns
     from .sources.fca_nsm import FcaNsmHoldings, parse_announcement
     from .sources.market import FredRates, TiingoPrices, YahooChartPrices
     f = fetcher or Fetcher()
@@ -160,11 +162,13 @@ def check_sources(cfg: dict, fetcher: Fetcher | None = None, today: date | None 
         if not found:
             raise FetchError("search returned no matching announcements")
         snap, fs = parse_announcement(f.text(found[0]["url"]), vehicle=veh["vehicle"], source_url=found[0]["url"],
-                                      published=found[0]["published"], columns=veh["live"].get("columns"))
+                                      published=found[0]["published"], columns=veh["live"].get("columns"),
+                                      realisation_patterns=compile_patterns(veh["live"].get("realisations")) if veh["live"].get("realisations") else None)
         if snap is None:
             raise FetchError("latest announcement did not parse: " + "; ".join(x.message for x in fs))
+        cash = [f"{label} {v:g}" for label, v in (("year to date", snap.realised_ytd_m), ("in the month", snap.realised_month_m)) if v is not None]
         return (f"{len(found)} announcements; latest report {snap.as_of} with {len(snap.holdings)} holdings, "
-                f"rows sum {snap.total_fv:,.1f} vs stated {snap.stated_total_fv}")
+                f"rows sum {snap.total_fv:,.1f} vs stated {snap.stated_total_fv}; cash received: {', '.join(cash) or 'not stated in this report'}")
 
     def calpers() -> str:
         tr = CalpersTrackRecord(f, **({"url": cfg["track"]["live"]["url"]} if cfg["track"]["live"].get("url") else {})).load()
@@ -213,7 +217,8 @@ def verify_live(cfg: dict, live_dir: Path, sample_dir: Path, price_tolerance: fl
         lb = {(h.company, h.fair_value, h.pct_of_fv, h.sponsor, h.sector, h.vintage) for h in b[d].holdings}
         if la != lb:
             mism.append({"as_of": d.isoformat(), "only_in_live": sorted(map(str, la - lb))[:5], "only_in_sample": sorted(map(str, lb - la))[:5]})
-        for fld in ("stated_total_fv", "stated_total_pct", "nav_per_share_usd", "nav_per_share_gbp", "valuation_mix"):
+        for fld in ("stated_total_fv", "stated_total_pct", "nav_per_share_usd", "nav_per_share_gbp", "valuation_mix",
+                    "realised_ytd_m", "realised_month_m", "realised_prior_year_m"):
             if getattr(a[d], fld) != getattr(b[d], fld):
                 mism.append({"as_of": d.isoformat(), "field": fld, "live": str(getattr(a[d], fld)), "sample": str(getattr(b[d], fld))})
     res["holdings"] = {"overlapping_snapshots": len(set(a) & set(b)), "only_in_live": sorted(d.isoformat() for d in set(a) - set(b)),

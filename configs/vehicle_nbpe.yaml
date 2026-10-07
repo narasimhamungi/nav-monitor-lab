@@ -18,6 +18,36 @@ live:
     sector: ["Sector", "Industry"]
     fair_value: ["Fair Value ($m)", "Fair Value($m)", "Fair Value"]
     pct: ["% of FV", "% of Fair Value", "% of Portfolio"]
+  # Sentences in the reports that state CASH RECEIVED from realisations (used to calibrate the exit pace).
+  # Only these wordings are read. Figures the publisher calls announced, pending, expected or pro forma are
+  # not cash and match nothing here. Each wording below was taken from a real report; the year it first
+  # appears is noted. {amt} = "$56 million", {year} = "2024", {date} = "31 May 2022", {month} = "June" or
+  # "June 2026", {ytd} = "year to date" / "year-to-date". A new wording is a new line, not new code.
+  realisations:
+    year_to_date:                     # cash received from 1 January to the report date
+      - "{amt} of cash from realisations received through {date}"          # 2022 footnotes
+      - "{amt} received through {date}"                                     # 2023 footnotes
+      - "{amt} of proceeds received {ytd}"                                  # 2023, 2025
+      - "total proceeds received of {amt} {ytd}"                            # 2025
+      - "total proceeds received in {year} {ytd} to {amt}"                  # 2024
+      - "{amt} of realisations received {ytd}"                              # 2024, 2025
+      - "{amt} of realisations {ytd}"                                       # 2025
+      - "{amt} of realisations in {year} (?:year )?to date"                 # 2025
+      - "{ytd} realisations total {amt}"                                    # 2026
+      - "total {year} realisations of {amt} to {date}"                      # 2024
+      - "{year} (?:{ytd} )?cash proceeds of {amt}"                          # 2023
+      - {re: "{amt} of proceeds received in the first three months of {year}", expect_month: 3}    # March reports
+      - {re: "{amt} of realisations in the first half of {year}", expect_month: 6}                 # June 2025
+    year:                             # cash received in a named year: the report year so far, or the whole previous year
+      - "{amt} received during {year}"                                      # 2023 footnotes
+      - "{amt} of proceeds received in {year}"                              # December 2023
+      - "{amt} of realisations received in {year}"                          # December and January reports
+      - "{amt} of proceeds from realisations received during {year}"        # annual results (previous year's total)
+    month:                            # cash received in the report month
+      - "{amt} of (?:realisation )?proceeds received (?:in|during) (?:the month of )?{month}"
+      - "{amt} of realisations received (?:in|during) (?:the month of )?{month}"
+      - "{amt} (?:of proceeds |of realisations )?received during the month(?: of {month})?(?! from)"   # "from <company>" is one item, not the month
+      - "{amt} of realisations during the month"
 
 # Where `navmon run` reads holdings from (the file plug), relative to the data directory.
 files:

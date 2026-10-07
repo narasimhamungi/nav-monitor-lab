@@ -1,14 +1,14 @@
 {
  "verdict": "Proceed with conditions",
  "proposed": {
-  "opening_ltv": 0.2,
-  "loan": 184.58890000000002,
+  "opening_ltv": 0.15,
+  "loan": 138.441675,
   "passed": true,
   "tests": [
    {
     "test": "Cushion to breach",
     "passed": true,
-    "detail": "pool can fall 50.0% before breach; policy needs 40%"
+    "detail": "pool can fall 62.5% before breach; policy needs 40%"
    },
    {
     "test": "Sector scenarios",
@@ -23,17 +23,17 @@
    {
     "test": "Repayment from exits (base pace)",
     "passed": true,
-    "detail": "repaid in quarter 16; peak LTV 20.0%"
+    "detail": "repaid in quarter 14; peak LTV 15.0%"
    },
    {
     "test": "Exit drought",
     "passed": true,
-    "detail": "peak LTV 20.0%; 69.7 outstanding at maturity"
+    "detail": "peak LTV 15.0%; 43.1 outstanding at maturity"
    },
    {
     "test": "Rolled-forward LTV under the sweep level",
     "passed": true,
-    "detail": "estimated LTV today 20.0% against sweep at 30%"
+    "detail": "estimated LTV today 15.0% against sweep at 30%"
    }
   ]
  },
@@ -74,9 +74,17 @@
    "code": "P18",
    "severity": "condition",
    "title": "Repayment depends on the pace of exits",
-   "observed": "needs 14.3% of the pool realised a year to repay by maturity; base case assumes 15%",
-   "threshold": "breakeven at most 80% of the assumed pace",
+   "observed": "needs 10.0% of the pool realised a year to repay by maturity; base case uses 11.7% (calibrated from reported realisations)",
+   "threshold": "breakeven at most 80% of the base pace (9.4%)",
    "action": "Add scheduled amortisation or a maturity extension test; do not rely on exits alone"
+  },
+  {
+   "code": "P20",
+   "severity": "note",
+   "title": "Exit pace calibrated from the vehicle's reported realisations",
+   "observed": "11.7% a year, the lowest of the windows to 2026-07-31 (12 months 15.9%; 24 months 11.7%; all 12.1%); the former assumption was 15%",
+   "threshold": "rule set in configs/facility.yaml",
+   "action": "The former assumption is shown beside the base case in section 5"
   }
  ],
  "candidate_tests": [
@@ -103,7 +111,7 @@
     {
      "test": "Repayment from exits (base pace)",
      "passed": true,
-     "detail": "repaid in quarter 7; peak LTV 10.0%"
+     "detail": "repaid in quarter 8; peak LTV 10.0%"
     },
     {
      "test": "Exit drought",
@@ -140,12 +148,12 @@
     {
      "test": "Repayment from exits (base pace)",
      "passed": true,
-     "detail": "repaid in quarter 11; peak LTV 15.0%"
+     "detail": "repaid in quarter 14; peak LTV 15.0%"
     },
     {
      "test": "Exit drought",
      "passed": true,
-     "detail": "peak LTV 15.0%; 13.0 outstanding at maturity"
+     "detail": "peak LTV 15.0%; 43.1 outstanding at maturity"
     },
     {
      "test": "Rolled-forward LTV under the sweep level",
@@ -155,6 +163,104 @@
    ]
   },
   {
+   "opening_ltv": 0.2,
+   "loan": 184.58890000000002,
+   "passed": false,
+   "tests": [
+    {
+     "test": "Cushion to breach",
+     "passed": true,
+     "detail": "pool can fall 50.0% before breach; policy needs 40%"
+    },
+    {
+     "test": "Sector scenarios",
+     "passed": true,
+     "detail": "no breach in any scenario"
+    },
+    {
+     "test": "Loss of the largest names",
+     "passed": true,
+     "detail": "no breach with the largest 3 written off"
+    },
+    {
+     "test": "Repayment from exits (base pace)",
+     "passed": false,
+     "detail": "32.7 outstanding at maturity; peak LTV 20.0%"
+    },
+    {
+     "test": "Exit drought",
+     "passed": true,
+     "detail": "peak LTV 20.3%; 99.8 outstanding at maturity"
+    },
+    {
+     "test": "Rolled-forward LTV under the sweep level",
+     "passed": true,
+     "detail": "estimated LTV today 20.0% against sweep at 30%"
+    }
+   ]
+  },
+  {
+   "opening_ltv": 0.25,
+   "loan": 230.73612500000002,
+   "passed": false,
+   "tests": [
+    {
+     "test": "Cushion to breach",
+     "passed": false,
+     "detail": "pool can fall 37.5% before breach; policy needs 40%"
+    },
+    {
+     "test": "Sector scenarios",
+     "passed": true,
+     "detail": "no breach in any scenario"
+    },
+    {
+     "test": "Loss of the largest names",
+     "passed": true,
+     "detail": "no breach with the largest 3 written off"
+    },
+    {
+     "test": "Repayment from exits (base pace)",
+     "passed": false,
+     "detail": "89.5 outstanding at maturity; peak LTV 25.0%"
+    },
+    {
+     "test": "Exit drought",
+     "passed": true,
+     "detail": "peak LTV 26.2%; 156.6 outstanding at maturity"
+    },
+    {
+     "test": "Rolled-forward LTV under the sweep level",
+     "passed": true,
+     "detail": "estimated LTV today 25.1% against sweep at 30%"
+    }
+   ]
+  }
+ ],
+ "pass_through": 0.12715560421956845,
+ "pass_through_source": "fitted on 18 past valuation cycles of this vehicle",
+ "base_rate_pct": 3.89,
+ "all_in_rate_pct": 10.39,
+ "discount_to_nav": {
+  "symbol": "NBPE.L",
+  "price_date": "2026-10-05",
+  "share_price": 15.02,
+  "nav_per_share": 20.75,
+  "nav_date": "2026-08-31",
+  "discount": 0.276144578313253,
+  "discount_at_report_date": 0.2848192771084337
+ },
+ "exit_pace": {
+  "base_pace": 0.11704608930447873,
+  "source": "calibrated",
+  "rule": "lowest",
+  "base_window": "24 months",
+  "windows_end": "2026-07-31",
+  "former_assumption": 0.15,
+  "reason": ""
+ },
+ "former_assumption_result": {
+  "proposed": {
    "opening_ltv": 0.2,
    "loan": 184.58890000000002,
    "passed": true,
@@ -190,56 +296,6 @@
      "detail": "estimated LTV today 20.0% against sweep at 30%"
     }
    ]
-  },
-  {
-   "opening_ltv": 0.25,
-   "loan": 230.73612500000002,
-   "passed": false,
-   "tests": [
-    {
-     "test": "Cushion to breach",
-     "passed": false,
-     "detail": "pool can fall 37.5% before breach; policy needs 40%"
-    },
-    {
-     "test": "Sector scenarios",
-     "passed": true,
-     "detail": "no breach in any scenario"
-    },
-    {
-     "test": "Loss of the largest names",
-     "passed": true,
-     "detail": "no breach with the largest 3 written off"
-    },
-    {
-     "test": "Repayment from exits (base pace)",
-     "passed": false,
-     "detail": "48.2 outstanding at maturity; peak LTV 25.0%"
-    },
-    {
-     "test": "Exit drought",
-     "passed": true,
-     "detail": "peak LTV 25.8%; 126.4 outstanding at maturity"
-    },
-    {
-     "test": "Rolled-forward LTV under the sweep level",
-     "passed": true,
-     "detail": "estimated LTV today 25.1% against sweep at 30%"
-    }
-   ]
   }
- ],
- "pass_through": 0.12715560421956845,
- "pass_through_source": "fitted on 18 past valuation cycles of this vehicle",
- "base_rate_pct": 3.89,
- "all_in_rate_pct": 10.39,
- "discount_to_nav": {
-  "symbol": "NBPE.L",
-  "price_date": "2026-10-05",
-  "share_price": 15.02,
-  "nav_per_share": 20.75,
-  "nav_date": "2026-08-31",
-  "discount": 0.276144578313253,
-  "discount_at_report_date": 0.2848192771084337
  }
 }

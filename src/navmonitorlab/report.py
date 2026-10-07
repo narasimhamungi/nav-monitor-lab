@@ -89,6 +89,28 @@ def write_outputs(r: dict, out: Path) -> list[Path]:
         pg_rows += [{"opening_ltv": l0, **row} for row in ro["pace_grid"]]
     files.append(write_rows(out / "runoff.csv", ro_rows))
     files.append(write_rows(out / "runoff_pace_grid.csv", pg_rows))
+    cal = r["calibration"]
+    files.append(write_rows(out / "realisations.csv", [
+        {"as_of": x["as_of"].isoformat(), "cash_received_year_to_date": x["ytd"], "basis": x["basis"], "cash_stated_for_month": x["month_stated"],
+         "previous_year_stated": x["prior_year_stated"], "running_total": x.get("cumulative"), "cash_in_month": x.get("cash_in_month"),
+         "portfolio_fair_value": x["portfolio_fv"], "read_from": x["text"]} for x in r["cash_rows"]]))
+    files.append(write_rows(out / "exit_pace_calibration.csv", [
+        {"window": w["window"], "start": w["start"].isoformat(), "end": w["end"].isoformat(), "months": w["months"], "cash_received": w["cash"],
+         "average_portfolio_fair_value": w["avg_portfolio_fv"], "portfolio_values_averaged": w.get("fv_observations"), "pace_per_year": w["pace"],
+         "base_case": cal["source"] == "calibrated" and w["window"] == cal["base_window"], "note": w["note"]} for w in cal["windows"]]
+        + [{"window": "base case", "pace_per_year": r["base_pace"], "note": (f"calibrated: {cal['rule']} of the windows" if cal["source"] == "calibrated"
+                                                                             else f"assumed: {cal['reason']}")},
+           {"window": "former assumption", "pace_per_year": r["former_pace"], "note": "configs/facility.yaml runoff.exit_pace_per_year; sensitivity only"}],
+        ["window", "start", "end", "months", "cash_received", "average_portfolio_fair_value", "portfolio_values_averaged", "pace_per_year", "base_case", "note"]))
+    sens = []
+    for label, pace, ros, tests in (("base case", r["base_pace"], r["runoffs"], r["candidate_tests"]),
+                                    ("former assumption", r["former_pace"], r["runoffs_former"], r["former_tests"])):
+        for l0, ro in ros.items():
+            sens.append({"case": label, "exit_pace_per_year": pace, "opening_ltv": l0, "loan": next(c["loan"] for c in r["grid"]["candidates"] if c["opening_ltv"] == l0),
+                         "repaid_quarter": ro["base"]["repaid_quarter"], "balance_at_maturity": ro["base"]["balance_at_maturity"],
+                         "drought_balance_at_maturity": ro["drought"]["balance_at_maturity"], "breakeven_exit_pace": ro["breakeven_pace"],
+                         "passed_all_tests": next(t["passed"] for t in tests if t["opening_ltv"] == l0)})
+    files.append(write_rows(out / "runoff_sensitivity.csv", sens))
     files.append(write_rows(out / "roll_forward.csv", r["roll_forward"]["rows"]))
     if r["backtest"]:
         files.append(write_rows(out / "backtest_periods.csv", r["accuracy"]["periods"]))
@@ -107,7 +129,10 @@ def write_outputs(r: dict, out: Path) -> list[Path]:
                             ["severity", "code", "scope", "message", "observed", "threshold"]))
     rec = {"verdict": r["verdict"], "proposed": r["proposed"], "flags": [f.row() for f in r["flags"]], "candidate_tests": r["candidate_tests"],
            "pass_through": r["pass_through"], "pass_through_source": r["pass_through_source"], "base_rate_pct": r["base_rate"],
-           "all_in_rate_pct": r["all_in_rate"], "discount_to_nav": r["discount"]}
+           "all_in_rate_pct": r["all_in_rate"], "discount_to_nav": r["discount"],
+           "exit_pace": {"base_pace": r["base_pace"], "source": cal["source"], "rule": cal["rule"], "base_window": cal["base_window"],
+                         "windows_end": cal["end"], "former_assumption": r["former_pace"], "reason": cal.get("reason", "")},
+           "former_assumption_result": {"proposed": r["former_proposed"]}}
     (out / "recommendation.json").write_text(json.dumps(rec, indent=1, default=str) + "\n", encoding="utf-8", newline="\n")
     files.append(out / "recommendation.json")
     (out / "memo.md").write_text(build_memo(r), encoding="utf-8", newline="\n")
@@ -265,12 +290,52 @@ def build_memo(r: dict) -> str:
         add("")
 
     # 5 ------------------------------------------------------------
-    add("## 5. Repayment from exits (`runoff.csv`, `runoff_pace_grid.csv`)")
+    add("## 5. Repayment from exits (`realisations.csv`, `exit_pace_calibration.csv`, `runoff.csv`, `runoff_pace_grid.csv`, `runoff_sensitivity.csv`)")
+    add("")
+    cal, base_pace, former = r["calibration"], r["base_pace"], r["former_pace"]
+    known = [x for x in r["cash_rows"] if x["ytd"] is not None]
+    if cal["source"] == "calibrated":
+        add(f"**Exit pace: {pct(base_pace)} a year, calibrated from the vehicle's own reports.** Pace = cash received from realisations over a "
+            "window, divided by the average portfolio fair value over the same months, annualised. The denominator is the fair value of the "
+            "whole portfolio, not NAV and not the eligible pool; the model applies that pace to the eligible pool (assumption). Only cash the "
+            "publisher says it received is counted; announced, pending and pro forma amounts are not.")
+        add("")
+        add("| Window | Months | Cash received | Average portfolio value | Pace a year |")
+        add("|---|---|---|---|---|")
+        for w in cal["windows"]:
+            star = " *" if w["window"] == cal["base_window"] else ""
+            if w["pace"] is None:
+                add(f"| {w['window']} to {w['end'].isoformat()} | {w['months']} | n/a | n/a | not computed: {w['note']} |")
+            else:
+                label = f"all, from {w['start'].year + 1}-01-01" if w["window"] == "all" else w["window"]
+                add(f"| {label} to {w['end'].isoformat()}{star} | {w['months']} | {money(w['cash'], 0)} | {money(w['avg_portfolio_fv'], 0)} | {pct(w['pace'])} |")
+        add("")
+        add(f"- Base case (*): the {cal['rule']} of the windows, a rule set in `configs/facility.yaml`. The former assumption was {pct(former, 0)}.")
+    else:
+        add(f"**Exit pace: {pct(base_pace)} a year, an assumption.** It could not be calibrated from the vehicle's reports: {cal.get('reason') or 'no reason recorded'}.")
+        add("")
+    if known:
+        years: dict[int, dict] = {}
+        for x in known:
+            years[x["as_of"].year] = x
+        add("- Cash received by calendar year: " + "; ".join(
+            f"{y} {money(x['ytd'], 0)}" + ("" if x["as_of"].month == 12 else f" to {x['as_of'].isoformat()}") for y, x in sorted(years.items())) + ".")
+    missing = [x["as_of"].isoformat() for x in r["cash_rows"] if x["ytd"] is None]
+    if missing:
+        add(f"- Not stated: {len(missing)} of {len(r['cash_rows'])} reports give no figure for cash received ({', '.join(missing)}). "
+            "The running total picks up at the next report that does.")
+    if cal.get("end") and cal.get("reports_after_end"):
+        add(f"- The latest report ({s.as_of.isoformat()}) is one of them, so the windows end at {cal['end'].isoformat()}"
+            + (", where the running total is the last stated year-to-date figure plus the monthly figures since." if cal.get("end_basis") == "derived" else "."))
+    ties = [f for f in r["findings"] if f.code in ("R02", "R03", "R04")]
+    if ties:
+        add(f"- The publisher's own figures do not tie in {len(ties)} place{'s' if len(ties) != 1 else ''}: "
+            + "; ".join(f"{f.scope}: {f.observed}" for f in ties[:3]) + ". Reported as found; the stated year-to-date figure is used.")
     add("")
     if prop:
         ro = r["runoffs"][prop["opening_ltv"]]
-        add(f"The loan is repaid from sale proceeds: {pct(ro_cfg['exit_pace_per_year'], 0)} of the pool realised a year (assumption), "
-            f"{pct(ro_cfg['sweep_share_below_trigger'], 0)} of proceeds after interest applied to principal, all of it once LTV reaches the sweep level.")
+        add(f"The loan is repaid from sale proceeds: {pct(base_pace)} of the pool realised a year ({'calibrated base case' if cal['source'] == 'calibrated' else 'assumption'}), "
+            f"{pct(ro_cfg['sweep_share_below_trigger'], 0)} of proceeds after interest applied to principal (assumption), all of it once LTV reaches the sweep level.")
         add("")
         add("| Case | Repaid | Outstanding at maturity | Peak LTV | Interest added to the loan |")
         add("|---|---|---|---|---|")
@@ -284,6 +349,26 @@ def build_memo(r: dict) -> str:
         add("")
         add(f"Breakeven: the pool must realise {pct(ro['breakeven_pace'])} a year for the loan to be repaid by maturity. By pace: "
             + "; ".join(f"{pct(x['pace'], 0)} leaves {money(x['balance_at_maturity'])}" for x in ro["pace_grid"]) + ".")
+        add("")
+    if cal["source"] == "calibrated":
+        fp = r["former_proposed"]
+        add(f"Sensitivity: the same rules on the former assumption of {pct(former, 0)} a year, beside the base case. Outstanding at maturity, base repayment case:")
+        add("")
+        add(f"| Opening LTV | Loan | Base case {pct(base_pace)} | Former assumption {pct(former, 0)} | Breakeven pace |")
+        add("|---|---|---|---|---|")
+
+        def _cellro(x: dict, passed: bool) -> str:
+            body = f"repaid in quarter {x['repaid_quarter']}" if x["repaid_quarter"] else f"{money(x['balance_at_maturity'])} outstanding"
+            return body + ("" if passed else " (fails a test)")
+        for c in grid["candidates"]:
+            l0 = c["opening_ltv"]
+            p_base = next(t["passed"] for t in r["candidate_tests"] if t["opening_ltv"] == l0)
+            p_former = next(t["passed"] for t in r["former_tests"] if t["opening_ltv"] == l0)
+            add(f"| {pct(l0, 0)} | {money(c['loan'])} | {_cellro(r['runoffs'][l0]['base'], p_base)} | {_cellro(r['runoffs_former'][l0]['base'], p_former)} | "
+                f"{pct(r['runoffs'][l0]['breakeven_pace'])} |")
+        add("")
+        add("Proposed loan: " + (f"{pct(prop['opening_ltv'], 0)} ({money(prop['loan'])}) on the base case" if prop else "none on the base case")
+            + "; " + (f"{pct(fp['opening_ltv'], 0)} ({money(fp['loan'])}) on the former assumption." if fp else "none on the former assumption."))
         add("")
 
     # 6 ------------------------------------------------------------
@@ -397,7 +482,9 @@ def build_memo(r: dict) -> str:
     add(f"- Sponsor records come from one investor ({tr.lp}), active funds only, with interim values. That is a biased sample, not a market benchmark.")
     add("- The roll-forward is an estimate from listed sector funds. Published fair-value changes also contain follow-on investments, "
         "part-realisations and currency moves, which the backtest cannot separate.")
-    add("- Thresholds, margins, exit pace and concentration limits are assumptions set in `configs/facility.yaml`.")
+    add("- Thresholds, margins, sweep shares and concentration limits are assumptions set in `configs/facility.yaml`."
+        + (" The exit pace is the whole portfolio's, from the publisher's statements of cash received; applying it to the eligible pool, and to the "
+           "next four years, is an assumption." if r["calibration"]["source"] == "calibrated" else " So is the exit pace."))
     add("- Full list: `docs/limitations.md`.")
     add("")
     return "\n".join(L)

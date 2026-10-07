@@ -8,6 +8,7 @@
 | Manager track records | Preqin, PitchBook, MSCI Burgiss | CalPERS Private Equity Program fund performance table | 485 rows read; tied to five column sums on the page |
 | Prices | Bloomberg, LSEG, FactSet, S&P Capital IQ | Yahoo Finance chart endpoint (unofficial) | Real response captured for nine symbols |
 | Reference rates | The same terminals | FRED CSV download (SOFR, SONIA) | Real response captured |
+| Realisation proceeds | The borrower's cash flow reporting and distribution notices | Statements of cash received in the same monthly NAV announcements | 55 reports read; 47 state a figure |
 | Lending terms | The lender's own credit policy | Published rating-agency commentary, as summarised by Sidley (Aug 2025): initial LTV 10% to 30%, maximum about 40% | Read in summary only; the agencies' full criteria were not read |
 
 Tried and dropped: **Stooq**. Its CSV download answered "Access denied" on 2026-10-07.
@@ -58,6 +59,22 @@ program. No figure was typed by hand. Checks:
   The reports for 31 March, 30 April and 31 August 2023 do not: their rows sum to 16.8, 17.8 and 19.0 more
   than the stated total. Those are reported as findings and left as published.
 - **Prices and rates**: no independent tie-out exists. `navmon verify-live` compares closes with a fresh fetch.
+- **NBPE cash received** (added in version 0.2.0): every line of each report that mentions realisations,
+  proceeds or exits was captured as text (`tests/fixtures/nbpe_realisation_lines.json`). Three readings agree
+  on all 55 reports: the Python reader on those lines; the same wordings run in the browser over each report's
+  full text, which also confirmed that no sentence outside the captured lines matches; and a reading by eye
+  recorded in `tests/test_realisations.py`. Tie-outs on the publisher's own numbers: the December figures for
+  2023, 2024 and 2025 (171, 179, 180) equal the totals restated in the following annual results
+  announcements; where a report states both the month and the year to date, they tie to the previous report
+  in 10 of 11 cases (one of them within the publisher's $1m rounding), and the eleventh (31 May 2025: 53 + 8
+  against a stated 66) is reported as finding R02. One
+  outside check on the denominator: the 31 May 2024 report calls $122m "approximately 9% of opening portfolio
+  value"; against this tool's portfolio value for 31 December 2023 it is 9.2%.
+- The live parser's reading of cash received from the live pages has not been compared with the sample yet.
+  It is tested on real HTML from seven reports, and a browser script that splits each page into lines by the
+  parser's rules (dropping superscripts) found the same figures in the full HTML of all 56 announcements on
+  2026-10-07. That script is a stand-in, not the parser. `navmon refresh` then `navmon verify-live` compares
+  all 55 with the parser itself.
 
 `navmon verify-live` repeats the comparison with the Python parsers. On 2026-10-07 the two independent readers
 agreed on all 55 holdings tables, all 485 funds and all 774 closes, with one exception that was the sample's
@@ -78,6 +95,12 @@ sample row was corrected and the correction is recorded in `data/sample/manifest
   to December 2022, "Fair Value ($m)" since.
 - NBPE renamed several companies over the period and relabelled sectors in October 2022. The maps in
   `configs/vehicle_nbpe.yaml` record each one.
+- NBPE's realisation reporting changes shape. Until early 2022 the headline figure is "announced"
+  realisations, which include deals not yet paid; cash received sits in a footnote from May 2022 and moves
+  into the main text during 2023. From May 2026 the reports give the month's cash and a total of announced
+  realisations, but no cash year to date. The 31 October 2025 report gives "$64 million of realisations in
+  October", of which $29m is described as cash and $34m as deals closed; the next report's cash total (157)
+  shows that not all of it had been received, so the October figure is not read.
 
 ## Use and redistribution
 

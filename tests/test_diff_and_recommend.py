@@ -63,7 +63,7 @@ def flags(**over):
     base = dict(pool={"eligible_names": 20, "undisclosed_share_of_published": 0.05, "excluded_names": 1},
                 overlay={"rated_share": 0.5, "weak_share": 0.0}, quality_counts={"error": 0, "unreconciled_recent": 0},
                 stale={"stale_share": 0.1, "age_today": 90.0}, snapshot_meta={"investment_level_pct": 100.0, "cash_m": 50.0, "undrawn_credit_m": 200.0},
-                proposed={"opening_ltv": 0.2}, runoff_info={"breakeven_pace": 0.10, "assumed_pace": 0.15}, policy=POLICY, cov=COV,
+                proposed={"opening_ltv": 0.2}, runoff_info={"breakeven_pace": 0.10, "base_pace": 0.15}, policy=POLICY, cov=COV,
                 limits_bite=0.0, market_ran=True)
     base.update(over)
     return recommend.build_flags(**base)
@@ -76,7 +76,7 @@ def test_flags_fire_only_when_a_threshold_is_crossed():
     assert sev(flags(overlay={"rated_share": 0.5, "weak_share": 0.2}))["P14"] == "condition"
     assert sev(flags(snapshot_meta={"investment_level_pct": 115.0, "cash_m": 7.0, "undrawn_credit_m": 135.0}))["P15"] == "condition"
     assert sev(flags(stale={"stale_share": 0.4, "age_today": 150.0})).keys() >= {"P11", "P12"}
-    assert sev(flags(runoff_info={"breakeven_pace": 0.143, "assumed_pace": 0.15}))["P18"] == "condition"
+    assert sev(flags(runoff_info={"breakeven_pace": 0.143, "base_pace": 0.15}))["P18"] == "condition"
     assert sev(flags(pool={"eligible_names": 20, "undisclosed_share_of_published": 0.2, "excluded_names": 3}))["P10"] == "condition"
     assert sev(flags(market_ran=False))["P19"] == "condition"
     assert sev(flags(quality_counts={"error": 0, "unreconciled_recent": 2}))["P16"] == "condition"

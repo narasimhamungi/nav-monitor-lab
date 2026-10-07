@@ -1,0 +1,6 @@
+window,start,end,months,cash_received,average_portfolio_fair_value,portfolio_values_averaged,pace_per_year,base_case,note
+12 months,2025-07-31,2026-07-31,12,198.0,1247.396807,12,0.158731,False,
+24 months,2024-07-31,2026-07-31,24,295.0,1260.187341,24,0.117046,True,
+all,2021-12-31,2026-07-31,55,739.0,1328.733166,53,0.121346,False,
+base case,,,,,,,0.117046,,calibrated: lowest of the windows
+former assumption,,,,,,,0.15,,configs/facility.yaml runoff.exit_pace_per_year; sensitivity only

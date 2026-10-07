@@ -30,6 +30,12 @@ All files are UTF-8 CSV with a header row. A data directory holds one of each.
 | `valuation_mix` | `date:share` pairs separated by `;`, for example `2026-08-31:0.08;2026-06-30:0.92` |
 | `investment_level_pct` | Investments as a percentage of NAV, where published |
 | `cash_m`, `undrawn_credit_m` | The vehicle's cash and undrawn credit line, where published separately |
+| `realised_ytd_m` | Cash received from realisations from 1 January to the report date, as stated; blank if not stated |
+| `realised_month_m` | Cash received from realisations in the report month, as stated; blank if not stated |
+| `realised_prior_year_m` | Cash received in the whole previous calendar year, where a report restates it |
+| `realised_text` | The phrases those three figures were read from |
+
+The four `realised_` columns are optional. A file without them still loads; the exit pace is then the assumed one.
 
 ### `track_record_<lp>.csv` : one row per fund
 | Column | Meaning |
@@ -60,6 +66,8 @@ All files are UTF-8 CSV with a header row. A data directory holds one of each.
 | LTV | loan / eligible NAV |
 | Effective names | 1 / Herfindahl index of the eligible holdings |
 | Weighted mark age | Days between each valuation date and the reference date, weighted by share of portfolio |
+| Portfolio fair value | The whole portfolio's fair value implied by a report: stated total of the listed holdings / their stated share |
+| Exit pace | Cash received from realisations over a window / average portfolio fair value over the window, a year (`model_spec.md`, E-4) |
 
 ## Output files (one run, one folder)
 
@@ -73,7 +81,10 @@ All files are UTF-8 CSV with a header row. A data directory holds one of each.
 | `track_record_funds.csv`, `_families.csv`, `_vintages.csv` | Fund metrics, manager ratings, medians by vintage year |
 | `sizing_candidates.csv` | One row per opening LTV: loan, cushion, tests passed or failed, breakeven exit pace |
 | `stress_uniform.csv`, `stress_single_name.csv`, `stress_scenarios.csv` | The three stress families |
+| `realisations.csv` | One row per report: cash received year to date, whether stated or derived, the running total, the phrases it was read from |
+| `exit_pace_calibration.csv` | Each window's months, cash, average portfolio value and pace; the base case and the former assumption |
 | `runoff.csv`, `runoff_pace_grid.csv` | Quarter-by-quarter repayment paths; sensitivity to exit pace |
+| `runoff_sensitivity.csv` | Each opening LTV at the base pace and at the former assumption: repaid or not, breakeven, tests passed |
 | `roll_forward.csv` | Per holding: proxy, return since its marks, estimated value |
 | `backtest_periods.csv`, `_observations.csv`, `_skipped.csv`, `_summary.csv`, `_robustness.csv` | The accuracy test and what was left out |
 | `covenant_replay.csv`, `_summary.csv` | LTV at every past report for a loan fixed at the first |
@@ -90,4 +101,5 @@ All files are UTF-8 CSV with a header row. A data directory holds one of each.
 | `T` | Track record | T01 multiple does not recompute; T04 extreme IRR; T05 value below cash out; T06 no cash in; T07 cash in far above commitment; T09 active funds only |
 | `H` | Live holdings parser | H00 no table found; H01 row skipped; H03 two reports with the same date |
 | `M`, `S` | Market data and scenarios | M01 no prices for a proxy; M02 prices end before the report; S01 scenario skipped |
-| `P` | Policy flags in the recommendation | P13 sponsor coverage; P15 vehicle borrowing; P18 repayment depends on exit pace |
+| `R` | Cash received from realisations | R01 reports with no figure; R02 month and year to date do not tie; R03 year to date falls; R04 year total differs when restated; R05 figure dated to another period; R06 two figures conflict; R07 a year has no total |
+| `P` | Policy flags in the recommendation | P13 sponsor coverage; P15 vehicle borrowing; P18 repayment depends on exit pace; P20 how the exit pace was set; P21 realisation data out of date |

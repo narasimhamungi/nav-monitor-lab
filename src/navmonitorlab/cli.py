@@ -51,6 +51,12 @@ def cmd_run(a) -> int:
     print(f"Data: {data}  |  holdings as of {res['snapshot'].as_of}  |  track record as of {res['track_record'].as_of}"
           + (f"  |  prices to {res['roll_forward']['to']}" if res["roll_forward"].get("to") else "  |  no market data"))
     print(f"Verdict: {res['verdict']}" + (f"  |  opening LTV {prop['opening_ltv']:.0%}, loan {prop['loan']:,.1f}" if prop else ""))
+    cal = res["calibration"]
+    fp = res["former_proposed"]
+    print(f"Exit pace: {res['base_pace']:.1%} a year, " + (f"calibrated ({cal['rule']} of the windows to {cal['end']})" if cal["source"] == "calibrated"
+                                                           else f"ASSUMED ({cal.get('reason')})")
+          + (f"  |  on the former {res['former_pace']:.0%} assumption: " + (f"opening LTV {fp['opening_ltv']:.0%}, loan {fp['loan']:,.1f}" if fp else "no loan passes")
+             if cal["source"] == "calibrated" else ""))
     for f in res["flags"]:
         if f.severity != "note":
             print(f"  [{f.severity}] {f.title}: {f.observed}")

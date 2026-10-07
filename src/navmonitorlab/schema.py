@@ -50,6 +50,11 @@ class Snapshot:
     cash_m: float | None = None
     undrawn_credit_m: float | None = None
     headline: str = ""
+    # cash received from realisations, as stated in the report (docs/model_spec.md, section E); None = not stated
+    realised_ytd_m: float | None = None          # from 1 January of the report year to the report date
+    realised_month_m: float | None = None        # in the report month
+    realised_prior_year_m: float | None = None   # in the whole previous calendar year
+    realised_text: str = ""                      # the sentences those figures were read from
 
     @property
     def listed_fv(self) -> float:

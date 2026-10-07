@@ -31,7 +31,7 @@ def holdings_source(cfg: dict, *, fetcher: Fetcher | None = None, data_dir: Path
                           headline_exclude=cfg.get("headline_exclude", ""),
                           since=date.fromisoformat(str(cfg["since"])) if cfg.get("since") else None,
                           columns=cfg.get("columns"), currency=cfg.get("currency", "USD"), unit=cfg.get("unit", "millions"),
-                          max_announcements=cfg.get("max_announcements"))
+                          max_announcements=cfg.get("max_announcements"), realisations=cfg.get("realisations"))
 
 
 def track_source(cfg: dict, *, fetcher: Fetcher | None = None, data_dir: Path | None = None):

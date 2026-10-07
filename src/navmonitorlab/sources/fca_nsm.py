@@ -17,6 +17,7 @@ from datetime import date, datetime
 
 from ..htmltable import find_table, parse
 from ..net import Fetcher
+from ..realisations import compile_patterns, read_statements
 from ..schema import Finding, Holding, Snapshot
 
 API_URL = "https://api.data.fca.org.uk/search?index=nsm-search"
@@ -52,9 +53,12 @@ def _num(text: str) -> float | None:
 
 
 def parse_announcement(html: str, *, vehicle: str, source_url: str, published: date | None, headline: str = "",
-                       columns: dict | None = None, currency: str = "USD", unit: str = "millions"
-                       ) -> tuple[Snapshot | None, list[Finding]]:
-    """Read one announcement. Returns (snapshot or None, findings)."""
+                       columns: dict | None = None, currency: str = "USD", unit: str = "millions",
+                       realisation_patterns: dict | None = None) -> tuple[Snapshot | None, list[Finding]]:
+    """Read one announcement. Returns (snapshot or None, findings).
+
+    `realisation_patterns` (from `compile_patterns`) switches on reading cash received from realisations.
+    """
     findings: list[Finding] = []
     tables, text = parse(html)
     flat = text.replace("\n", " ")
@@ -101,6 +105,11 @@ def parse_announcement(html: str, *, vehicle: str, source_url: str, published: d
                     valuation_mix=mix, investment_level_pct=float(inv.group(1)) if inv else None,
                     cash_m=_num(cash.group(1)) if cash else None, undrawn_credit_m=_num(undrawn.group(1)) if undrawn else None,
                     headline=headline)
+    if realisation_patterns:
+        got, rf = read_statements(text, as_of, realisation_patterns, scope=f"{vehicle} {as_of}")
+        snap.realised_ytd_m, snap.realised_month_m = got["realised_ytd_m"], got["realised_month_m"]
+        snap.realised_prior_year_m, snap.realised_text = got["realised_prior_year_m"], got["realised_text"]
+        findings += rf
     return snap, findings
 
 
@@ -114,12 +123,14 @@ def search_body(lei: str, start: int) -> dict:
 class FcaNsmHoldings:
     def __init__(self, fetcher: Fetcher, *, vehicle: str, lei: str, headline_include: str, headline_exclude: str = "",
                  since: date | None = None, columns: dict | None = None, currency: str = "USD", unit: str = "millions",
-                 api_url: str = API_URL, artefact_base: str = ARTEFACT_BASE, max_announcements: int | None = None):
+                 api_url: str = API_URL, artefact_base: str = ARTEFACT_BASE, max_announcements: int | None = None,
+                 realisations: dict | None = None):
         self.f, self.vehicle, self.lei = fetcher, vehicle, lei
         self.inc = re.compile(headline_include, re.I)
         self.exc = re.compile(headline_exclude, re.I) if headline_exclude else None
         self.since, self.columns, self.currency, self.unit = since, columns, currency, unit
         self.api_url, self.artefact_base, self.max = api_url, artefact_base, max_announcements
+        self.realisation_patterns = compile_patterns(realisations) if realisations else None
         self.findings: list[Finding] = []
 
     def discover(self) -> list[dict]:
@@ -153,7 +164,8 @@ class FcaNsmHoldings:
         for a in self.discover():
             html = self.f.text(a["url"], label="fca_nsm_artefact")
             snap, fs = parse_announcement(html, vehicle=self.vehicle, source_url=a["url"], published=a["published"],
-                                          headline=a["headline"], columns=self.columns, currency=self.currency, unit=self.unit)
+                                          headline=a["headline"], columns=self.columns, currency=self.currency, unit=self.unit,
+                                          realisation_patterns=self.realisation_patterns)
             self.findings += fs
             if snap is None or not snap.holdings:
                 continue

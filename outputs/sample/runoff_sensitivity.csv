@@ -1,0 +1,9 @@
+case,exit_pace_per_year,opening_ltv,loan,repaid_quarter,balance_at_maturity,drought_balance_at_maturity,breakeven_exit_pace,passed_all_tests
+base case,0.117046,0.1,92.29445,8,0.0,0.0,0.063,True
+base case,0.117046,0.15,138.441675,14,0.0,43.116447,0.1,True
+base case,0.117046,0.2,184.5889,,32.739965,99.84621,0.143,False
+base case,0.117046,0.25,230.736125,,89.469729,156.575973,0.195,False
+former assumption,0.15,0.1,92.29445,7,0.0,0.0,0.063,True
+former assumption,0.15,0.15,138.441675,11,0.0,12.980051,0.1,True
+former assumption,0.15,0.2,184.5889,16,0.0,69.709814,0.143,True
+former assumption,0.15,0.25,230.736125,,48.237591,126.439578,0.195,False

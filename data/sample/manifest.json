@@ -15,8 +15,8 @@
    "bytes": 3359
   },
   "snapshots_nbpe.csv": {
-   "sha256": "966386a4673cd4ab93908f50d852690a3cd9fca6e893a7e9e9048bfdfa86d6fc",
-   "bytes": 12848
+   "sha256": "bf29b497681e647b4c52de656ea43c174c9e97402027b617f452edae560fa903",
+   "bytes": 17253
   },
   "track_record_calpers.csv": {
    "sha256": "0545fc773bbf3722049f3bea163404b6a55e872894f9d8111cb729c46bd1fc5d",
@@ -28,7 +28,28 @@
    "publisher": "NB Private Equity Partners Limited, monthly NAV announcements",
    "archive": "FCA National Storage Mechanism, https://data.fca.org.uk (each snapshot's own URL is in snapshots_nbpe.csv)",
    "coverage": "55 monthly reports, 2022-02-28 to 2026-08-31, top-30 holdings table each",
-   "tie_out": "52 of 55 tables sum to the publisher's own total row within 0.5; 2023-03-31, 2023-04-30 and 2023-08-31 do not (reported as findings Q01/Q02, not corrected)"
+   "tie_out": "52 of 55 tables sum to the publisher's own total row within 0.5; 2023-03-31, 2023-04-30 and 2023-08-31 do not (reported as findings Q01/Q02, not corrected)",
+   "cash_received": {
+    "columns": "realised_ytd_m, realised_month_m, realised_prior_year_m, realised_text in snapshots_nbpe.csv",
+    "what": "cash received from realisations as stated in each monthly report; announced, pending and pro forma amounts are not read",
+    "coverage": "47 of 55 reports state a figure; 2022-02-28, 2022-03-31, 2022-04-30, 2023-01-31, 2023-02-28, 2025-10-31, 2026-03-31 and 2026-08-31 do not",
+    "tie_out": {
+     "cash_received_by_year": {
+      "2022": 120,
+      "2023": 171,
+      "2024": 179,
+      "2025": 180
+     },
+     "year_to_date_2026-07-31": 89,
+     "previous_year_totals_restated_in_later_reports": {
+      "2023": 171,
+      "2024": 179,
+      "2025": 180
+     },
+     "note": "December year-to-date figures agree with the totals the publisher restates in its annual results announcements for 2023, 2024 and 2025 (2022 is not restated as cash received). One month does not tie: 2025-05-31 states 66 year to date after 53 plus 8 in the month (finding R02, not corrected)."
+    },
+    "checked": "three readings agree on all 55 reports: the Python reader on the captured lines, the same wordings run in the browser over each report's full text, and a reading by eye recorded in tests/test_realisations.py"
+   }
   },
   "track_record_calpers.csv": {
    "publisher": "CalPERS, Private Equity Program Fund Performance Review",
@@ -60,6 +81,13 @@
    "date": "2026-10-07",
    "file": "holdings_nbpe.csv",
    "change": "2023-09-30 row 'Business Services Company4' -> 'Business Services Company'. The '4' was a superscript footnote mark that the browser capture read as part of the name. Found by `navmon verify-live` on its first live run; the live parser had it right."
+  }
+ ],
+ "additions": [
+  {
+   "date": "2026-10-07",
+   "file": "snapshots_nbpe.csv",
+   "change": "four cash-received columns added (version 0.2.0); the fifteen existing columns are byte-for-byte unchanged"
   }
  ]
 }

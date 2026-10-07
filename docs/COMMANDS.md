@@ -21,8 +21,9 @@ If PowerShell refuses to run `Activate.ps1`, run `Set-ExecutionPolicy -Scope Pro
 ## 2. Check it works offline
 
 ```powershell
-pytest -q                                              # expect: 77 passed
-navmon run --data data/sample --out outputs/check      # expect: "Verdict: Proceed with conditions | opening LTV 20%"
+pytest -q                                              # expect: 114 passed
+navmon run --data data/sample --out outputs/check      # expect: "Verdict: Proceed with conditions | opening LTV 15%, loan 138.4"
+                                                       #         "Exit pace: 11.7% a year, calibrated ... on the former 15% assumption: opening LTV 20%, loan 184.6"
 fc.exe outputs\check\memo.md outputs\sample\memo.md    # expect: no differences
 ```
 

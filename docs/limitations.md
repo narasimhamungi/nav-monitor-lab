@@ -43,18 +43,34 @@
 - The discount to NAV reflects fees, leverage and liquidity as well as doubt about marks.
 
 ## Repayment model
-- Exits are a constant share of pool value each quarter. Real exits are lumpy and name-specific.
-- **The 15% base exit pace is an assumption and looks optimistic.** NBPE's April 2026 announcement reports $28m
-  of realisations in the first four months of 2026. Against a portfolio of about $1.26bn that is roughly 7% a
-  year. At 10% the proposed loan leaves 56.1 unpaid at maturity; at 5%, 133.8. Realisations are not yet parsed
-  from the announcements, so the pace is not calibrated to the vehicle.
+- Exits are a constant share of pool value each quarter. Real exits are lumpy and name-specific: monthly cash
+  received in the data runs from 0 to 53.
+- **The exit pace is calibrated on the past and on the whole portfolio.** It is cash received from realisations
+  divided by the fair value of the whole portfolio. The model applies it to the eligible pool (27 named
+  holdings) and to the next four years. Both steps are assumptions. Cash received includes sales of quoted
+  shares, the run-off of older income investments, part-sales and refinancing proceeds, and holdings outside
+  the published top 30.
+- The vehicle keeps making new investments, so its portfolio always contains young holdings that are not ready
+  to sell. The model's pool is fixed and ages. The measured pace is not corrected for that.
+- The pace depends on the window: 15.9% over 12 months, 11.7% over 24, 12.1% since January 2022. The base case
+  takes the lowest. Only the 12-month window supports the 20% loan that version 0.1.0 proposed.
+- Version 0.1.0 of this file said the 15% assumption "looks optimistic" because the first four months of 2026
+  brought in $28m, about 7% a year. Four months was too short to judge: the next three months brought $61m.
+- 8 of 55 reports state no cash received, including the latest (31 August 2026), so the windows end one month
+  before the holdings. Since April 2026 the publisher has stated the month's cash but not the year to date; the
+  running total for those months is the last stated total plus the monthly figures.
+- Before mid-2022 the publisher reported announced realisations, which include deals not yet paid. Those are
+  not read. The first usable cash figure is May 2022, and the 2022 total (120) is not restated anywhere else.
+- Accepted wordings are a list in the vehicle config. A new wording is skipped, and shows up as a report with
+  no figure (finding R01), until a line is added for it.
 - One sweep percentage below the trigger and 100% above it. No scheduled amortisation, fees, hedging or
   maturity extension.
 - The covenant replay holds the loan constant with no repayments, which overstates LTV as holdings are sold.
 
 ## Data and operations
 - Monthly holdings, quarterly track records with about a two-quarter lag, daily prices and rates. Not a live feed.
-- Live fetching has run once (2026-10-07). It has not yet picked up a newly published report, and the
+- Live fetching has run once (2026-10-07), before the cash-received columns existed. It has not yet picked up
+  a newly published report, the live parser has not yet read cash received from the live pages, and the
   scheduled workflow has never run.
 - The Yahoo chart endpoint is unofficial and unlicensed. It can change or block without notice.
 - A change in a publisher's page layout stops that source with an error; it does not silently return stale data.

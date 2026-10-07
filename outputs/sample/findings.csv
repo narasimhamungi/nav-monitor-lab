@@ -5,6 +5,7 @@ warn,Q01,NBPE 2023-08-31,Holdings do not sum to the publisher's own total row,ro
 warn,Q02,NBPE 2023-03-31,Holdings' percentages do not sum to the stated share of the portfolio,rows 67.4% vs stated 66.1%,within 0.6%
 warn,Q02,NBPE 2023-04-30,Holdings' percentages do not sum to the stated share of the portfolio,rows 68.4% vs stated 67.1%,within 0.6%
 warn,Q02,NBPE 2023-08-31,Holdings' percentages do not sum to the stated share of the portfolio,rows 68.3% vs stated 66.9%,within 0.6%
+warn,R02,NBPE 2025-05-31,Cash received does not tie: previous year-to-date plus this month's cash is not this report's year-to-date,53 + 8 = 61 vs stated 66 (difference +5),within 1
 warn,T04,Forbion Growth Opportunities Fund II Cooperatief U.A.,Extreme net IRR; typical of a very young fund and not a track record,"700.9%, vintage 2023",|IRR| >= 100%
 warn,T04,"JSC Capital Partners, L.P.",Extreme net IRR; typical of a very young fund and not a track record,"101.3%, vintage 2024",|IRR| >= 100%
 warn,T04,"LS Investments C, L.P.",Extreme net IRR; typical of a very young fund and not a track record,"137.7%, vintage 2024",|IRR| >= 100%
@@ -25,6 +26,7 @@ info,Q11,Excelitas,The publisher has shown different sectors for the same compan
 info,Q12,Engineering,The publisher has shown different lead-sponsor labels for the same company,NB Renaissance / Bain Capital (first seen 2022-02-28); Renaissance Partners / Bain Capital (first seen 2025-07-31),
 info,Q12,Marquee Brands,The publisher has shown different lead-sponsor labels for the same company,Neuberger Berman (first seen 2022-02-28); Neuberger (first seen 2026-05-31),
 info,Q12,Ryan,The publisher has shown different lead-sponsor labels for the same company,Ares Management (first seen 2026-03-31); Ares / Onex (first seen 2026-04-30),
+info,R01,NBPE,Reports that do not state cash received from realisations; the gap closes at the next report that does,"8 of 55: 2022-02-28, 2022-03-31, 2022-04-30, 2023-01-31, 2023-02-28, 2025-10-31, 2026-03-31, 2026-08-31",
 info,T02,CalPERS 2026-03-31,Rows carrying the 'not meaningful' footnote marker; their IRR and multiple are interim and should not be ranked,"261 rows, vintages 2022-2026",
 info,T03,CalPERS 2026-03-31,The publisher marks these rows 'not meaningful' yet still prints an IRR for them,178 of 261 marked rows,
 info,T08,Forbion BioEconomy Fund I Co?peratief U.A.,Fund name contains a character the publisher's page failed to encode,,

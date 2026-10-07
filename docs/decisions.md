@@ -20,10 +20,17 @@
 | D-16 | Company renames are handled by a hand-entered alias map | Five companies renamed in 55 months, each visible in the tables; a fuzzy matcher would be wrong silently | Automatic matching |
 | D-17 | The scheduled workflow ships manual-only | Whether the sources answer GitHub's servers is untested | Shipping a schedule that may fail every morning |
 | D-18 | Renamed from nav-diligence-lab to nav-monitor-lab | It underwrites and monitors. It does not do manager due diligence, and the name should not claim it | Keeping a name that oversells |
+| D-19 | The base exit pace is calibrated from cash the vehicle reports receiving, and the 15% assumption is kept only as a labelled sensitivity | Repayment from exits decided the headline loan, and it rested on a number chosen by hand. Pace = cash received / average portfolio fair value over the window, a year; the denominator is portfolio fair value because that is what the model applies the pace to. Windows of 12 and 24 months and all months are shown; the base case is the lowest, a rule set in `configs/facility.yaml` before the figures were computed. The recommendation moved from 20% ($184.6m) to 15% ($138.4m). No covenant, threshold or window was changed to hold the old result | Keeping 15% because the latest 12 months (15.9%) happen to support it; choosing the window after seeing the answer |
+| D-20 | Only cash received is read; announced, pending and pro forma figures are never read; accepted wordings live in the vehicle config | A lender is repaid from cash. The publisher's "announced" totals include deals that had not paid, and its wording changes from year to year (21 accepted wordings are listed). A wording that is not on the list is skipped and reported, never guessed | Reading any dollar figure near the word "realisations"; one loose pattern |
+| D-21 | A report's own figures are never used to fill another report's gap by interpolation | 8 of 55 reports state no cash received. The running total simply resumes at the next stated figure, and a window that would have to start in a gap is not computed | Spreading a later total evenly across missing months |
 
 ## Open questions
 
 - Should the pool include holdings at a haircut once names are obtained under NDA? Needs a real data room.
+- Is "lowest of the windows" the right base rule? It is conservative and it was fixed in advance, but a lender
+  might prefer the long-run figure as base and the lowest as a stress. The rule is one word in the config.
+- Should the exit pace be measured on the eligible names only? The reports name the companies behind most
+  exits, but not the cash from each.
 - Is a second investor's table worth adding to raise sponsor coverage above 17%? CalSTRS, Oregon and Washington
   State publish comparable tables; none has been checked.
 - The field names follow a schedule of investments. They have not been mapped to the ILPA reporting template.

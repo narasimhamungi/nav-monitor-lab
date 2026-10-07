@@ -1,7 +1,8 @@
 # Plan and build checklist
 
-Status as of 2026-10-07, after the first live run on the author's Windows machine. "Done" means built and
-covered by a passing test or a recorded run.
+Status as of 2026-10-07, version 0.2.0. Version 0.1.0 was run live on the author's Windows machine; the
+exit-pace calibration added in 0.2.0 has run on the captured sample only. "Done" means built and covered by a
+passing test or a recorded run.
 
 ## Goal
 
@@ -71,9 +72,19 @@ would screen, measure how far stale private marks can be trusted, and re-run whe
 - [ ] **Not run:** scheduled refresh workflow on GitHub Actions (left manual-only)
 
 ### Stage 5: packaging
-- [x] 77 tests, CI workflow, `.gitattributes` so hashes survive Windows checkouts
-- [x] README, commands, sources, data dictionary, model spec, decisions, limitations
-- [ ] CI has not run on GitHub yet (it runs on first push)
+- [x] 114 tests, CI workflow, `.gitattributes` so hashes survive Windows checkouts
+- [x] README, commands, sources, data dictionary, model spec, decisions, limitations, changelog
+- [x] Public on GitHub; CI green on version 0.1.0 (author's report, 2026-10-07)
+
+### Stage 6: exit-pace calibration (version 0.2.0)
+- [x] Found where realisations are reported: sentences in the same monthly NAV announcements
+- [x] Reader for cash received (year to date, month, previous year); announced, pending and pro forma never read
+- [x] Sample extended: 47 of 55 reports state a figure; three readings agree on all 55
+- [x] Reconciliation: month against year to date (one exception, reported), December against restated totals
+- [x] Calibration: 12 months 15.9%, 24 months 11.7%, all months 12.1%; base case by rule (`lowest`)
+- [x] Full re-run with no rule changed: recommendation moved from 20% ($184.6m) to 15% ($138.4m)
+- [x] The former 15% assumption kept as a labelled sensitivity in the memo and in `runoff_sensitivity.csv`
+- [ ] **Not yet run live:** `navmon refresh` then `navmon verify-live` with the new columns
 - [ ] fund-finance-lab release tag (optional; command in `COMMANDS.md`)
 - [ ] Interview prep document: not written. It is personal and must stay outside this repository
 
@@ -81,13 +92,12 @@ would screen, measure how far stale private marks can be trusted, and re-run whe
 - Private debt (SEC BDC data sets are the route; `decisions.md` D-02)
 - HVPE and Pantheon ingestion
 - A second investor's track-record table (CalSTRS, Oregon, Washington State publish similar tables)
-- Reading realisation proceeds from the announcements to calibrate the exit pace (the 15% base pace is an
-  assumption; see `limitations.md`)
+- Exit pace for the eligible names only (the reports name the companies sold, not the cash from each)
 - Automatic alias detection for renamed companies (aliases are hand-entered in the vehicle config)
 - Own-ticker pricing for quoted holdings (they use the sector proxy)
 - A dashboard
 
-## What can and cannot be claimed (the live checks passed on 2026-10-07)
+## What can and cannot be claimed (version 0.2.0)
 
 | Statement | Tag |
 |---|---|
@@ -95,7 +105,11 @@ would screen, measure how far stale private marks can be trusted, and re-run whe
 | Screens 485 funds from a public pension disclosure and rates managers on capital returned within vintage year | Demonstrated, for one investor's active funds |
 | Backtests a mark roll-forward over 18 valuation cycles and reports that it is not a reliable improvement | Demonstrated |
 | Reconciles every input table to the publisher's totals and carries exceptions into the memo | Demonstrated |
-| Fetches from four live public sources and cross-checks the parse against an independent capture | Demonstrated once, 2026-10-07 |
+| Calibrates the exit pace from cash received in 55 monthly reports (11.7% to 15.9% a year by window) and sizes the loan on it | Demonstrated on the captured sample |
+| Proposes 15% opening LTV, $138.4m, with three conditions | Demonstrated; illustrative, on assumed covenants, margin and sweep |
+| "$185m at 20% LTV" | No longer the result. It is what the same rules give on the former 15% assumption, shown as a sensitivity |
+| The live parser reads cash received from the live pages | Inferred from tests on real HTML from seven reports, until `verify-live` has run with the new columns |
+| Fetches from four live public sources and cross-checks the parse against an independent capture | Demonstrated once, 2026-10-07, for holdings, track records and prices |
 | Re-runs when new data is published | Inferred until `navmon update` has picked up a newly published report. "Automatically" is unsupported until the scheduled workflow has run |
 | Compatible with Bloomberg or Preqin | Unsupported. Say "source-agnostic; a new source is one class" |
 | Manager due diligence | Unsupported. It is quantitative screening |

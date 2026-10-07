@@ -11,7 +11,7 @@ from collections import Counter
 from datetime import date, datetime, timezone
 from pathlib import Path
 
-from . import __version__, backtest, collateral, diff, quality, recommend, rollforward, sizing, trackrecord
+from . import __version__, backtest, collateral, diff, quality, realisations, recommend, rollforward, sizing, trackrecord
 from .schema import SEVERITY_ORDER, Finding, Snapshot
 from .sources import PriceBook, RateBook, holdings_source, price_source, rate_source, track_source
 
@@ -75,6 +75,9 @@ def analyse(cfg: dict, data_dir: Path, *, as_of: date | None = None, compare_to:
         findings += fs
     findings += quality.check_history(history, veh.get("company_aliases") or {}, veh.get("sector_aliases") or {})
     findings += quality.check_track_record(tr, **track_cfg["quality"])
+    cal_cfg = fac["runoff"].get("exit_pace_calibration") or {}
+    cash_rows, cash_findings = realisations.cash_series(history, float(cal_cfg.get("tie_tolerance", 1.0)))
+    findings += cash_findings
     recent = history[-12:]
     unreconciled_recent = sum(1 for s in recent if any(f.code in ("Q01", "Q02") for f in per_snapshot[s.as_of]))
     unreconciled_all = [s.as_of.isoformat() for s in history if any(f.code == "Q01" for f in per_snapshot[s.as_of])]
@@ -113,6 +116,14 @@ def analyse(cfg: dict, data_dir: Path, *, as_of: date | None = None, compare_to:
         findings.append(Finding("warn", "M05", "market data", f"No {series} rate available; interest is computed on the margin alone"))
     ro_cfg = fac["runoff"]
     all_in = base_rate + float(ro_cfg["margin_pct"])
+    former_pace = float(ro_cfg["exit_pace_per_year"])
+    if cal_cfg.get("enabled", False):
+        calib = realisations.calibrate(cash_rows, cal_cfg, former_pace)
+    else:
+        calib = {"source": "assumed", "rule": "", "windows": [], "base_pace": former_pace, "base_window": None, "end": None,
+                 "fallback_pace": former_pace, "reason": "calibration is switched off in configs/facility.yaml"}
+    base_pace = float(calib["base_pace"])
+    calib["lag_months"] = ((cur.as_of.year - calib["end"].year) * 12 + cur.as_of.month - calib["end"].month) if calib.get("end") else None
 
     # 6. sizing, stresses, repayment
     grid = sizing.size_grid(pool, cov, fac["sizing"])
@@ -131,6 +142,16 @@ def analyse(cfg: dict, data_dir: Path, *, as_of: date | None = None, compare_to:
     full_elig = sizing.eligible_nav(sizing.to_assets(pool, rf_full["values"]), cov)[0] if rf_full else None
     full_ltv: dict[float, float | None] = {}
 
+    def repayment_cases(loan: float, pace: float) -> dict:
+        return {
+            "base": sizing.runoff(grid["eligible_nav"], loan, pace_per_year=pace, **ro_kw),
+            "drought": sizing.runoff(grid["eligible_nav"], loan, pace_per_year=pace, drought_multiplier=float(dr["pace_multiplier"]),
+                                     drought_quarters=int(dr["quarters"]), **ro_kw),
+            "drought_markdown": sizing.runoff(grid["eligible_nav"], loan, pace_per_year=pace, drought_multiplier=float(dr["pace_multiplier"]),
+                                              drought_quarters=int(dr["quarters"]), markdown=float(dr["markdown"]), **ro_kw),
+        }
+    runoffs_former: dict[float, dict] = {}
+
     def pool_change(run: dict | None) -> float | None:
         """Change in the eligible holdings' summed value, before concentration limits."""
         if not run or not run.get("ran"):
@@ -141,17 +162,13 @@ def analyse(cfg: dict, data_dir: Path, *, as_of: date | None = None, compare_to:
     for c in grid["candidates"]:
         l0, loan = c["opening_ltv"], c["loan"]
         scen_rows[l0] = sizing.run_scenarios(pool, cov, loan, resolved)
-        pace = float(ro_cfg["exit_pace_per_year"])
         runoffs[l0] = {
-            "base": sizing.runoff(grid["eligible_nav"], loan, pace_per_year=pace, **ro_kw),
-            "drought": sizing.runoff(grid["eligible_nav"], loan, pace_per_year=pace, drought_multiplier=float(dr["pace_multiplier"]),
-                                     drought_quarters=int(dr["quarters"]), **ro_kw),
-            "drought_markdown": sizing.runoff(grid["eligible_nav"], loan, pace_per_year=pace, drought_multiplier=float(dr["pace_multiplier"]),
-                                              drought_quarters=int(dr["quarters"]), markdown=float(dr["markdown"]), **ro_kw),
+            **repayment_cases(loan, base_pace),
             "breakeven_pace": sizing.breakeven_pace(grid["eligible_nav"], loan, **ro_kw),
             "pace_grid": [{"pace": p, **{k: v for k, v in sizing.runoff(grid["eligible_nav"], loan, pace_per_year=p, **ro_kw).items() if k != "rows"}}
                           for p in ro_cfg["pace_grid"]],
         }
+        runoffs_former[l0] = {**repayment_cases(loan, former_pace), "breakeven_pace": runoffs[l0]["breakeven_pace"]}
         rolled_ltv[l0] = (loan / est_elig) if est_elig else None
         full_ltv[l0] = (loan / full_elig) if full_elig else None
 
@@ -159,6 +176,10 @@ def analyse(cfg: dict, data_dir: Path, *, as_of: date | None = None, compare_to:
     cand_tests = recommend.assess_candidates(grid["candidates"], scen_rows, grid["single_name"], runoffs, rolled_ltv, cov, fac["sizing"])
     passing = [c for c in cand_tests if c["passed"]]
     proposed = max(passing, key=lambda c: c["opening_ltv"]) if passing else None
+    # the same rules on the former assumed pace, kept beside the base case as a labelled sensitivity
+    former_tests = recommend.assess_candidates(grid["candidates"], scen_rows, grid["single_name"], runoffs_former, rolled_ltv, cov, fac["sizing"])
+    former_passing = [c for c in former_tests if c["passed"]]
+    former_proposed = max(former_passing, key=lambda c: c["opening_ltv"]) if former_passing else None
     counts = Counter(f.severity for f in findings)
     stale = {"stale_share": quality.stale_share(cur, policy["stale_days"]), "age_at_report": quality.weighted_mark_age(cur),
              "age_today": rf.get("weighted_private_mark_age_days") if rf["ran"] else None}
@@ -166,8 +187,8 @@ def analyse(cfg: dict, data_dir: Path, *, as_of: date | None = None, compare_to:
     flags = recommend.build_flags(
         pool=pool_sum, overlay=overlay_sum, quality_counts={"error": counts.get("error", 0), "unreconciled_recent": unreconciled_recent},
         stale=stale, snapshot_meta=meta, proposed=proposed,
-        runoff_info=({"breakeven_pace": runoffs[proposed["opening_ltv"]]["breakeven_pace"], "assumed_pace": float(ro_cfg["exit_pace_per_year"])}
-                     if proposed else None),
+        runoff_info=({"breakeven_pace": runoffs[proposed["opening_ltv"]]["breakeven_pace"], "base_pace": base_pace} if proposed else None),
+        calibration=calib,
         policy=policy, cov=cov, limits_bite=grid["excluded_by_limits"], market_ran=rf["ran"])
     verdict, proposed = recommend.decide(cand_tests, flags)
 
@@ -187,6 +208,8 @@ def analyse(cfg: dict, data_dir: Path, *, as_of: date | None = None, compare_to:
         "runoffs": runoffs, "rolled_ltv": rolled_ltv, "full_pass_through_ltv": full_ltv, "full_pass_through_eligible_nav": full_elig,
         "eligible_pool_change_estimated": pool_change(rf), "eligible_pool_change_full_pass_through": pool_change(rf_full), "candidate_tests": cand_tests, "flags": flags, "verdict": verdict,
         "proposed": proposed, "stale": stale, "changes": changes, "have_prices": have_prices,
+        "cash_rows": cash_rows, "calibration": calib, "base_pace": base_pace, "former_pace": former_pace,
+        "runoffs_former": runoffs_former, "former_tests": former_tests, "former_proposed": former_proposed,
     }
 
 

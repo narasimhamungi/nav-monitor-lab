@@ -37,7 +37,15 @@ scenarios:                          # sector write-downs applied to eligible hol
 runoff:                             # how the loan is repaid from exits over its life
   tenor_years: 4
   margin_pct: 6.5                   # ASSUMPTION: margin over the base rate, in percentage points
-  exit_pace_per_year: 0.15          # ASSUMPTION: share of collateral value realised each year
+  exit_pace_per_year: 0.15          # ASSUMPTION. Not the base case any more (decision D-19): used only if the pace cannot be
+                                    # calibrated, and always shown beside the calibrated result as a labelled sensitivity
+  exit_pace_calibration:            # base case = cash received from realisations / average portfolio fair value, a year
+    enabled: true
+    windows_months: [12, 24, all]   # trailing windows ending at the latest report with a known running total of cash received
+    base_rule: lowest               # lowest | highest | median | one window ("12", "24", "all"). Lowest: a lender's base case
+                                    # should not rest on the best stretch of exits. Fixed before the figures were computed
+    min_months: 12                  # a shorter window is not used
+    tie_tolerance: 1.0              # the publisher rounds to the nearest $1m; larger differences between its own figures are reported
   sweep_share_below_trigger: 0.5    # ASSUMPTION: share of exit proceeds applied to the loan while LTV is under the sweep level
   sweep_share_above_trigger: 1.0
   nav_growth_per_year: 0.0
@@ -53,6 +61,8 @@ policy:                             # the rules behind every flag and the verdic
   max_weak_sponsor_share: 0.15
   max_vehicle_investment_level: 110 # percent; above this the vehicle itself is drawing on borrowings
   max_unreconciled_snapshots: 0     # of the latest 12
+  max_breakeven_share_of_base_pace: 0.80   # the loan must repay at 80% of the base exit pace (was a fixed value in the code; unchanged)
+  max_calibration_lag_months: 3     # months between the report date and the last report that states cash received
   mover_threshold: 0.15             # month-on-month fair value move that is reported in the change log
 
 watchlist:                          # always shown in the change log, whatever they did

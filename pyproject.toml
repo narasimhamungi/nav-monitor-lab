@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nav-monitor-lab"
-version = "0.1.0"
+version = "0.2.0"
 description = "Underwrite and monitor an illustrative NAV loan on a real, published private equity portfolio: collateral, sponsor track record, stress, market roll-forward, backtest, memo"
 requires-python = ">=3.10"
 dependencies = [

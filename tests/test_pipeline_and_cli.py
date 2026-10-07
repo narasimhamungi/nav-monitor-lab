@@ -37,7 +37,8 @@ def test_cli_run_writes_every_output(run):
     names = {p.name for p in run.iterdir()}
     assert {"memo.md", "collateral.csv", "sizing_candidates.csv", "stress_scenarios.csv", "runoff.csv", "roll_forward.csv", "backtest_periods.csv",
             "covenant_replay_summary.csv", "changes.csv", "findings.csv", "sponsor_overlay.csv", "track_record_families.csv",
-            "recommendation.json", "run_manifest.json", "nav_monitor.xlsx"} <= names
+            "recommendation.json", "run_manifest.json", "nav_monitor.xlsx", "realisations.csv", "exit_pace_calibration.csv",
+            "runoff_sensitivity.csv"} <= names
     man = json.loads((run / "run_manifest.json").read_text())
     assert man["snapshot_as_of"] == "2026-08-31" and man["prices_to"] == "2026-10-06" and len(man["inputs_sha256"]) == 5
     assert man["inputs_sha256"] == {k: v["sha256"] for k, v in json.loads((SAMPLE / "manifest.json").read_text())["files"].items()}
@@ -80,7 +81,8 @@ def test_every_headline_figure_in_the_memo_is_in_a_named_output_file(run):
 
 def test_real_run_result(cfg):
     r = pipeline.analyse(cfg, SAMPLE)
-    assert r["verdict"] == "Proceed with conditions" and r["proposed"]["opening_ltv"] == 0.20
+    # 15% since v0.2.0: the exit pace is calibrated (11.7%), not assumed (15%), and the 20% loan no longer repays from exits
+    assert r["verdict"] == "Proceed with conditions" and r["proposed"]["opening_ltv"] == 0.15
     assert {f.code for f in r["flags"] if f.severity == "condition"} == {"P13", "P15", "P18"}
     assert r["finding_counts"].get("error", 0) == 0 and r["unreconciled_all"] == ["2023-03-31", "2023-04-30", "2023-08-31"]
     assert r["base_rate"] == 3.89 and r["all_in_rate"] == pytest.approx(10.39) and round(r["discount"]["discount"], 3) == 0.276
