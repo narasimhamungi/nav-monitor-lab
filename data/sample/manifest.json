@@ -1,0 +1,65 @@
+{
+ "captured_on": "2026-10-07",
+ "method": "Read from the publishers' own pages in a browser on the capture date and written to these files by script, without retyping. See docs/sources.md.",
+ "files": {
+  "holdings_nbpe.csv": {
+   "sha256": "53ed50de1891989065fe5dfc7b019db00d6bdca58dce179d71ab5191dce960b0",
+   "bytes": 123766
+  },
+  "prices.csv": {
+   "sha256": "39fdd84de314507fff0702762550c792be52c4be0508dd919e0f15e3d30861d6",
+   "bytes": 28497
+  },
+  "rates.csv": {
+   "sha256": "1fb7d245afe801537fb1ac82bfc1e3f52076047934ae3832adf1da657e8b92a1",
+   "bytes": 3359
+  },
+  "snapshots_nbpe.csv": {
+   "sha256": "966386a4673cd4ab93908f50d852690a3cd9fca6e893a7e9e9048bfdfa86d6fc",
+   "bytes": 12848
+  },
+  "track_record_calpers.csv": {
+   "sha256": "0545fc773bbf3722049f3bea163404b6a55e872894f9d8111cb729c46bd1fc5d",
+   "bytes": 58380
+  }
+ },
+ "sources": {
+  "holdings_nbpe.csv / snapshots_nbpe.csv": {
+   "publisher": "NB Private Equity Partners Limited, monthly NAV announcements",
+   "archive": "FCA National Storage Mechanism, https://data.fca.org.uk (each snapshot's own URL is in snapshots_nbpe.csv)",
+   "coverage": "55 monthly reports, 2022-02-28 to 2026-08-31, top-30 holdings table each",
+   "tie_out": "52 of 55 tables sum to the publisher's own total row within 0.5; 2023-03-31, 2023-04-30 and 2023-08-31 do not (reported as findings Q01/Q02, not corrected)"
+  },
+  "track_record_calpers.csv": {
+   "publisher": "CalPERS, Private Equity Program Fund Performance Review",
+   "url": "https://www.calpers.ca.gov/investments/about-investment-office/investment-organization/pep-fund-performance-print",
+   "as_of": "2026-03-31",
+   "tie_out": {
+    "rows": 485,
+    "sum_vintage": 979490,
+    "sum_committed": 162963141157,
+    "sum_cash_in": 130145793533,
+    "sum_cash_out": 78560475497,
+    "sum_total_value": 198163046678,
+    "rows_with_footnote": 261,
+    "note": "column sums computed on the live page at capture; tests/test_sample_data.py checks the file against them"
+   }
+  },
+  "prices.csv": {
+   "publisher": "Yahoo Finance chart endpoint (unofficial, unlicensed)",
+   "coverage": "month-end closes from 2021-08-31 plus the last 25 trading days to 2026-10-06, for XLK XLF XLI XLY XLV XLC IYT SPY NBPE.L",
+   "note": "a thinned sample for offline runs; `navmon refresh` fetches full daily history"
+  },
+  "rates.csv": {
+   "publisher": "FRED, Federal Reserve Bank of St. Louis: SOFR and IUDSOIA (SONIA)",
+   "coverage": "month-end values from 2021-08-31 plus the last 10 observations"
+  }
+ },
+ "corrections": [
+  {
+   "date": "2026-10-07",
+   "file": "holdings_nbpe.csv",
+   "change": "2023-09-30 row 'Business Services Company4' -> 'Business Services Company'. The '4' was a superscript footnote mark that the browser capture read as part of the name. Found by `navmon verify-live` on its first live run; the live parser had it right."
+  }
+ ]
+}

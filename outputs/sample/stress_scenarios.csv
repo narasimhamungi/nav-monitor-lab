@@ -1,0 +1,21 @@
+opening_ltv,scenario,kind,pool_fall,eligible_nav,ltv,status,cure_to_target,shocks
+0.1,Broad market -25%,configured,0.25,692.208375,0.133333,ok,0.0,every sector -25%
+0.1,Technology de-rating,configured,0.141864,776.7021,0.118829,ok,0.0,Technology / IT -40%; Communications / Media -30%; all other sectors -10%
+0.1,Consumer and industrial recession,configured,0.240998,717.835,0.128573,ok,0.0,Consumer -35%; Industrials -30%; Transportation -30%; Business Services -25%; all other sectors -15%
+0.1,Financials shock,configured,0.149003,774.7923,0.119122,ok,0.0,Financial Services -40%; all other sectors -10%
+0.1,Worst listed sector fall in the price history (2021-12-31 to 2022-12-31),market history,0.245143,697.593215,0.132304,ok,0.0,Communications / Media -38%; Consumer -36%; Technology / IT -31%; Transportation -28%; Financial Services -21%; Business Services -21%; Industrials -21%; Healthcare -13%
+0.15,Broad market -25%,configured,0.25,692.208375,0.2,ok,0.0,every sector -25%
+0.15,Technology de-rating,configured,0.141864,776.7021,0.178243,ok,0.0,Technology / IT -40%; Communications / Media -30%; all other sectors -10%
+0.15,Consumer and industrial recession,configured,0.240998,717.835,0.19286,ok,0.0,Consumer -35%; Industrials -30%; Transportation -30%; Business Services -25%; all other sectors -15%
+0.15,Financials shock,configured,0.149003,774.7923,0.178682,ok,0.0,Financial Services -40%; all other sectors -10%
+0.15,Worst listed sector fall in the price history (2021-12-31 to 2022-12-31),market history,0.245143,697.593215,0.198456,ok,0.0,Communications / Media -38%; Consumer -36%; Technology / IT -31%; Transportation -28%; Financial Services -21%; Business Services -21%; Industrials -21%; Healthcare -13%
+0.2,Broad market -25%,configured,0.25,692.208375,0.266667,ok,0.0,every sector -25%
+0.2,Technology de-rating,configured,0.141864,776.7021,0.237657,ok,0.0,Technology / IT -40%; Communications / Media -30%; all other sectors -10%
+0.2,Consumer and industrial recession,configured,0.240998,717.835,0.257147,ok,0.0,Consumer -35%; Industrials -30%; Transportation -30%; Business Services -25%; all other sectors -15%
+0.2,Financials shock,configured,0.149003,774.7923,0.238243,ok,0.0,Financial Services -40%; all other sectors -10%
+0.2,Worst listed sector fall in the price history (2021-12-31 to 2022-12-31),market history,0.245143,697.593215,0.264608,ok,0.0,Communications / Media -38%; Consumer -36%; Technology / IT -31%; Transportation -28%; Financial Services -21%; Business Services -21%; Industrials -21%; Healthcare -13%
+0.25,Broad market -25%,configured,0.25,692.208375,0.333333,cash sweep,0.0,every sector -25%
+0.25,Technology de-rating,configured,0.141864,776.7021,0.297072,ok,0.0,Technology / IT -40%; Communications / Media -30%; all other sectors -10%
+0.25,Consumer and industrial recession,configured,0.240998,717.835,0.321433,cash sweep,0.0,Consumer -35%; Industrials -30%; Transportation -30%; Business Services -25%; all other sectors -15%
+0.25,Financials shock,configured,0.149003,774.7923,0.297804,ok,0.0,Financial Services -40%; all other sectors -10%
+0.25,Worst listed sector fall in the price history (2021-12-31 to 2022-12-31),market history,0.245143,697.593215,0.33076,cash sweep,0.0,Communications / Media -38%; Consumer -36%; Technology / IT -31%; Transportation -28%; Financial Services -21%; Business Services -21%; Industrials -21%; Healthcare -13%

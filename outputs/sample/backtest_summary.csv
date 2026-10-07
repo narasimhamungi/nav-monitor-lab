@@ -1,0 +1,15 @@
+item,value
+n_periods,18
+n_observations,433
+beta_in_sample,0.127156
+correlation_name_level,0.086566
+correlation_period_level,0.59259
+mae_no_adjustment,0.016647
+mae_full_pass_through,0.05767
+mae_fitted_in_sample,0.01314
+n_walk_forward,14
+mae_walk_forward,0.014836
+mae_no_adjustment_same_periods,0.017455
+mae_full_pass_through_same_periods,0.0556
+beta_latest_walk_forward,0.11469
+verdict,"the estimate beat carrying stale marks on 2 of 3 sets of reporting months, so it is not a reliable improvement at this horizon"

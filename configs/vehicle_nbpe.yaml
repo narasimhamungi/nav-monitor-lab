@@ -1,0 +1,46 @@
+# One file per vehicle. To analyse a different listed vehicle, copy this file and change the values.
+vehicle: NBPE
+name: NB Private Equity Partners Limited
+currency: USD
+unit: millions
+
+# Where `navmon refresh` gets holdings from (the live plug).
+live:
+  plug: fca_nsm                     # FCA National Storage Mechanism: the official UK regulatory archive
+  lei: 213800UJH93NH8IOFQ77         # NBPE's legal entity identifier, as printed in its announcements
+  headline_include: "NAV|Net Asset Value"
+  headline_exclude: "Kepler|Transaction in Own"
+  since: 2022-01-01
+  columns:                          # acceptable spellings of each column heading in the holdings table
+    company: ["Company Name", "Company", "Investment"]
+    vintage: ["Vintage", "Vintage Year"]
+    sponsor: ["Lead Sponsor", "Sponsor"]
+    sector: ["Sector", "Industry"]
+    fair_value: ["Fair Value ($m)", "Fair Value($m)", "Fair Value"]
+    pct: ["% of FV", "% of Fair Value", "% of Portfolio"]
+
+# Where `navmon run` reads holdings from (the file plug), relative to the data directory.
+files:
+  plug: file
+  holdings_csv: holdings_nbpe.csv
+  snapshots_csv: snapshots_nbpe.csv
+
+# The vehicle's own share listing, used for the market's discount to reported NAV.
+listed_share:
+  symbol: NBPE.L                    # quoted in pence
+  price_divisor: 100                # pence -> pounds
+  nav_field: nav_per_share_gbp
+
+# The publisher renames companies and relabels sectors over time. These maps make month-on-month
+# comparison possible. Each entry was read off the published tables; "inferred" ones are flagged.
+company_aliases:
+  "Advisor Group": "Osaic"                              # renamed by the publisher from the Aug 2023 report
+  "Material Handling Systems": "Fortna"                 # renamed by the publisher from the Aug 2023 report
+  "Monroe Engineering": "OneMonroe"
+  "Monroe Engingeering": "OneMonroe"                    # publisher's typo, Jun-Jul 2022 reports
+  "OneMonroe (fka Monroe Engineering)": "OneMonroe"
+  "Branded Toy Company": "Melissa & Doug"               # INFERRED: same fair value ($21.2m) the month the name changed
+  "Agiliti (NYSE: AGTI)": "Agiliti"                     # taken private; ticker dropped from the May 2024 report
+sector_aliases:
+  "Consumer / E-commerce": "Consumer"
+  "Industrials / Industrial Technology": "Industrials"

@@ -1,0 +1,4 @@
+chain_ends,periods,observations,beta_in_sample,mae_no_adjustment,mae_full_pass_through,walk_forward_periods,mae_walk_forward,mae_no_adjustment_same_periods,mae_full_pass_through_same_periods,estimate_beats_stale_marks,correlation_period_level
+2026-08-31,18,433,0.127156,0.016647,0.05767,14,0.014836,0.017455,0.0556,True,0.59259
+2026-07-31,17,415,0.093514,0.017671,0.052458,13,0.017094,0.017524,0.044398,True,0.221677
+2026-06-30,17,410,0.106329,0.014859,0.060572,13,0.016627,0.0164,0.05348,False,0.409223

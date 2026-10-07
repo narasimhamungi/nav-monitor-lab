@@ -1,0 +1,76 @@
+from,to,company,reason
+2022-02-28,2022-05-31,Agiliti,quoted holding (marked to market already)
+2022-02-28,2022-05-31,AutoStore,quoted holding (marked to market already)
+2022-02-28,2022-05-31,Business Services Company,undisclosed name cannot be matched across reports
+2022-02-28,2022-05-31,GFL,quoted holding (marked to market already)
+2022-02-28,2022-05-31,Melissa & Doug,undisclosed name cannot be matched across reports
+2022-02-28,2022-05-31,Petsmart / Chewy,quoted holding (marked to market already)
+2022-05-31,2022-08-31,Agiliti,quoted holding (marked to market already)
+2022-05-31,2022-08-31,AutoStore,quoted holding (marked to market already)
+2022-05-31,2022-08-31,Business Services Company,undisclosed name cannot be matched across reports
+2022-05-31,2022-08-31,GFL,quoted holding (marked to market already)
+2022-05-31,2022-08-31,Melissa & Doug,undisclosed name cannot be matched across reports
+2022-05-31,2022-08-31,Petsmart / Chewy,quoted holding (marked to market already)
+2022-08-31,2022-11-30,Agiliti,quoted holding (marked to market already)
+2022-08-31,2022-11-30,AutoStore,quoted holding (marked to market already)
+2022-08-31,2022-11-30,Business Services Company,undisclosed name cannot be matched across reports
+2022-08-31,2022-11-30,GFL,quoted holding (marked to market already)
+2022-08-31,2022-11-30,Melissa & Doug,undisclosed name cannot be matched across reports
+2022-08-31,2022-11-30,Petsmart / Chewy,quoted holding (marked to market already)
+2022-11-30,2023-02-28,Agiliti,quoted holding (marked to market already)
+2022-11-30,2023-02-28,AutoStore,quoted holding (marked to market already)
+2022-11-30,2023-02-28,Business Services Company,undisclosed name cannot be matched across reports
+2022-11-30,2023-02-28,GFL,quoted holding (marked to market already)
+2022-11-30,2023-02-28,Melissa & Doug,undisclosed name cannot be matched across reports
+2022-11-30,2023-02-28,Petsmart / Chewy,quoted holding (marked to market already)
+2023-02-28,2023-05-31,Agiliti,quoted holding (marked to market already)
+2023-02-28,2023-05-31,AutoStore,quoted holding (marked to market already)
+2023-02-28,2023-05-31,Business Services Company,undisclosed name cannot be matched across reports
+2023-02-28,2023-05-31,GFL,quoted holding (marked to market already)
+2023-02-28,2023-05-31,Melissa & Doug,undisclosed name cannot be matched across reports
+2023-02-28,2023-05-31,Solenis,move of +64% exceeds the size limit (follow-on or part-exit likely)
+2023-05-31,2023-08-31,Agiliti,quoted holding (marked to market already)
+2023-05-31,2023-08-31,AutoStore,quoted holding (marked to market already)
+2023-05-31,2023-08-31,Business Services Company,undisclosed name cannot be matched across reports
+2023-05-31,2023-08-31,GFL,quoted holding (marked to market already)
+2023-05-31,2023-08-31,Melissa & Doug,undisclosed name cannot be matched across reports
+2023-08-31,2023-11-30,Agiliti,quoted holding (marked to market already)
+2023-08-31,2023-11-30,AutoStore,quoted holding (marked to market already)
+2023-08-31,2023-11-30,Business Services Company,undisclosed name cannot be matched across reports
+2023-08-31,2023-11-30,GFL,quoted holding (marked to market already)
+2023-08-31,2023-11-30,Melissa & Doug,undisclosed name cannot be matched across reports
+2023-11-30,2024-02-29,Agiliti,quoted holding (marked to market already)
+2023-11-30,2024-02-29,AutoStore,quoted holding (marked to market already)
+2023-11-30,2024-02-29,Business Services Company,undisclosed name cannot be matched across reports
+2023-11-30,2024-02-29,GFL,quoted holding (marked to market already)
+2023-11-30,2024-02-29,USI,move of -70% exceeds the size limit (follow-on or part-exit likely)
+2024-02-29,2024-05-31,Agiliti,quoted holding (marked to market already)
+2024-02-29,2024-05-31,AutoStore,quoted holding (marked to market already)
+2024-02-29,2024-05-31,Business Services Company,undisclosed name cannot be matched across reports
+2024-02-29,2024-05-31,GFL,quoted holding (marked to market already)
+2024-05-31,2024-08-31,Agiliti,quoted holding (marked to market already)
+2024-05-31,2024-08-31,AutoStore,quoted holding (marked to market already)
+2024-05-31,2024-08-31,Business Services Company,undisclosed name cannot be matched across reports
+2024-05-31,2024-08-31,GFL,quoted holding (marked to market already)
+2024-08-31,2024-11-30,AutoStore,quoted holding (marked to market already)
+2024-08-31,2024-11-30,Business Services Company,undisclosed name cannot be matched across reports
+2024-08-31,2024-11-30,GFL,quoted holding (marked to market already)
+2024-11-30,2025-02-28,AutoStore,quoted holding (marked to market already)
+2024-11-30,2025-02-28,Business Services Company,undisclosed name cannot be matched across reports
+2024-11-30,2025-02-28,GFL,quoted holding (marked to market already)
+2025-02-28,2025-05-31,Business Services Company,undisclosed name cannot be matched across reports
+2025-02-28,2025-05-31,GFL,quoted holding (marked to market already)
+2025-05-31,2025-08-31,Business Services Company,undisclosed name cannot be matched across reports
+2025-05-31,2025-08-31,GFL,quoted holding (marked to market already)
+2025-08-31,2025-11-30,AutoStore,quoted holding (marked to market already)
+2025-08-31,2025-11-30,Business Services Company,undisclosed name cannot be matched across reports
+2025-08-31,2025-11-30,GFL,quoted holding (marked to market already)
+2025-11-30,2026-02-28,AutoStore,quoted holding (marked to market already)
+2025-11-30,2026-02-28,Business Services Company,undisclosed name cannot be matched across reports
+2025-11-30,2026-02-28,GFL,quoted holding (marked to market already)
+2026-02-28,2026-05-31,AutoStore,quoted holding (marked to market already)
+2026-02-28,2026-05-31,Business Services Company,undisclosed name cannot be matched across reports
+2026-02-28,2026-05-31,GFL,quoted holding (marked to market already)
+2026-05-31,2026-08-31,AutoStore,quoted holding (marked to market already)
+2026-05-31,2026-08-31,Business Services Company,undisclosed name cannot be matched across reports
+2026-05-31,2026-08-31,GFL,quoted holding (marked to market already)

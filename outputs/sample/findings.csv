@@ -1,0 +1,38 @@
+severity,code,scope,message,observed,threshold
+warn,Q01,NBPE 2023-03-31,Holdings do not sum to the publisher's own total row,rows 939.9 vs stated 923.1 (difference +16.8),within 0.55
+warn,Q01,NBPE 2023-04-30,Holdings do not sum to the publisher's own total row,rows 957.4 vs stated 939.6 (difference +17.8),within 0.55
+warn,Q01,NBPE 2023-08-31,Holdings do not sum to the publisher's own total row,rows 962.6 vs stated 943.6 (difference +19.0),within 0.55
+warn,Q02,NBPE 2023-03-31,Holdings' percentages do not sum to the stated share of the portfolio,rows 67.4% vs stated 66.1%,within 0.6%
+warn,Q02,NBPE 2023-04-30,Holdings' percentages do not sum to the stated share of the portfolio,rows 68.4% vs stated 67.1%,within 0.6%
+warn,Q02,NBPE 2023-08-31,Holdings' percentages do not sum to the stated share of the portfolio,rows 68.3% vs stated 66.9%,within 0.6%
+warn,T04,Forbion Growth Opportunities Fund II Cooperatief U.A.,Extreme net IRR; typical of a very young fund and not a track record,"700.9%, vintage 2023",|IRR| >= 100%
+warn,T04,"JSC Capital Partners, L.P.",Extreme net IRR; typical of a very young fund and not a track record,"101.3%, vintage 2024",|IRR| >= 100%
+warn,T04,"LS Investments C, L.P.",Extreme net IRR; typical of a very young fund and not a track record,"137.7%, vintage 2024",|IRR| >= 100%
+warn,T04,"MBK Partners Fund VI, L.P.",Extreme net IRR; typical of a very young fund and not a track record,"150.7%, vintage 2024",|IRR| >= 100%
+warn,T04,"The Veritas Capital Fund IX, L.P.",Extreme net IRR; typical of a very young fund and not a track record,"-100.0%, vintage 2024",|IRR| >= 100%
+warn,T04,"Thrive Capital Partners IX Growth, L.P.",Extreme net IRR; typical of a very young fund and not a track record,"106.7%, vintage 2024",|IRR| >= 100%
+warn,T04,"Thrive Capital Partners Opportunity Fund, L.P.",Extreme net IRR; typical of a very young fund and not a track record,"104.5%, vintage 2024",|IRR| >= 100%
+warn,T04,"Triangle Investment Opportunities II, L.P.",Extreme net IRR; typical of a very young fund and not a track record,"135.3%, vintage 2024",|IRR| >= 100%
+warn,T06,"NM Pacific Parallel Series, L.P. (Series B)",No cash paid in; multiples are undefined,"cash in 0, value 5,165,367",
+warn,T07,Blackstone Capital Partners V L.P.,"Cash paid in is a multiple of the stated commitment; the commitment figure is not comparable (recycling, or a partial figure)","cash in 794,822,847 vs committed 38,400,000 (20.7x)",>= 3.0x
+warn,T07,CVC Capital Partners VIII (A) L.P.,"Cash paid in is a multiple of the stated commitment; the commitment figure is not comparable (recycling, or a partial figure)","cash in 766,911,601 vs committed 99,010,624 (7.7x)",>= 3.0x
+warn,T07,"Green Equity Investors VIII, L.P.","Cash paid in is a multiple of the stated commitment; the commitment figure is not comparable (recycling, or a partial figure)","cash in 571,429,840 vs committed 119,970,601 (4.8x)",>= 3.0x
+info,Q04,NBPE 2026-05-31,The same name appears more than once in the table,Undisclosed Technology Company*,
+info,Q10,Engineering,The publisher has shown different vintage years for the same company,2016 (first seen 2022-02-28); 2020 (first seen 2022-10-31),
+info,Q10,Excelitas,The publisher has shown different vintage years for the same company,2017 (first seen 2022-02-28); 2022 (first seen 2024-02-29),
+info,Q10,GFL,The publisher has shown different vintage years for the same company,2018 (first seen 2022-02-28); 2019 (first seen 2022-10-31),
+info,Q11,Excelitas,The publisher has shown different sectors for the same company,Technology / IT (first seen 2022-02-28); Industrials (first seen 2022-10-31),
+info,Q12,Engineering,The publisher has shown different lead-sponsor labels for the same company,NB Renaissance / Bain Capital (first seen 2022-02-28); Renaissance Partners / Bain Capital (first seen 2025-07-31),
+info,Q12,Marquee Brands,The publisher has shown different lead-sponsor labels for the same company,Neuberger Berman (first seen 2022-02-28); Neuberger (first seen 2026-05-31),
+info,Q12,Ryan,The publisher has shown different lead-sponsor labels for the same company,Ares Management (first seen 2026-03-31); Ares / Onex (first seen 2026-04-30),
+info,T02,CalPERS 2026-03-31,Rows carrying the 'not meaningful' footnote marker; their IRR and multiple are interim and should not be ranked,"261 rows, vintages 2022-2026",
+info,T03,CalPERS 2026-03-31,The publisher marks these rows 'not meaningful' yet still prints an IRR for them,178 of 261 marked rows,
+info,T08,Forbion BioEconomy Fund I Co?peratief U.A.,Fund name contains a character the publisher's page failed to encode,,
+info,T08,Forbion Growth Opportunities Fund III Co?peratief U.A.,Fund name contains a character the publisher's page failed to encode,,
+info,T08,Forbion Ventures Fund VII Co?peratief U.A.,Fund name contains a character the publisher's page failed to encode,,
+info,T08,Pophouse Investment Platform SCA SICAV-RAIF ? Pophouse Co-Investment Fund II,Fund name contains a character the publisher's page failed to encode,,
+info,T09,CalPERS 2026-03-31,"The table lists active partnerships only; exited funds are absent, so results are biased towards managers the investor still holds","485 funds, 83 with IRR 'N/M'",
+info,T11,Permira Growth Opportunities I L.P. 1,Fund name ends in a digit that looks like a footnote mark typed into the name,,
+info,T11,Permira IV L.P.2,Fund name ends in a digit that looks like a footnote mark typed into the name,,
+info,T11,Permira VI L.P. 1,Fund name ends in a digit that looks like a footnote mark typed into the name,,
+info,T11,Permira VII L.P.1,Fund name ends in a digit that looks like a footnote mark typed into the name,,

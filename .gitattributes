@@ -1,0 +1,4 @@
+# Line endings are fixed so that file hashes (data/sample/manifest.json) and the committed sample
+# outputs are the same on Windows, macOS and Linux.
+* text=auto eol=lf
+*.xlsx binary

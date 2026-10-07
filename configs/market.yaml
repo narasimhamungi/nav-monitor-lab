@@ -1,0 +1,36 @@
+# Market data: which plug, which symbols, and how listed markets are mapped onto private holdings.
+prices:
+  live: {plug: yahoo_chart}         # alternatives: tiingo (needs TIINGO_API_KEY). A professional feed is a new plug.
+  files: {plug: file, csv: prices.csv}
+  history_start: 2021-08-01
+rates:
+  live: {plug: fred_csv}
+  files: {plug: file, csv: rates.csv}
+  base_rate_series: SOFR            # SOFR for a USD loan; IUDSOIA is SONIA for a GBP one
+  also_fetch: [IUDSOIA]
+
+# Listed proxy for each sector label used in the holdings table (after sector_aliases).
+# Sector ETFs stand in for sector indices because index levels are licensed and ETF prices are not.
+sector_proxy:
+  "Technology / IT": XLK
+  "Financial Services": XLF
+  "Industrials": XLI
+  "Business Services": XLI          # ASSUMPTION: no listed business-services sector fund; industrials is the nearest
+  "Consumer": XLY
+  "Healthcare": XLV
+  "Communications / Media": XLC
+  "Transportation": IYT
+default_proxy: SPY
+
+roll_forward:
+  pass_through: 0.25                # share of the listed sector move assumed to reach a private mark.
+                                    # ASSUMPTION until the backtest has run; `use_backtest_beta` then replaces it.
+  use_backtest_beta: true
+  listed_pass_through: 1.0          # quoted holdings move one-for-one with their proxy from the report date
+  max_price_gap_days: 10
+
+backtest:
+  horizon_months: 3                 # compare snapshots this far apart (one valuation cycle)
+  min_periods_to_fit: 4
+  max_abs_move: 0.5                 # name-level moves beyond +/-50% are treated as follow-ons or part-exits and left out
+  replay_opening_ltvs: [0.15, 0.20, 0.25]

@@ -1,0 +1,31 @@
+company,key,sponsor,eligible,fair_value,families,rating,detail,family_funds,pooled_mature_dpi,median_dpi_rank,mapping_basis
+Action,Action,3i,True,78.4,,no record,sponsor has no funds in the investor's table,0,,,
+Solenis,Solenis,Platinum Equity,True,72.6,,no record,sponsor has no funds in the investor's table,0,,,
+OneMonroe,OneMonroe,AEA Investors,True,66.1,,no record,sponsor has no funds in the investor's table,0,,,
+FDH Aero,FDH Aero,Audax Group,True,56.1,,no record,sponsor has no funds in the investor's table,0,,,
+True Potential,True Potential,Cinven,True,47.2,,no record,sponsor has no funds in the investor's table,0,,,
+Mariner,Mariner,Leonard Green & Partners,True,46.3,Leonard Green,strong,Leonard Green: strong (returns capital faster than same-vintage peers (median rank 0.90); older funds have returned 2.30x),7,2.296527,0.904762,inferred
+Osaic,Osaic,Reverence Capital,True,41.5,,no record,sponsor has no funds in the investor's table,0,,,
+Business Services Company*,Business Services Company,Not Disclosed,False,41.2,,no record,sponsor has no funds in the investor's table,0,,,
+BeyondTrust,BeyondTrust,Francisco Partners,True,39.1,Francisco Partners,strong,Francisco Partners: strong (returns capital faster than same-vintage peers (median rank 0.85); older funds have returned 2.24x),6,2.240437,0.845238,name
+Ryan,Ryan,Ares / Onex,True,37.5,Ares; Onex,strong,Ares: strong (returns capital faster than same-vintage peers (median rank 0.75); older funds have returned 1.37x); Onex: insufficient (2 seasoned funds with a vintage peer group (needs 3)),3,1.368281,0.75,name
+Constellation Automotive,Constellation Automotive,TDR Capital,True,36.5,,no record,sponsor has no funds in the investor's table,0,,,
+AutoStore (OB.AUTO),AutoStore,THL,True,36.2,,no record,sponsor has no funds in the investor's table,0,,,
+Marquee Brands,Marquee Brands,Neuberger,True,35.5,,no record,sponsor has no funds in the investor's table,0,,,
+Auctane,Auctane,Thoma Bravo,True,34.9,Thoma Bravo,insufficient,Thoma Bravo: insufficient (2 seasoned funds with a vintage peer group (needs 3)),4,,0.841014,name
+Benecon,Benecon,TA Associates,True,31.6,TA Associates,insufficient,TA Associates: insufficient (2 seasoned funds with a vintage peer group (needs 3)),3,,0.416667,inferred
+Staples,Staples,Sycamore Partners,True,31.0,Sycamore,insufficient,Sycamore: insufficient (0 seasoned funds with a vintage peer group (needs 3)),1,,,name
+Excelitas,Excelitas,AEA Investors,True,28.4,,no record,sponsor has no funds in the investor's table,0,,,
+Engineering,Engineering,Renaissance Partners / Bain Capital,True,26.8,Bain Capital,insufficient,Bain Capital: insufficient (0 seasoned funds with a vintage peer group (needs 3)),7,,,name
+Technology Company #1*,Technology Company #1,Multiple GPs,False,26.4,,no record,sponsor has no funds in the investor's table,0,,,
+AI Company #1*,AI Company #1,Not Disclosed,False,25.5,,no record,sponsor has no funds in the investor's table,0,,,
+Agiliti,Agiliti,THL,True,25.3,,no record,sponsor has no funds in the investor's table,0,,,
+GFL (NYSE: GFL),GFL,BC Partners,True,25.1,,no record,sponsor has no funds in the investor's table,0,,,
+Branded Cities Network,Branded Cities Network,Shamrock Capital,True,24.6,,no record,sponsor has no funds in the investor's table,0,,,
+Viant,Viant,JLL Partners,True,23.6,,no record,sponsor has no funds in the investor's table,0,,,
+Kroll,Kroll,Further Global / Stone Point,True,21.5,Stone Point,strong,Stone Point: strong (returns capital faster than same-vintage peers (median rank 0.76); older funds have returned 1.57x),4,1.567659,0.760369,name
+Chemical Guys,Chemical Guys,AEA Investors,True,20.7,,no record,sponsor has no funds in the investor's table,0,,,
+CH Guenther,CH Guenther,Pritzker Private Capital,True,19.7,,no record,sponsor has no funds in the investor's table,0,,,
+Addison Group,Addison Group,Trilantic Capital Partners,True,18.1,,no record,sponsor has no funds in the investor's table,0,,,
+Qpark,Qpark,KKR,True,17.3,KKR,adequate,KKR: adequate (in line with same-vintage peers on capital returned (median rank 0.55); older funds have returned 1.37x),7,1.366847,0.545455,name
+Infra Group,Infra Group,PAI Partners,True,16.5,,no record,sponsor has no funds in the investor's table,0,,,

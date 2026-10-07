@@ -1,0 +1,26 @@
+# Manager track records from one investor's (LP's) public disclosure.
+lp: CalPERS
+program: Private Equity
+
+live:
+  plug: calpers_html
+  url: https://www.calpers.ca.gov/investments/about-investment-office/investment-organization/pep-fund-performance-print
+
+files:
+  plug: file
+  csv: track_record_calpers.csv
+
+# Scoring. These thresholds are this tool's own policy defaults (assumptions), not a market standard.
+scoring:
+  seasoned_age_years: 4        # old enough to have had the chance to distribute; younger funds are not ranked
+  mature_age_years: 8          # old enough that paid-in capital should be back
+  min_seasoned_funds: 3        # a family needs this many seasoned funds with a vintage peer group to be rated
+  cohort_min_funds: 5          # a vintage year needs this many funds before within-vintage ranks are computed
+  strong: {median_dpi_rank_min: 0.60, pooled_mature_dpi_min: 1.3}
+  weak:   {median_dpi_rank_max: 0.35, pooled_mature_dpi_max: 1.0}
+
+# Data-quality thresholds.
+quality:
+  multiple_tolerance: 0.06     # published multiples carry one decimal, so recomputed vs published may differ by 0.05
+  extreme_irr_abs: 1.0         # |net IRR| at or above 100% is flagged
+  called_over_committed_warn: 3.0

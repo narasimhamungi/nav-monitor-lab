@@ -1,0 +1,5 @@
+opening_ltv,loan,status,drawdown_to_sweep,drawdown_to_breach,excluded_single_cap,excluded_top_n,largest_asset,largest_asset_share,rolled_forward_ltv,full_pass_through_ltv,passed_all_tests,failed_tests,breakeven_exit_pace
+0.1,92.29445,ok,0.666667,0.75,7.285,27.8705,Action,0.081829,0.100229,0.100821,True,,0.063
+0.15,138.441675,ok,0.5,0.625,7.285,27.8705,Action,0.081829,0.150344,0.151232,True,,0.1
+0.2,184.5889,ok,0.333333,0.5,7.285,27.8705,Action,0.081829,0.200459,0.201642,True,,0.143
+0.25,230.736125,ok,0.166667,0.375,7.285,27.8705,Action,0.081829,0.250573,0.252053,False,Cushion to breach; Repayment from exits (base pace),0.195

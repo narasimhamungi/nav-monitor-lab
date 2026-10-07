@@ -1,0 +1,41 @@
+family,basis,funds,seasoned_funds,mature_funds,cash_in,remaining,pooled_dpi,pooled_tvpi,pooled_mature_dpi,share_returned,median_dpi_rank,median_tvpi_rank,rating,reason
+Advent International,name,7,7,4,2584339645.0,1584154420.0,1.137355,1.750337,1.797443,1.0,0.666667,0.645161,strong,returns capital faster than same-vintage peers (median rank 0.67); older funds have returned 1.80x
+Apollo,name,8,6,5,3226904631.0,719431084.0,1.192523,1.415471,1.372269,1.0,0.25,0.25,weak,"returns capital more slowly than same-vintage peers (median rank 0.25, 0 = slowest)"
+Ares,name,3,3,2,1370384218.0,597678424.0,1.141726,1.577866,1.368281,0.5,0.75,0.75,strong,returns capital faster than same-vintage peers (median rank 0.75); older funds have returned 1.37x
+Bain Capital,name,7,0,0,723564368.0,888727106.0,0.094028,1.32229,,,,,insufficient,0 seasoned funds with a vintage peer group (needs 3)
+Blackstone,inferred,13,12,9,6127630845.0,2013651666.0,1.119308,1.447926,1.329566,0.777778,0.547619,0.363636,adequate,in line with same-vintage peers on capital returned (median rank 0.55); older funds have returned 1.33x
+Bridgepoint,inferred,13,11,7,1745489757.0,1109115422.0,1.108684,1.744102,1.644134,1.0,0.363636,0.547619,adequate,in line with same-vintage peers on capital returned (median rank 0.36); older funds have returned 1.64x
+CVC,name,10,8,6,4912534933.0,2899581938.0,1.200567,1.790809,1.380516,0.833333,0.583333,0.571429,adequate,in line with same-vintage peers on capital returned (median rank 0.58); older funds have returned 1.38x
+Carlyle,name,11,11,9,4301514589.0,765878382.0,1.350782,1.52883,1.452845,0.666667,0.674242,0.345238,strong,returns capital faster than same-vintage peers (median rank 0.67); older funds have returned 1.45x
+Cerberus,name,8,4,3,2244854593.0,1319678106.0,1.288126,1.875994,1.799523,1.0,0.5,0.6875,adequate,in line with same-vintage peers on capital returned (median rank 0.50); older funds have returned 1.80x
+"Clayton, Dubilier & Rice",name,2,1,1,376396861.0,367570829.0,0.815317,1.791868,1.573294,1.0,1.0,0.928571,insufficient,1 seasoned funds with a vintage peer group (needs 3)
+Clearlake,name,6,5,4,671782744.0,445819253.0,0.858102,1.521738,1.600777,0.75,0.545455,0.636364,adequate,in line with same-vintage peers on capital returned (median rank 0.55); older funds have returned 1.60x
+EQT,name,3,2,0,1113519296.0,942204115.0,0.396851,1.243001,,,0.751152,0.382488,insufficient,2 seasoned funds with a vintage peer group (needs 3)
+Francisco Partners,name,6,4,2,827212430.0,613589867.0,0.889411,1.631167,2.240437,1.0,0.845238,0.869048,strong,returns capital faster than same-vintage peers (median rank 0.85); older funds have returned 2.24x
+General Atlantic,name,1,1,0,992980119.0,1107748694.0,0.142811,1.25839,,,0.190476,0.095238,insufficient,1 seasoned funds with a vintage peer group (needs 3)
+General Catalyst,name,5,0,0,835789716.0,1243527572.0,0.001661,1.489509,,,,,insufficient,0 seasoned funds with a vintage peer group (needs 3)
+Genstar,name,4,2,0,379147810.0,435550705.0,0.100469,1.249231,,,0.5,0.452381,insufficient,2 seasoned funds with a vintage peer group (needs 3)
+Hellman & Friedman,name,4,4,2,2507867204.0,1875310304.0,0.908905,1.656676,1.705557,0.5,0.780952,0.666667,strong,returns capital faster than same-vintage peers (median rank 0.78); older funds have returned 1.71x
+Hg,name,4,0,0,168483092.0,187847615.0,0.051959,1.166894,,,,,insufficient,0 seasoned funds with a vintage peer group (needs 3)
+Insight Partners,name,8,6,3,2035592241.0,2346640321.0,0.911404,2.064209,2.268773,1.0,0.47619,0.930736,adequate,in line with same-vintage peers on capital returned (median rank 0.48); older funds have returned 2.27x
+KKR,name,7,7,4,3168421998.0,1363980180.0,0.94717,1.377662,1.366847,0.75,0.545455,0.545455,adequate,in line with same-vintage peers on capital returned (median rank 0.55); older funds have returned 1.37x
+Leonard Green,inferred,7,5,1,1824745314.0,980297803.0,1.051525,1.588749,2.296527,1.0,0.904762,0.857143,strong,returns capital faster than same-vintage peers (median rank 0.90); older funds have returned 2.30x
+Lightspeed,name,8,4,0,594715000.0,1123972133.0,0.005273,1.895207,,,0.145161,0.951613,weak,"returns capital more slowly than same-vintage peers (median rank 0.15, 0 = slowest)"
+New Mountain,inferred,6,4,1,1571477447.0,921564697.0,0.949396,1.535828,2.239274,1.0,0.764069,0.464286,strong,returns capital faster than same-vintage peers (median rank 0.76); older funds have returned 2.24x
+Oaktree,name,2,2,1,680000000.0,318930537.0,1.048873,1.517889,1.683669,1.0,0.428571,0.261905,insufficient,2 seasoned funds with a vintage peer group (needs 3)
+Onex,name,2,2,2,927748112.0,489586725.0,0.875359,1.403074,0.875359,0.5,0.309524,0.190476,insufficient,2 seasoned funds with a vintage peer group (needs 3)
+Permira,name,8,7,4,2690943918.0,1808178776.0,0.93692,1.60887,1.620022,1.0,0.645833,0.237903,strong,returns capital faster than same-vintage peers (median rank 0.65); older funds have returned 1.62x
+Riverstone,name,2,2,2,1181807944.0,48949112.0,0.892959,0.934378,0.892959,0.0,0.214286,0.0,insufficient,2 seasoned funds with a vintage peer group (needs 3)
+Silver Lake,inferred,9,8,6,2834818431.0,2110818788.0,1.053871,1.798475,1.546057,0.666667,0.696429,0.824675,strong,returns capital faster than same-vintage peers (median rank 0.70); older funds have returned 1.55x
+Stone Point,name,4,4,2,1568039961.0,1406315736.0,0.902932,1.799794,1.567659,1.0,0.760369,0.647465,strong,returns capital faster than same-vintage peers (median rank 0.76); older funds have returned 1.57x
+Summit Partners,name,2,2,0,482697120.0,539560940.0,0.218122,1.335926,,,0.423963,0.462366,insufficient,2 seasoned funds with a vintage peer group (needs 3)
+Sycamore,name,1,0,0,43820391.0,117889368.0,0.0,2.690286,,,,,insufficient,0 seasoned funds with a vintage peer group (needs 3)
+TA Associates,inferred,3,2,0,293016748.0,271557509.0,0.129316,1.05608,,,0.416667,0.190476,insufficient,2 seasoned funds with a vintage peer group (needs 3)
+TPG,inferred,20,11,7,3923358735.0,2107514655.0,0.85633,1.393501,1.36922,0.857143,0.440476,0.37013,adequate,in line with same-vintage peers on capital returned (median rank 0.44); older funds have returned 1.37x
+Thoma Bravo,name,4,2,0,1332616009.0,1069369611.0,0.371538,1.173997,,,0.841014,0.356759,insufficient,2 seasoned funds with a vintage peer group (needs 3)
+Thrive Capital,name,6,0,0,1006229750.0,2163659434.0,0.083719,2.233983,,,,,insufficient,0 seasoned funds with a vintage peer group (needs 3)
+TowerBrook,name,5,4,2,1406369368.0,1125006705.0,0.784905,1.584841,1.308775,0.5,0.452381,0.502976,adequate,in line with same-vintage peers on capital returned (median rank 0.45); older funds have returned 1.31x
+Triton,name,3,2,1,397593558.0,396758824.0,0.866895,1.864795,1.405863,1.0,0.449405,0.616071,insufficient,2 seasoned funds with a vintage peer group (needs 3)
+Veritas Capital,name,2,1,0,583558510.0,743353079.0,0.00097,1.274798,,,0.322581,0.677419,insufficient,1 seasoned funds with a vintage peer group (needs 3)
+Vista Equity,name,1,1,0,412259323.0,401036686.0,0.126813,1.099591,,,0.047619,0.095238,insufficient,1 seasoned funds with a vintage peer group (needs 3)
+Welsh Carson,name,4,4,2,1119973337.0,829196881.0,1.084214,1.824586,1.972592,1.0,0.580645,0.714286,adequate,in line with same-vintage peers on capital returned (median rank 0.58); older funds have returned 1.97x

@@ -1,0 +1,13 @@
+opening_ltv,loan,assets_written_down,names,eligible_nav,ltv,status,remaining_drawdown_to_breach
+0.1,92.29445,1,Action,853.2865,0.108163,ok,0.729591
+0.1,92.29445,2,"Action, Solenis",790.35975,0.116775,ok,0.708062
+0.1,92.29445,3,"Action, Solenis, OneMonroe",732.9425,0.125923,ok,0.685192
+0.15,138.441675,1,Action,853.2865,0.162245,ok,0.594387
+0.15,138.441675,2,"Action, Solenis",790.35975,0.175163,ok,0.562093
+0.15,138.441675,3,"Action, Solenis, OneMonroe",732.9425,0.188885,ok,0.527788
+0.2,184.5889,1,Action,853.2865,0.216327,ok,0.459183
+0.2,184.5889,2,"Action, Solenis",790.35975,0.23355,ok,0.416124
+0.2,184.5889,3,"Action, Solenis, OneMonroe",732.9425,0.251846,ok,0.370384
+0.25,230.736125,1,Action,853.2865,0.270409,ok,0.323978
+0.25,230.736125,2,"Action, Solenis",790.35975,0.291938,ok,0.270155
+0.25,230.736125,3,"Action, Solenis, OneMonroe",732.9425,0.314808,cash sweep,0.21298

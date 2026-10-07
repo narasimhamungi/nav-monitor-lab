@@ -1,0 +1,59 @@
+# The illustrative loan and the house policy it is tested against.
+# Nothing here is an observed term of a real facility. Where a number leans on a published source the
+# source is named; everything else is this tool's own policy default and is labelled an assumption.
+label: "Illustrative senior NAV facility secured on the vehicle's disclosed holdings"
+
+collateral:
+  exclude_undisclosed: true         # names the publisher will not disclose cannot be diligenced from public data
+  min_fair_value: 0.0
+  exclude_names: []
+  credit_for_undisclosed_tail: false   # holdings outside the published table get no collateral credit
+
+covenants:                          # passed straight to fund-finance-lab's NavFacility
+  # Published rating-agency commentary summarised by Sidley (Aug 2025) puts initial LTVs at 10% to 30%
+  # with maximums around 40%. The sweep and cure levels are assumptions.
+  ltv_breach: 0.40
+  ltv_sweep: 0.30
+  ltv_target: 0.25
+  single_asset_cap: 0.075           # ASSUMPTION
+  top_n: 5                          # ASSUMPTION
+  top_n_share: 0.30                 # ASSUMPTION
+  min_assets: 15                    # ASSUMPTION
+
+sizing:
+  opening_ltv_grid: [0.10, 0.15, 0.20, 0.25]
+  drawdown_grid: [0.0, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60]
+  min_cushion_to_breach: 0.40       # ASSUMPTION: the pool must be able to fall this far before the covenant is breached
+  single_name_loss: 1.0
+  single_names: 3
+
+scenarios:                          # sector write-downs applied to eligible holdings; `default` covers the rest
+  - {name: "Broad market -25%", shocks: {default: 0.25}}
+  - {name: "Technology de-rating", shocks: {"Technology / IT": 0.40, "Communications / Media": 0.30, default: 0.10}}
+  - {name: "Consumer and industrial recession", shocks: {"Consumer": 0.35, "Industrials": 0.30, "Business Services": 0.25, "Transportation": 0.30, default: 0.15}}
+  - {name: "Financials shock", shocks: {"Financial Services": 0.40, default: 0.10}}
+  - {name: "Worst listed sector fall in the price history", historical: {window_start: 2021-12-31, window_end: 2022-12-31, pass_through: 1.0}}
+
+runoff:                             # how the loan is repaid from exits over its life
+  tenor_years: 4
+  margin_pct: 6.5                   # ASSUMPTION: margin over the base rate, in percentage points
+  exit_pace_per_year: 0.15          # ASSUMPTION: share of collateral value realised each year
+  sweep_share_below_trigger: 0.5    # ASSUMPTION: share of exit proceeds applied to the loan while LTV is under the sweep level
+  sweep_share_above_trigger: 1.0
+  nav_growth_per_year: 0.0
+  drought: {pace_multiplier: 0.25, quarters: 8, markdown: 0.25}
+  pace_grid: [0.05, 0.10, 0.15, 0.20, 0.25]
+
+policy:                             # the rules behind every flag and the verdict; change a number, the memo changes
+  max_undisclosed_share: 0.10       # of the published holdings' fair value
+  max_stale_share: 0.25             # share of the portfolio valued more than `stale_days` before the report date
+  stale_days: 100
+  max_weighted_mark_age_days: 120   # age of marks today (report-date age plus days since the report date)
+  min_sponsor_coverage: 0.25        # share of eligible value whose sponsor has a rated track record
+  max_weak_sponsor_share: 0.15
+  max_vehicle_investment_level: 110 # percent; above this the vehicle itself is drawing on borrowings
+  max_unreconciled_snapshots: 0     # of the latest 12
+  mover_threshold: 0.15             # month-on-month fair value move that is reported in the change log
+
+watchlist:                          # always shown in the change log, whatever they did
+  companies: ["Action", "Solenis", "OneMonroe", "Osaic"]

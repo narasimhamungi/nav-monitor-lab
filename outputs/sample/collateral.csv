@@ -1,0 +1,31 @@
+key,company,sponsor,sector,vintage,fair_value,listed,eligible,reason,share_of_eligible,sponsor_rating,sponsor_families,proxy,proxy_return_since_marks,estimated_fv
+Action,Action,3i,Consumer,2020,78.4,False,True,,0.081829,no record,,XLY,-0.04531,77.948303
+Solenis,Solenis,Platinum Equity,Industrials,2021,72.6,False,True,,0.075775,no record,,XLI,-0.071203,71.942694
+OneMonroe,OneMonroe,AEA Investors,Industrials,2021,66.1,False,True,,0.068991,no record,,XLI,-0.071203,65.501543
+FDH Aero,FDH Aero,Audax Group,Industrials,2024,56.1,False,True,,0.058553,no record,,XLI,-0.071203,55.592081
+True Potential,True Potential,Cinven,Financial Services,2022,47.2,False,True,,0.049264,no record,,XLF,0.011028,47.266184
+Mariner,Mariner,Leonard Green & Partners,Financial Services,2024,46.3,False,True,,0.048325,strong,Leonard Green,XLF,0.011028,46.364922
+Osaic,Osaic,Reverence Capital,Financial Services,2019,41.5,False,True,,0.043315,no record,,XLF,0.011028,41.558192
+Business Services Company,Business Services Company*,Not Disclosed,Business Services,2017,41.2,False,False,name or sponsor not disclosed,,no record,,XLI,-0.071203,40.826983
+BeyondTrust,BeyondTrust,Francisco Partners,Technology / IT,2018,39.1,False,True,,0.04081,strong,Francisco Partners,XLK,0.061494,39.405733
+Ryan,Ryan,Ares / Onex,Business Services,2026,37.5,False,True,,0.03914,strong,Ares; Onex,XLI,-0.071203,37.160482
+Constellation Automotive,Constellation Automotive,TDR Capital,Business Services,2019,36.5,False,True,,0.038096,no record,,XLI,-0.071203,36.169536
+AutoStore,AutoStore (OB.AUTO),THL,Industrials,2019,36.2,True,True,,0.037783,no record,,XLI,-0.017638,35.561518
+Marquee Brands,Marquee Brands,Neuberger,Consumer,2014,35.5,False,True,,0.037052,no record,,XLY,-0.04531,35.295469
+Auctane,Auctane,Thoma Bravo,Technology / IT,2021,34.9,False,True,,0.036426,insufficient,Thoma Bravo,XLK,0.061494,35.172892
+Benecon,Benecon,TA Associates,Healthcare,2024,31.6,False,True,,0.032982,insufficient,TA Associates,XLV,0.057163,31.829688
+Staples,Staples,Sycamore Partners,Business Services,2017,31.0,False,True,,0.032356,insufficient,Sycamore,XLI,-0.071203,30.719332
+Excelitas,Excelitas,AEA Investors,Industrials,2022,28.4,False,True,,0.029642,no record,,XLI,-0.071203,28.142872
+Engineering,Engineering,Renaissance Partners / Bain Capital,Technology / IT,2020,26.8,False,True,,0.027972,insufficient,Bain Capital,XLK,0.061494,27.009556
+Technology Company #1,Technology Company #1*,Multiple GPs,Technology / IT,2026,26.4,False,False,name or sponsor not disclosed,,no record,,XLK,0.061494,26.606428
+AI Company #1,AI Company #1*,Not Disclosed,Technology / IT,2026,25.5,False,False,name or sponsor not disclosed,,no record,,XLK,0.061494,25.699391
+Agiliti,Agiliti,THL,Healthcare,2019,25.3,False,True,,0.026406,no record,,XLV,0.057163,25.483895
+GFL,GFL (NYSE: GFL),BC Partners,Business Services,2018,25.1,True,True,,0.026198,no record,,XLI,-0.017638,24.657295
+Branded Cities Network,Branded Cities Network,Shamrock Capital,Communications / Media,2017,24.6,False,True,,0.025676,no record,,XLC,0.045626,24.742721
+Viant,Viant,JLL Partners,Healthcare,2018,23.6,False,True,,0.024632,no record,,XLV,0.057163,23.771539
+Kroll,Kroll,Further Global / Stone Point,Financial Services,2020,21.5,False,True,,0.02244,strong,Stone Point,XLF,0.011028,21.530148
+Chemical Guys,Chemical Guys,AEA Investors,Consumer,2021,20.7,False,True,,0.021605,no record,,XLY,-0.04531,20.580738
+CH Guenther,CH Guenther,Pritzker Private Capital,Consumer,2021,19.7,False,True,,0.020562,no record,,XLY,-0.04531,19.5865
+Addison Group,Addison Group,Trilantic Capital Partners,Business Services,2021,18.1,False,True,,0.018892,no record,,XLI,-0.071203,17.936126
+Qpark,Qpark,KKR,Transportation,2017,17.3,False,True,,0.018057,adequate,KKR,IYT,-0.079311,17.125533
+Infra Group,Infra Group,PAI Partners,Technology / IT,2025,16.5,False,True,,0.017222,no record,,XLK,0.061494,16.629018

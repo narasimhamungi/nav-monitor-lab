@@ -1,0 +1,24 @@
+# Scheduled live refresh. NOT YET RUN: whether the data sources answer requests from GitHub's servers
+# is untested (docs/PLAN.md). It is manual-only until you have seen one run succeed; then uncomment the schedule.
+name: Refresh
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: "17 6 * * 1-5"      # weekdays 06:17 UTC
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -e ".[excel]"
+      - run: navmon check-sources || true
+      - run: navmon update
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nav-monitor-latest
+          path: |
+            outputs/latest
+            data/live

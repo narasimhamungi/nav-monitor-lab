@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nav-monitor-lab"
+version = "0.1.0"
+description = "Underwrite and monitor an illustrative NAV loan on a real, published private equity portfolio: collateral, sponsor track record, stress, market roll-forward, backtest, memo"
+requires-python = ">=3.10"
+dependencies = [
+    "pyyaml>=6",
+    # Pinned to a commit because fund-finance-lab has no release tag yet (see docs/decisions.md, D-04).
+    "fund-finance-lab @ git+https://github.com/narasimhamungi/fund-finance-lab@d771874b03d5629af1f3835da3c0e9e846b93264",
+]
+
+[project.optional-dependencies]
+excel = ["openpyxl>=3.1"]
+test = ["pytest>=7", "openpyxl>=3.1"]
+
+[project.scripts]
+navmon = "navmonitorlab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

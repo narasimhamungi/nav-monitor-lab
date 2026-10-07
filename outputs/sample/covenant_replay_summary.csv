@@ -1,0 +1,4 @@
+opening_ltv,loan,start,end,peak_ltv_reported,peak_ltv_estimated,peak_ltv_full,peak_date_reported,peak_date_estimated,peak_date_full,first_reported_sweep,first_estimated_sweep,first_full_sweep,first_reported_breach,first_estimated_breach,first_full_breach
+0.15,128.92665,2022-02-28,2026-08-31,0.157209,0.157779,0.182494,2022-09-30,2022-09-30,2022-06-30,,,,,,
+0.2,171.9022,2022-02-28,2026-08-31,0.209612,0.210372,0.243325,2022-09-30,2022-09-30,2022-06-30,,,,,,
+0.25,214.87775,2022-02-28,2026-08-31,0.262015,0.262965,0.304156,2022-09-30,2022-09-30,2022-06-30,,,2022-06-30,,,

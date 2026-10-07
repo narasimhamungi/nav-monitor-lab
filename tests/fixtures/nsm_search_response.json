@@ -1,0 +1,133 @@
+{
+ "hits": {
+  "total": {
+   "relation": "eq",
+   "value": 9
+  },
+  "hits": [
+   {
+    "_source": {
+     "category_group": "Corporate actions",
+     "classifications": "",
+     "classifications_code": "",
+     "company": "NB PRIVATE EQUITY PARTNERS LIMITED",
+     "disclosure_id": "c8aa04c4-b0d2-4d75-a937-d01c783fa67c",
+     "document_date": "2026-10-06T06:00:00Z",
+     "document_format": "Plain text",
+     "download_link": "NSM/GNW/c8aa04c4-b0d2-4d75-a937-d01c783fa67c.html",
+     "headline": "NBPE Announces Transaction in Own Shares",
+     "hist_seq": "1",
+     "last_updated_date": "2026-10-06T06:00:00Z",
+     "latest_flag": "Y",
+     "lei": "213800UJH93NH8IOFQ77",
+     "lei_remediation_flag": "N",
+     "publication_date": "2026-10-06T06:00:00Z",
+     "related_org": [],
+     "seq_id": "c8aa04c4-b0d2-4d75-a937-d01c783fa67c",
+     "source": "GNW",
+     "submitted_date": "2026-10-06T06:00:00Z",
+     "tag_esef": "",
+     "type": "Transaction in Own Shares",
+     "type_code": "POS"
+    }
+   },
+   {
+    "_source": {
+     "company": "NB PRIVATE EQUITY PARTNERS LIMITED",
+     "lei": "213800UJH93NH8IOFQ77",
+     "headline": "Results analysis from Kepler Trust Intelligence",
+     "type_code": "NRA",
+     "source": "RNS",
+     "download_link": "NSM/RNS/326c97d9-9f07-40ad-b580-3b42dc1762bf.html",
+     "publication_date": "2026-09-24T06:00:00Z",
+     "latest_flag": "Y"
+    }
+   },
+   {
+    "_source": {
+     "company": "NB PRIVATE EQUITY PARTNERS LIMITED",
+     "lei": "213800UJH93NH8IOFQ77",
+     "headline": "NBPE Announces August Monthly NAV Update",
+     "type_code": "NAV",
+     "source": "GNW",
+     "download_link": "NSM/GNW/25d07b8e-e71f-4c69-97ef-c772fdbc7eb1.html",
+     "publication_date": "2026-09-23T06:00:00Z",
+     "latest_flag": "Y"
+    }
+   },
+   {
+    "_source": {
+     "company": "NB PRIVATE EQUITY PARTNERS LIMITED",
+     "lei": "213800UJH93NH8IOFQ77",
+     "headline": "NBPE Announces Interim Results",
+     "type_code": "IR",
+     "source": "GNW",
+     "download_link": "NSM/GNW/868feda1-6ce8-4e80-932c-179b724e0188.html",
+     "publication_date": "2026-09-23T06:00:00Z",
+     "latest_flag": "Y"
+    }
+   },
+   {
+    "_source": {
+     "company": "NB PRIVATE EQUITY PARTNERS LIMITED",
+     "lei": "213800UJH93NH8IOFQ77",
+     "headline": "NBPE: Neuberger Private Equity Partners Announces July Monthly NAV Update",
+     "type_code": "NAV",
+     "source": "GNW",
+     "download_link": "NSM/GNW/2d0e199c-f3c1-4bbf-aa0a-374bbe7eaa47.html",
+     "publication_date": "2026-08-24T06:00:00Z",
+     "latest_flag": "Y"
+    }
+   },
+   {
+    "_source": {
+     "company": "NB PRIVATE EQUITY PARTNERS LIMITED",
+     "lei": "213800UJH93NH8IOFQ77",
+     "headline": "NBPE Announces June Monthly NAV Update",
+     "type_code": "NAV",
+     "source": "GNW",
+     "download_link": "NSM/GNW/ae20217e-b457-4bd5-92f7-d70788343055.html",
+     "publication_date": "2026-07-22T06:00:00Z",
+     "latest_flag": "Y"
+    }
+   },
+   {
+    "_source": {
+     "company": "NB PRIVATE EQUITY PARTNERS LIMITED",
+     "lei": "213800UJH93NH8IOFQ77",
+     "headline": "NBPE Announces May Monthly NAV Update",
+     "type_code": "NAV",
+     "source": "GNW",
+     "download_link": "NSM/GNW/75f14f6d-a026-4d8a-bc19-5d6aa6f6c702.html",
+     "publication_date": "2026-06-24T06:00:00Z",
+     "latest_flag": "Y"
+    }
+   },
+   {
+    "_source": {
+     "company": "NB PRIVATE EQUITY PARTNERS LIMITED",
+     "lei": "213800UJH93NH8IOFQ77",
+     "headline": "NBPE: NB Private Equity Partners Announces the Results of the Annual General Meeting",
+     "type_code": "RAG",
+     "source": "GNW",
+     "download_link": "NSM/GNW/8be00999-46fb-4c5a-93c7-6eb58b4770f0.html",
+     "publication_date": "2026-06-11T06:00:00Z",
+     "latest_flag": "Y"
+    }
+   },
+   {
+    "_source": {
+     "company": "NB PRIVATE EQUITY PARTNERS LIMITED",
+     "lei": "213800UJH93NH8IOFQ77",
+     "headline": "NBPE Announces April Monthly NAV Update",
+     "type_code": "NAV",
+     "source": "GNW",
+     "download_link": "NSM/GNW/5d98500e-a2b1-4aff-9197-bc50d7bcbf01.html",
+     "publication_date": "2026-05-27T06:00:00Z",
+     "latest_flag": "Y"
+    }
+   }
+  ]
+ },
+ "_note": "Trimmed from a real NSM search response captured 2026-10-07: 9 of 904 hits, field names and values as returned; total adjusted to 9 to match."
+}

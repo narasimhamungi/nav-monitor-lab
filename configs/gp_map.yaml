@@ -1,0 +1,67 @@
+# Fund name -> manager (GP) family. Hand-maintained, because the published table names funds, not managers,
+# and many of the largest lines are custom accounts whose names carry no manager at all.
+# basis: "name"     = the manager's name is in the fund name
+#        "inferred" = mapped from industry naming conventions, not from the table itself. Verify before relying on it.
+# Patterns are regular expressions, case-insensitive, matched from the start of the fund name.
+families:
+  - {family: "Advent International", basis: name, patterns: ["Advent (International|Global)"]}
+  - {family: "Apollo", basis: name, patterns: ["Apollo "]}
+  - {family: "Ares", basis: name, patterns: ["Ares "]}
+  - {family: "Bain Capital", basis: name, patterns: ["Bain Capital"]}
+  - {family: "Blackstone", basis: name, patterns: ["Blackstone "]}
+  - {family: "Blackstone", basis: inferred, patterns: ["GSO "]}
+  - {family: "Bridgepoint", basis: name, patterns: ["Bridgepoint "]}
+  - {family: "Bridgepoint", basis: inferred, patterns: ["BE VI ", "BDC (III|IV|V) ", "Wigmore Street"]}
+  - {family: "Carlyle", basis: name, patterns: ["Carlyle "]}
+  - {family: "Cerberus", basis: name, patterns: ["Cerberus "]}
+  - {family: "Clayton, Dubilier & Rice", basis: name, patterns: ["Clayton, Dubilier"]}
+  - {family: "Clearlake", basis: name, patterns: ["Clearlake "]}
+  - {family: "CVC", basis: name, patterns: ["CVC "]}
+  - {family: "EQT", basis: name, patterns: ["EQT "]}
+  - {family: "Francisco Partners", basis: name, patterns: ["Francisco Partners"]}
+  - {family: "General Atlantic", basis: name, patterns: ["General Atlantic"]}
+  - {family: "General Catalyst", basis: name, patterns: ["General Catalyst"]}
+  - {family: "Genstar", basis: name, patterns: ["Genstar "]}
+  - {family: "Hellman & Friedman", basis: name, patterns: ["Hellman & Friedman"]}
+  - {family: "Hg", basis: name, patterns: ["Hg "]}
+  - {family: "Insight Partners", basis: name, patterns: ["Insight (Partners|Venture)"]}
+  - {family: "KKR", basis: name, patterns: ["KKR "]}
+  - {family: "Leonard Green", basis: inferred, patterns: ["Green Equity Investors", "Jade Equity Investors"]}
+  - {family: "Lightspeed", basis: name, patterns: ["Lightspeed "]}
+  - {family: "New Mountain", basis: name, patterns: ["New Mountain"]}
+  - {family: "New Mountain", basis: inferred, patterns: ["NM Pacific"]}
+  - {family: "Oaktree", basis: name, patterns: ["Oaktree "]}
+  - {family: "Onex", basis: name, patterns: ["Onex "]}
+  - {family: "Permira", basis: name, patterns: ["Permira "]}
+  - {family: "Riverstone", basis: name, patterns: ["Riverstone "]}
+  - {family: "Silver Lake", basis: name, patterns: ["Silver Lake"]}
+  - {family: "Silver Lake", basis: inferred, patterns: ["SL SPV"]}
+  - {family: "Stone Point", basis: name, patterns: ["Stone Point"]}
+  - {family: "Summit Partners", basis: name, patterns: ["Summit Partners"]}
+  - {family: "Sycamore", basis: name, patterns: ["Sycamore "]}
+  - {family: "TA Associates", basis: inferred, patterns: ["TA (XIV|XV|Select)"]}
+  - {family: "Thoma Bravo", basis: name, patterns: ["Thoma Bravo"]}
+  - {family: "Thrive Capital", basis: name, patterns: ["Thrive Capital"]}
+  - {family: "TowerBrook", basis: name, patterns: ["Towerbrook "]}
+  - {family: "TPG", basis: name, patterns: ["TPG "]}
+  - {family: "TPG", basis: inferred, patterns: ["The Rise Fund"]}
+  - {family: "Triton", basis: name, patterns: ["Triton "]}
+  - {family: "Veritas Capital", basis: name, patterns: ["The Veritas Capital"]}
+  - {family: "Vista Equity", basis: name, patterns: ["Vista Equity"]}
+  - {family: "Welsh Carson", basis: name, patterns: ["WCAS ", "Welsh, Carson"]}
+
+# Sponsor label in a holdings table -> family above. A label with several sponsors ("Ares / Onex") is
+# split on "/" and each part is looked up. Labels with no entry here have no track record in this dataset.
+sponsors:
+  "Ares": "Ares"
+  "Ares Management": "Ares"
+  "Onex": "Onex"
+  "Bain Capital": "Bain Capital"
+  "Francisco Partners": "Francisco Partners"
+  "KKR": "KKR"
+  "Leonard Green & Partners": "Leonard Green"
+  "Stone Point": "Stone Point"
+  "Sycamore Partners": "Sycamore"
+  "TA Associates": "TA Associates"
+  "Thoma Bravo": "Thoma Bravo"
+  "Veritas Capital": "Veritas Capital"

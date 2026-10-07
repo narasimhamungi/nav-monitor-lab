@@ -1,0 +1,52 @@
+{
+ "tool": "nav-monitor-lab",
+ "version": "0.1.0",
+ "fund_finance_lab_version": "0.4.0",
+ "python": "3.14.4",
+ "generated_at": "2026-10-07T02:24:02+00:00",
+ "data_dir": "data/sample",
+ "snapshot_as_of": "2026-08-31",
+ "track_record_as_of": "2026-03-31",
+ "prices_to": "2026-10-06",
+ "inputs_sha256": {
+  "holdings_nbpe.csv": "53ed50de1891989065fe5dfc7b019db00d6bdca58dce179d71ab5191dce960b0",
+  "prices.csv": "39fdd84de314507fff0702762550c792be52c4be0508dd919e0f15e3d30861d6",
+  "rates.csv": "1fb7d245afe801537fb1ac82bfc1e3f52076047934ae3832adf1da657e8b92a1",
+  "snapshots_nbpe.csv": "966386a4673cd4ab93908f50d852690a3cd9fca6e893a7e9e9048bfdfa86d6fc",
+  "track_record_calpers.csv": "0545fc773bbf3722049f3bea163404b6a55e872894f9d8111cb729c46bd1fc5d"
+ },
+ "configs_sha256": {
+  "facility.yaml": "c57b4ea1af10d6ccbafe5e38cb17bf6d58656914ea367bf4d771825a8fe4241c",
+  "gp_map.yaml": "919b14de7c98bd09fa06d38d785203a2486adcb4011c27cd594c53cfc8b4ddd8",
+  "market.yaml": "bbb6bdf5555435f0d42684b92d1f9a599d52b6eb392603896761ab15768bde32",
+  "track_record_calpers.yaml": "df46ed20538d1c4924231a79a041eed3dec154865b4c135d9d9d35bb9be855c4",
+  "vehicle_nbpe.yaml": "283117e76019fe0592b917c697940a2d1919e1849bd572cc0fd8696073b5d1b3"
+ },
+ "outputs_sha256": {
+  "backtest_observations.csv": "322a9116f580a599ebafbd645d6d40d09bbc45f5c36f16bbfdbe007fdae715c4",
+  "backtest_periods.csv": "805aeb8cf55c891aaf76a51d38ba9f726e83779557e5d502f2ccd5360297b28f",
+  "backtest_robustness.csv": "79b57337449f5c0e0d62138c81ecf3eb3b7f6e28e1ded47da58ac7a9a28f9a60",
+  "backtest_skipped.csv": "a1e7d1620b027f60125c0354a16178853c2cd67db4437e39938bd8f6e5b688ad",
+  "backtest_summary.csv": "6c3a11059f37293daad556e6a829da1b5bc5b75a8b1a447089d49cbeb05a6258",
+  "changes.csv": "05073beac29f4ef410c32b4649eaefd2ada4a534900fc83616091915808884e4",
+  "changes_sectors.csv": "7b3331872219decf26900e352aef38d0e23fbe4dfeba16eb28ec2ce8596bf035",
+  "collateral.csv": "9158f38b2c96c4af308adbee1ab2fa15ac861f35854796e319853a8031246fe1",
+  "covenant_replay.csv": "6601d0577cb4956950d0a23440af2f2f3565e0cff8276ec6c41e3f92d9904827",
+  "covenant_replay_summary.csv": "b54443e115fc5ccde4343fa7b74ee8d0f65866bc62fccb165b73ed278d80d21d",
+  "findings.csv": "0c096830d8fc66a63c72f71e5a481c69a0f8537b178c0d7abfa59a7c1139d089",
+  "memo.md": "c2d17ca94807690ad678500cd1fb485c868362211e0c40e00acd76c7319845a6",
+  "pool_summary.csv": "cf33e38fdae061d57d2d2cd01ca4ef2ec6d7dcbd0ce030173b37bc07d45233b5",
+  "recommendation.json": "d7beeb415b7a885cdaea4338a2ec710bdca0cd47d37bba043aeb73339eb6b5fd",
+  "roll_forward.csv": "3c61ba66154035fe85d25015fbb8df95a884cbfc4a3e18ad4b72885b025f2bf7",
+  "runoff.csv": "5246653bf5a2f881b0cbe7047cb7e89aca82983d0a1045db7cca675aa158edda",
+  "runoff_pace_grid.csv": "c75e3df7a7ce56e8c8644e97924f7d4a83aaed63f72435d609b2638da3eb8cb4",
+  "sizing_candidates.csv": "bafd32097185fa263216b0627f532806965bdb9b40f15a22be882b38e3f0d386",
+  "sponsor_overlay.csv": "980bc74002bb31d0c1566856c6a5c75d7642c603110ffdf91e8e3de8ef1f9bea",
+  "stress_scenarios.csv": "d9231273212a191179d44e16401cc7ed0a731efca9034600f2e330475b2770a5",
+  "stress_single_name.csv": "7ab7afe6efec32e813151e652f62f5281e1a041650121839362c61910549ae2e",
+  "stress_uniform.csv": "9b7ddad4d8efbbd4b552549396fa94e166103cad7018cb40b9f055fa1fcf9154",
+  "track_record_families.csv": "a892d8a169ac4bbd0207b4a650d454cd4539c35e43fa89985f79e452927f7ca6",
+  "track_record_funds.csv": "cf4222725c02187c3d387331d2b793ebe51a0301964e42d34dcdcc651667a46d",
+  "track_record_vintages.csv": "10538d6c5e4485f531edf5491565666a47308e1e73c65cd023657ca2aad80302"
+ }
+}

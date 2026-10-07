@@ -1,0 +1,31 @@
+company,key,sector,proxy,proxy_is_default,listed,eligible,reported_fv,oldest_mark,proxy_return,pass_through,estimated_fv,change
+Action,Action,Consumer,XLY,False,False,True,78.4,2026-06-30,-0.04531,0.127156,77.948303,-0.005761
+Solenis,Solenis,Industrials,XLI,False,False,True,72.6,2026-06-30,-0.071203,0.127156,71.942694,-0.009054
+OneMonroe,OneMonroe,Industrials,XLI,False,False,True,66.1,2026-06-30,-0.071203,0.127156,65.501543,-0.009054
+FDH Aero,FDH Aero,Industrials,XLI,False,False,True,56.1,2026-06-30,-0.071203,0.127156,55.592081,-0.009054
+True Potential,True Potential,Financial Services,XLF,False,False,True,47.2,2026-06-30,0.011028,0.127156,47.266184,0.001402
+Mariner,Mariner,Financial Services,XLF,False,False,True,46.3,2026-06-30,0.011028,0.127156,46.364922,0.001402
+Osaic,Osaic,Financial Services,XLF,False,False,True,41.5,2026-06-30,0.011028,0.127156,41.558192,0.001402
+Business Services Company*,Business Services Company,Business Services,XLI,False,False,False,41.2,2026-06-30,-0.071203,0.127156,40.826983,-0.009054
+BeyondTrust,BeyondTrust,Technology / IT,XLK,False,False,True,39.1,2026-06-30,0.061494,0.127156,39.405733,0.007819
+Ryan,Ryan,Business Services,XLI,False,False,True,37.5,2026-06-30,-0.071203,0.127156,37.160482,-0.009054
+Constellation Automotive,Constellation Automotive,Business Services,XLI,False,False,True,36.5,2026-06-30,-0.071203,0.127156,36.169536,-0.009054
+AutoStore (OB.AUTO),AutoStore,Industrials,XLI,False,True,True,36.2,2026-08-31,-0.017638,1.0,35.561518,-0.017638
+Marquee Brands,Marquee Brands,Consumer,XLY,False,False,True,35.5,2026-06-30,-0.04531,0.127156,35.295469,-0.005761
+Auctane,Auctane,Technology / IT,XLK,False,False,True,34.9,2026-06-30,0.061494,0.127156,35.172892,0.007819
+Benecon,Benecon,Healthcare,XLV,False,False,True,31.6,2026-06-30,0.057163,0.127156,31.829688,0.007269
+Staples,Staples,Business Services,XLI,False,False,True,31.0,2026-06-30,-0.071203,0.127156,30.719332,-0.009054
+Excelitas,Excelitas,Industrials,XLI,False,False,True,28.4,2026-06-30,-0.071203,0.127156,28.142872,-0.009054
+Engineering,Engineering,Technology / IT,XLK,False,False,True,26.8,2026-06-30,0.061494,0.127156,27.009556,0.007819
+Technology Company #1*,Technology Company #1,Technology / IT,XLK,False,False,False,26.4,2026-06-30,0.061494,0.127156,26.606428,0.007819
+AI Company #1*,AI Company #1,Technology / IT,XLK,False,False,False,25.5,2026-06-30,0.061494,0.127156,25.699391,0.007819
+Agiliti,Agiliti,Healthcare,XLV,False,False,True,25.3,2026-06-30,0.057163,0.127156,25.483895,0.007269
+GFL (NYSE: GFL),GFL,Business Services,XLI,False,True,True,25.1,2026-08-31,-0.017638,1.0,24.657295,-0.017638
+Branded Cities Network,Branded Cities Network,Communications / Media,XLC,False,False,True,24.6,2026-06-30,0.045626,0.127156,24.742721,0.005802
+Viant,Viant,Healthcare,XLV,False,False,True,23.6,2026-06-30,0.057163,0.127156,23.771539,0.007269
+Kroll,Kroll,Financial Services,XLF,False,False,True,21.5,2026-06-30,0.011028,0.127156,21.530148,0.001402
+Chemical Guys,Chemical Guys,Consumer,XLY,False,False,True,20.7,2026-06-30,-0.04531,0.127156,20.580738,-0.005761
+CH Guenther,CH Guenther,Consumer,XLY,False,False,True,19.7,2026-06-30,-0.04531,0.127156,19.5865,-0.005761
+Addison Group,Addison Group,Business Services,XLI,False,False,True,18.1,2026-06-30,-0.071203,0.127156,17.936126,-0.009054
+Qpark,Qpark,Transportation,IYT,False,False,True,17.3,2026-06-30,-0.079311,0.127156,17.125533,-0.010085
+Infra Group,Infra Group,Technology / IT,XLK,False,False,True,16.5,2026-06-30,0.061494,0.127156,16.629018,0.007819
