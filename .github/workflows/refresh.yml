@@ -1,5 +1,5 @@
-# Scheduled live refresh. NOT YET RUN: whether the data sources answer requests from GitHub's servers
-# is untested (docs/PLAN.md). It is manual-only until you have seen one run succeed; then uncomment the schedule.
+# Scheduled live refresh. Manual-only: whether the data sources answer requests from GitHub-hosted runners
+# is untested (docs/decisions.md, D-17). Uncomment the schedule after a manual run succeeds.
 name: Refresh
 on:
   workflow_dispatch:

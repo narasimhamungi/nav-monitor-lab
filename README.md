@@ -1,5 +1,7 @@
 # nav-monitor-lab
 
+[![CI](https://github.com/narasimhamungi/nav-monitor-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/narasimhamungi/nav-monitor-lab/actions/workflows/ci.yml)
+
 Underwrites and monitors an illustrative NAV loan on a real, published private equity portfolio. It reads
 a listed vehicle's monthly holdings from the UK regulatory archive, reads its sponsors' track records from a
 public pension fund's disclosure, sizes and stresses a loan with
@@ -19,8 +21,8 @@ Run on NB Private Equity Partners (NBPE) holdings as of 31 August 2026, CalPERS 
   $922.9m. 20% fails one test: at the calibrated exit pace $32.7m is still unpaid at maturity.
 - **The exit pace is calibrated, not assumed.** Cash received from realisations, read from 55 monthly reports,
   divided by average portfolio fair value: 15.9% a year over the last 12 months, 11.7% over 24, 12.1% since
-  January 2022. The base case is the lowest, by a rule in the config. Version 0.1.0 assumed 15% and proposed
-  20% LTV ($184.6m); that result is kept in the memo as a labelled sensitivity. Nothing else was changed.
+  January 2022. The base case is the lowest, by a rule fixed in the config before the figures were computed.
+  A flat 15% a year would give 20% LTV ($184.6m); the memo keeps that as a labelled sensitivity.
 - **Three conditions**, each a rule with its observed number: a rated sponsor record exists for only 17% of
   eligible value; the vehicle is itself borrowing (investment level 115%); repayment needs 10.0% of the pool
   realised a year against a base pace of 11.7%, and policy wants it to work at 80% of the base pace.
@@ -104,7 +106,7 @@ sector proxies, the covenant levels, the stress scenarios and every policy thres
 | `src/navmonitorlab/diff.py` | What changed since the previous report |
 | `src/navmonitorlab/recommend.py`, `report.py` | Rules, verdict, memo and tables |
 | `data/sample/` | Real published data captured 2026-10-07, with hashes and tie-outs |
-| `docs/` | Plan and status, commands, sources, data dictionary, model spec, decisions, limitations |
+| `docs/` | Commands, sources, data dictionary, model spec, decisions, limitations |
 
 ## Limits
 

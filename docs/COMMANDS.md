@@ -2,12 +2,11 @@
 
 PowerShell, from the repository root. Lines starting `#` are comments.
 
-## 1. Unpack and install (once)
+## 1. Install (once)
 
 ```powershell
-# Unpack wherever you keep projects; this example uses N:\AAA Projects
-Expand-Archive -Force "$HOME\Downloads\nav-monitor-lab.zip" "N:\AAA Projects"
-cd "N:\AAA Projects\nav-monitor-lab"
+git clone https://github.com/narasimhamungi/nav-monitor-lab.git
+cd nav-monitor-lab
 
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
@@ -40,7 +39,7 @@ What to do with the results:
 - `check-sources` shows a FAIL: the message says which source and why. The rest still work; `refresh` keeps
   going and falls back to the sample file for the failed source, and says so.
 - `verify-live` shows differences in holdings: a parser is reading the page differently from the capture.
-  Send me the mismatch block.
+  The mismatch block names the table and rows.
 - `verify-live` says the track record has a different as-of date: CalPERS has published a new quarter. That
   is expected over time, not an error.
 
@@ -62,30 +61,12 @@ $env:TIINGO_API_KEY = "your-key"
 
 Then set `plug: tiingo` under `prices: live:` in `configs/market.yaml`.
 
-## 5. Put it on GitHub
+## 5. Scheduled refresh
 
-```powershell
-git init -b main
-git add .
-git status                      # check that .env, .venv and data/raw are NOT listed
-git commit -m "nav-monitor-lab v0.1.0: NAV-loan underwriting and monitoring on published PE data"
-gh repo create narasimhamungi/nav-monitor-lab --public --source . --push
-```
+GitHub > Actions > Refresh > Run workflow runs `navmon update` on a GitHub-hosted runner. The schedule in
+`.github/workflows/refresh.yml` is commented out until a manual run has succeeded (`docs/decisions.md`, D-17).
 
-CI runs on the push. To try the scheduled refresh: GitHub > Actions > Refresh > Run workflow.
-
-## 6. Optional: tag fund-finance-lab so the pin is a version, not a commit
-
-```powershell
-cd "N:\AAA Projects\Fitch\fund finance lab"
-git tag -a v0.4.0 d771874 -m "v0.4.0"
-git push origin v0.4.0
-```
-
-Then in this repository's `pyproject.toml` replace `@d771874b03d5629af1f3835da3c0e9e846b93264` with `@v0.4.0`
-and run `pip install -e ".[test]"` again.
-
-## 7. Analyse a different vehicle or your own file
+## 6. Analyse a different vehicle or your own file
 
 - Another listed vehicle on the FCA archive with a holdings table: copy `configs/vehicle_nbpe.yaml`, change the
   LEI, headline filter and column headings, then `navmon update --vehicle vehicle_other.yaml`.

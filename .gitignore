@@ -15,7 +15,7 @@ outputs/*
 # secrets
 .env
 
-# interview prep is personal and never belongs in this repository
+# personal notes stay out of the repository
 *interview*
 *prep_notes*
 

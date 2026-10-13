@@ -3,10 +3,10 @@
 - `yahoo_chart`: Yahoo Finance chart endpoint, no key. Unofficial and unlicensed: fine for a personal
   tool, not something a firm would rely on. Response shape captured live on 2026-10-07.
 - `tiingo`: Tiingo end-of-day API, needs TIINGO_API_KEY. Written from Tiingo's documented response
-  shape; it was NOT exercised against the live service when this was built (docs/PLAN.md).
+  shape; NOT exercised against the live service (README, "What is and is not verified").
 - `fred_csv`: FRED's CSV download for a series (SOFR, SONIA), no key. Shape captured live 2026-10-07.
 
-Stooq was tried and dropped: its CSV download answered "Access denied" on 2026-10-07.
+Stooq is not used: its CSV download answered "Access denied" on 2026-10-07 (docs/decisions.md, D-14).
 """
 from __future__ import annotations
 

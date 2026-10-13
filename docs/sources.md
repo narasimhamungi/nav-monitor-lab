@@ -31,8 +31,8 @@ through the same analysis.
 | Rates | `file` | `sources.files.FileRates` | no | shipped sample |
 | Rates | `fred_csv` | `sources.market.FredRates` | yes | real rows |
 
-The build environment could not reach these hosts. The first live run was on 2026-10-07 from a Windows
-machine: FCA NSM, CalPERS, Yahoo and FRED all answered. Tiingo has still not been run.
+The first live run was on 2026-10-07 from a Windows machine: FCA NSM, CalPERS, Yahoo and FRED all
+answered. Tiingo has not been run.
 
 ## Adding a plug (for example a licensed feed)
 
