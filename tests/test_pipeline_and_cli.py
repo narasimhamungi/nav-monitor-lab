@@ -190,6 +190,7 @@ def test_cli_update_refreshes_then_runs(tmp_path, monkeypatch, capsys):
 
 def test_cli_check_sources_and_verify_live_exit_codes(tmp_path, monkeypatch, capsys):
     from navmonitorlab import net
+    monkeypatch.setattr(refresh, "_today", lambda: date(2026, 10, 7))   # the captured payloads cover early October 2026
     web = FakeWeb()
     monkeypatch.setattr(net.Fetcher, "_urllib", lambda self, url, data, headers: web(url, data, headers))
     monkeypatch.setattr(net.time, "sleep", lambda s: None)
@@ -199,3 +200,24 @@ def test_cli_check_sources_and_verify_live_exit_codes(tmp_path, monkeypatch, cap
     text = capsys.readouterr().out
     assert text.count("PASS") == 4 and "FAIL  prices: tiingo" in text
     assert cli.main(["verify-live", "--live", "data/sample", "--sample", "data/sample"]) == 0
+
+
+@pytest.mark.parametrize("day", [date(2026, 10, 13), date(2027, 6, 30)])
+def test_check_sources_reports_an_empty_window_instead_of_crashing(cfg, monkeypatch, day):
+    """On a date the captured payloads do not cover, every plug still reports PASS or FAIL with a reason."""
+    monkeypatch.setattr(refresh, "_today", lambda: day)
+    out = {r["source"]: r for r in refresh.check_sources(cfg, Fetcher(transport=FakeWeb()))}
+    assert set(out) >= {"prices: yahoo_chart", "rates: fred_csv"}
+    for r in out.values():
+        assert r["status"] in ("PASS", "FAIL") and "IndexError" not in r["detail"]
+    if day.year == 2027:
+        assert out["prices: yahoo_chart"]["status"] == "FAIL" and "no daily rows" in out["prices: yahoo_chart"]["detail"]
+
+
+def test_yahoo_empty_result_is_a_fetch_error():
+    from navmonitorlab.net import FetchError
+    from navmonitorlab.sources.market import parse_yahoo_chart
+    with pytest.raises(FetchError, match="no result"):
+        parse_yahoo_chart('{"chart": {"result": [], "error": null}}')
+    with pytest.raises(FetchError, match="no result"):
+        parse_yahoo_chart('{"chart": {"result": null, "error": null}}')

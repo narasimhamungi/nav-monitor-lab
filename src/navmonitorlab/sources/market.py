@@ -22,7 +22,10 @@ def parse_yahoo_chart(payload: str | bytes) -> tuple[list[tuple[date, float, flo
     j = json.loads(payload)
     if j.get("chart", {}).get("error"):
         raise FetchError(f"Yahoo chart error: {j['chart']['error']}")
-    res = j["chart"]["result"][0]
+    result = (j.get("chart") or {}).get("result") or []
+    if not result:
+        raise FetchError("Yahoo chart response has no result (unknown symbol, or an empty window)")
+    res = result[0]
     off = res["meta"].get("gmtoffset", 0)
     ts = res.get("timestamp") or []
     close = res["indicators"]["quote"][0]["close"]

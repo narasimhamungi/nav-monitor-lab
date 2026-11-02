@@ -19,6 +19,11 @@ from .sources.files import (PRICE_COLS, RATE_COLS, FileHoldings, FileTrackRecord
 STEPS = ("holdings", "track", "prices", "rates")
 
 
+
+def _today() -> date:
+    """The clock, in one place so tests and replays can fix it (monkeypatch `refresh._today`)."""
+    return date.today()
+
 def needed_symbols(cfg: dict) -> list[str]:
     m, v = cfg["market"], cfg["vehicle"]
     syms = set(m["sector_proxy"].values()) | {m["default_proxy"]}
@@ -45,7 +50,7 @@ def refresh(cfg: dict, live_dir: Path, *, cache_dir: Path | None = None, sample_
     live_dir = Path(live_dir)
     live_dir.mkdir(parents=True, exist_ok=True)
     f = fetcher or Fetcher(cache_dir=cache_dir)
-    today = today or date.today()
+    today = today or _today()
     veh, market, track = cfg["vehicle"], cfg["market"], cfg["track"]
     report: dict = {"steps": {}, "seeded_from_sample": []}
 
@@ -145,7 +150,7 @@ def check_sources(cfg: dict, fetcher: Fetcher | None = None, today: date | None 
     from .sources.fca_nsm import FcaNsmHoldings, parse_announcement
     from .sources.market import FredRates, TiingoPrices, YahooChartPrices
     f = fetcher or Fetcher()
-    today = today or date.today()
+    today = today or _today()
     veh, market = cfg["vehicle"], cfg["market"]
     out = []
 
@@ -176,15 +181,21 @@ def check_sources(cfg: dict, fetcher: Fetcher | None = None, today: date | None 
 
     def yahoo() -> str:
         rows = YahooChartPrices(f).history(market["default_proxy"], today - timedelta(days=10), today)
+        if not rows:
+            raise FetchError(f"no daily rows between {today - timedelta(days=10)} and {today}")
         return f"{market['default_proxy']}: {len(rows)} daily rows, latest {rows[-1][0]} close {rows[-1][2]:.2f}"
 
     def tiingo() -> str:
         rows = TiingoPrices(f).history(market["default_proxy"], today - timedelta(days=10), today)
+        if not rows:
+            raise FetchError(f"no daily rows between {today - timedelta(days=10)} and {today}")
         return f"{market['default_proxy']}: {len(rows)} daily rows, latest {rows[-1][0]} close {rows[-1][2]:.2f}"
 
     def fred() -> str:
         sid = market["rates"]["base_rate_series"]
         rows = FredRates(f).history(sid, today - timedelta(days=30), today)
+        if not rows:
+            raise FetchError(f"no observations between {today - timedelta(days=30)} and {today}")
         return f"{sid}: {len(rows)} observations, latest {rows[-1][0]} at {rows[-1][1]}%"
 
     attempt("holdings: fca_nsm", nsm)

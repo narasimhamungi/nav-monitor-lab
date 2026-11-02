@@ -44,7 +44,7 @@ Run on NB Private Equity Partners (NBPE) holdings as of 31 August 2026, CalPERS 
 
 | Claim | Status |
 |---|---|
-| Analysis runs end to end on real published data, offline, with byte-identical outputs on a re-run | Demonstrated (`pytest`, 114 tests) |
+| Analysis runs end to end on real published data, offline, with byte-identical outputs on a re-run | Demonstrated (`pytest`, 117 tests) |
 | Shipped CalPERS data matches the live page | Demonstrated on 2026-10-07: 485 rows tie to five column sums read off the page |
 | Shipped NBPE holdings match the publisher | Demonstrated: 52 of 55 tables tie to their own total row; the other three are the publisher's inconsistency |
 | Live parsers read the real pages | Demonstrated against real excerpts of each page and API response (`tests/fixtures/`) |
